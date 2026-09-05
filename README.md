@@ -20,3 +20,5 @@ cp .env.example .env   # ANTHROPIC_API_KEY を記入
 - [Phase 1・2 計測結果](docs/phase1-2-results.md) — 速度・VRAM・思考トークンの実測とグラフ
 
 - [Phase 3 計測結果](docs/phase3-results.md) — ツール呼び出し・JSON準拠・コード生成の2審査員評価
+
+- [記事ドラフト](docs/article-draft.md) — note 公開用の原稿
