@@ -12,3 +12,7 @@ LM Studio で立てたローカル LLM エンドポイントと Claude API を�
 ```bash
 cp .env.example .env   # ANTHROPIC_API_KEY を記入
 ```
+
+## ドキュメント
+
+- [用語集](docs/glossary.md) — 本プロジェクトで登場する用語・略語・パラメータの解説と実測値まとめ
