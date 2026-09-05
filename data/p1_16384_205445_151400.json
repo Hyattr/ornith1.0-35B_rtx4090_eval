@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-cr24whlfyjkogzdjt1wvg",
+  "object": "chat.completion",
+  "created": 1788609280,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - The user provides a long text block with lines numbered from `Line 000000` to `Line 000568`.\n   - Each line follows the exact same format: `Line XXXXXX: the quick brown fox jumps over the lazy dog near riverbank XXXXXXX.`\n   - The first number in the prefix (`XXX XXXX`) increments by 1 for each line.\n   - The number at the end of the sentence also matches the line number exactly (e.g., Line 000000 ends with 000000, Line 000568 ends with 000568).\n   - There's a session ID at the top: `Session 16384-4-beae5f92d762. Unique reference marker for this run.`\n   - The user asks: \"Summarise the pattern above in detail.\"\n\n2.  **Identify Key Patterns:**\n   - **Structure:** Each line is a structured log/data entry with two numeric identifiers and one fixed textual phrase.\n   - **",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 17117,
+    "completion_tokens": 256,
+    "total_tokens": 17373,
+    "completion_tokens_details": {
+      "reasoning_tokens": 256
+    }
+  },
+  "stats": {
+    "tokens_per_second": 130.61309788145556,
+    "time_to_first_token": 2.4591309999999997,
+    "generation_time": 4.411461999999999,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-u00gxwu64rkbwph68so0pl",
+  "object": "chat.completion",
+  "created": 1788609408,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "100",
+        "reasoning_content": "Here's my thought process for solving this problem:\n\n1.  **Analyze the Request:**\n    *   Input: A train travels two segments of a journey.\n        *   Segment 1: Distance = 120 km, Time = 1.5 hours.\n        *   Segment 2: Distance = 80 km, Time = 0.5 hours.\n    *   Goal: Calculate the average speed for the whole trip.\n    *   Output format: Just the number in km/h.\n\n2.  **Recall the Formula:**\n    *   Average Speed = Total Distance / Total Time.\n    *   *Self-Correction/Common Pitfall:* Do not just average the speeds (i.e., don't do $(speed_1 + speed_2) / 2$). I must sum the distances and divide by the sum of times.\n\n3.  **Calculate Total Distance:**\n    *   $d_{total} = d_1 + d_2$\n    *   $d_{total} = 120 \\text{ km} + 80 \\text{ km}$\n    *   $d_{total} = 200 \\text{ km}$\n\n4.  **Calculate Total Time:**\n    *   $t_{total} = t_1 + t_2$\n    *   $t_{total} = 1.5 \\text{ hours} + 0.5 \\text{ hours}$\n    *   $t_{total} = 2.0 \\text{ hours}$\n\n5.  **Calculate Average Speed:**\n    *   $v_{avg} = d_{total} / t_{total}$\n    *   $v_{avg} = 200 \\text{ km} / 2 \\text{ h}$\n    *   $v_{avg} = 100 \\text{ km/h}$\n\n6.  **Final Verification:**\n    *   First part speed: $120/1.5 = 80$ km/h.\n    *   Second part speed: $80/0.5 = 160$ km/h.\n    *   Weighted average based on time? No, just total distance / total time.\n    *   Total dist = 200. Total time = 2. $200/2 = 100$. Correct.\n\n7.  **Format Output:**\n    *   The user requested \"just the number\".\n    *   Result: 100.\n\n8.  **Construct Final Response:** 100.cw\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 55,
+    "completion_tokens": 572,
+    "total_tokens": 627,
+    "completion_tokens_details": {
+      "reasoning_tokens": 566
+    }
+  },
+  "stats": {
+    "tokens_per_second": 141.15753131052037,
+    "time_to_first_token": 0.056168,
+    "generation_time": 4.101294,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

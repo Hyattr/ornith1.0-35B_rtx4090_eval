@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-ieq2aimx7oyoin33gz3l",
+  "object": "chat.completion",
+  "created": 1788609431,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "100",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - Distance 1: 120 km\n   - Time 1: 1.5 hours\n   - Distance 2: 80 km\n   - Time 2: 0.5 hours\n   - Question: Average speed for the whole trip?\n   - Format requirement: \"Give just the number in km/h.\"\n\n2.  **Identify Key Concept:**\n   - Average speed = Total distance / Total time\n\n3.  **Calculate:**\n   - Total distance = 120 km + 80 km = 200 km\n   - Total time = 1.5 hours + 0.5 hours = 2.0 hours\n   - Average speed = 200 km / 2.0 h = 100 km/h\n\n4.  **Check Format Requirement:**\n   - \"Give just the number in km/h.\" -> Output should be exactly \"100\" (or maybe \"100 km/h\", but the prompt says \"just the number\", so I'll output \"100\").\n\n5.  **Final Output Generation:**\n   - Just the number: 100✅\n   - Double-check calculation: 200/2 = 100. Correct.\n   - Format matches request. All good.✅\n   - Output: 100\n   - Self-Correction/Refinement during thought: The prompt says \"Give just the number in km/h.\" This is slightly ambiguous but typically means output only the numeric value. I will output exactly \"100\". No extra text.✅\n   - Proceed. \n   - Output matches response.✅\n   - Done. \n   - [Output Generation] -> 100\n   - [Self-Correction/Verification during process] \n     - Total distance: 120 + 80 = 200\n     - Total time: 1.5 + 0.5 = 2\n     - Avg speed: 200 / 2 = 100\n     - Matches requirement. All good. \n   - Final Answer: 100. \n   - Proceeds. \n   - [Output] 100\n   - [Done.] \n   - *(Self-Correction/Note during thought)*: I'll make sure there's absolutely no extra text as requested. \"Give just the number in km/h.\" -> `100` is perfect.✅\n   - Output matches exactly.✅\n   - Proceeds. \n   - [Final Check of the Prompt]: \"What is its average speed for the whole trip? Give just the number in km/h.\" -> 100. All correct. \n   - Output Generation. \n   - [Output] 100\n   - [Done.] \n   - *(Note: I will output exactly \"100\" as requested.)*\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 55,
+    "completion_tokens": 646,
+    "total_tokens": 701,
+    "completion_tokens_details": {
+      "reasoning_tokens": 640
+    }
+  },
+  "stats": {
+    "tokens_per_second": 137.26020960591634,
+    "time_to_first_token": 0.057386,
+    "generation_time": 4.75649,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

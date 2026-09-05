@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-230cmy7151fhqqi1w2yuyl",
+  "object": "chat.completion",
+  "created": 1788609399,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's my thought process for solving this problem:\n\n1.  **Analyze the Request:**\n    *   Given information:\n        *   Part 1 of trip: Distance = 120 km, Time = 1.5 hours.\n        *   Part 2 of trip: Distance = 80 km, Time = 0.5 hours.\n    *   Goal: Find the average speed for the whole trip.\n    *   Output format: Just the number in km/h.\n\n2.  **Recall the Formula:**\n    *   Average Speed is defined as total distance traveled divided by total time taken.\n    *   $\\text{Average Speed} = \\frac{\\text{Total Distance}}{\\text{Total Time}}$\n\n3.  **Perform Calculations:**\n    *   *Step 1: Calculate Total Distance.*\n        *   $d_{\\text{total}} = d_1 + d_2$\n        *   $d_{\\text{total}} = 120 \\text{ km} + 80 \\text{ km}$\n        *   $d_{\\text{total}} = 200 \\text{ km}$\n\n    *   *Step 2: Calculate Total Time.*\n        *   $t_{\\text{total}} = t_1 + t_2$\n        *   $t_{\\text{total}} = 1.5 \\text{ hours} + 0.5 \\text{ hours}$\n        *   $t_{\\text{total}} = 2.0 \\text{ hours}$\n\n    *   *Step 3: Calculate Average Speed.*\n        *   $v_{\\text{avg}} = \\frac{200 \\text{ km}}{2 \\text{ h}}$\n        *   $v_{\\text{avg}} = 100 \\text{ km/h}$\n\n4.  **Verify the Result:**\n    *   Does it make sense?\n        *   First leg speed: $120 / 1.5 = 80 \\text{ km/h}$.\n        *   Second leg speed: $80 / 0.5 = 160 \\text{ km/h}$.\n        *   The average should be somewhere between 80 and 160, weighted by time. Since the",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 55,
+    "completion_tokens": 512,
+    "total_tokens": 567,
+    "completion_tokens_details": {
+      "reasoning_tokens": 512
+    }
+  },
+  "stats": {
+    "tokens_per_second": 141.1114167144402,
+    "time_to_first_token": 0.056679,
+    "generation_time": 3.677931,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

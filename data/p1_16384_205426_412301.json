@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-kjmgiehzi2f4krwgikiod",
+  "object": "chat.completion",
+  "created": 1788609261,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - The user provides a long list of lines, each starting with \"Line XXXXXX:\" followed by a sentence.\n   - The sentence is: \"the quick brown fox jumps over the lazy dog near riverbank XXXXXXX.\"\n   - There's a header line: \"Session 16384-0-bbe9ecec50a8. Unique reference marker for this run.\"\n   - The user asks: \"Summarise the pattern above in detail.\"\n\n2.  **Identify Key Components & Patterns:**\n   - **Header/Marker:** `Session 16384-0-bbe9ecec50a8. Unique reference marker for this run.` This looks like a session ID or run identifier, possibly hex-based (`bbe9ecec50a8`).\n   - **Line Numbering:** Starts at `Line 000000:` and increments sequentially by 1 up to at least `Line 000568:`. Format is 6-digit zero-padded decimal numbers.\n   - **Text Content:** Every line contains the exact same sentence template: `",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 17116,
+    "completion_tokens": 256,
+    "total_tokens": 17372,
+    "completion_tokens_details": {
+      "reasoning_tokens": 256
+    }
+  },
+  "stats": {
+    "tokens_per_second": 130.6094184244304,
+    "time_to_first_token": 2.4667800000000004,
+    "generation_time": 4.419166000000001,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

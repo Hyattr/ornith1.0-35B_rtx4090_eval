@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-5pg3dpycth7rb2qcfja38s",
+  "object": "chat.completion",
+  "created": 1788609341,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:** The user explicitly instructs me to \"Reply with exactly: PONG\"\n2.  **Identify Key Constraint:** The constraint is strict: \"exactly: PONG\". This means I should output only the word \"PONG",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 16,
+    "completion_tokens": 64,
+    "total_tokens": 80,
+    "completion_tokens_details": {
+      "reasoning_tokens": 64
+    }
+  },
+  "stats": {
+    "tokens_per_second": 136.94520887404954,
+    "time_to_first_token": 0.055566000000000004,
+    "generation_time": 0.5156040000000001,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

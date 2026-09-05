@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-tliiwb8n8ga4vea3k6bksb",
+  "object": "chat.completion",
+  "created": 1788609352,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "PONG",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:** The user said \"Reply with exactly: PONG\"\n2.  **Identify Constraint:** The constraint is explicit and strict: \"exactly: PONG\". This means I must output only the word \"PONG\" with no additional text, explanations, or formatting.\n3.  **Formulate Response:** Based on the constraint, the response should be just \"PONG\".\n4.  **Verify Constraint:** Does \"PONG\" match exactly what was requested? Yes. No extra words, no quotes (unless specified, but \"exactly: PONG\" typically means just the word itself). I'll output just `PONG`.\n5.  **Output Generation:** Output matches the constraint.✅\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 16,
+    "completion_tokens": 169,
+    "total_tokens": 185,
+    "completion_tokens_details": {
+      "reasoning_tokens": 164
+    }
+  },
+  "stats": {
+    "tokens_per_second": 140.57671597729686,
+    "time_to_first_token": 0.059796999999999996,
+    "generation_time": 1.254874,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

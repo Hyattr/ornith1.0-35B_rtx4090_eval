@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-u7511sedyjfl0afdbmoir",
+  "object": "chat.completion",
+  "created": 1788609389,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's my thought process for solving this problem:\n\n1.  **Analyze the Request:**\n    *   Input: A train travels two segments of a journey with different distances and times.\n        *   Segment 1: 120 km in 1.5 hours.\n        *   Segment 2: 80 km in 0.5 hours.\n    *   Goal: Calculate the average speed for the whole trip.\n    *   Output format: Just the number in km/h.\n\n2.  **Recall the Formula:**\n    *   Average Speed = Total Distance / Total Time.\n    *   *Self-Correction/Warning:* A common mistake is to take the arithmetic mean of the two speeds (i.e., $(speed_1 + speed_2) / 2$). This is incorrect unless the time spent at each speed is equal. Here, the times are different (1.5h vs 0.5h), so I must use total distance/total time.\n\n3.  **Perform Calculations:**\n    *   *Step 1: Calculate Total Distance.*\n        *   $Distance_1 = 120 \\text{ km}$\n        *   $Distance_2 = 80 \\text{ km}$\n        *   $\\text{Total Distance} = 120 + 80 = 200 \\text{ km}$\n\n    *   *Step 2: Calculate Total Time.*\n        *   $Time_1 = 1.5 \\text{ hours}$\n        *   $Time_2 = 0.5 \\text{ hours}$\n        *   $\\text{Total Time} = 1.5 + 0.5 = 2.0 \\text{ hours}$\n\n    *   *Step 3: Calculate Average Speed.*\n        *   $\\text{Average Speed} = \\frac{200 \\text{ km}}{2 \\text{ h}}$\n        *   $= 100 \\text{ km/h}$\n\n4.  **Verify the Result:**\n    *   First part speed: $120 / 1.5 = 80 \\text{ km/h}$.\n    *   Second part speed: $80 / 0.5 = 160 \\text{ km/h}$.\n    *   The average must be",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 55,
+    "completion_tokens": 512,
+    "total_tokens": 567,
+    "completion_tokens_details": {
+      "reasoning_tokens": 512
+    }
+  },
+  "stats": {
+    "tokens_per_second": 140.58050118186662,
+    "time_to_first_token": 0.056949,
+    "generation_time": 3.691877,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

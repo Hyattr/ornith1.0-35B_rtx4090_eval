@@ -1,0 +1,97 @@
+{
+  "config": {
+    "timestamp": "2026-09-05T20:55:39",
+    "model": "ornith-1.0-35b",
+    "arch": "qwen35moe",
+    "quantization": "IQ4_XS",
+    "loaded_context": 32768,
+    "max_context": 262144,
+    "vram_used_mib": 20855,
+    "vram_free_mib": 3284,
+    "gpu_util_pct": 3,
+    "gpu_temp_c": 48,
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20
+  },
+  "budget_sweep": {
+    "trivial": {
+      "64": {
+        "empty_rate_pct": 100,
+        "median_reasoning": 64
+      },
+      "128": {
+        "empty_rate_pct": 60,
+        "median_reasoning": 128
+      },
+      "256": {
+        "empty_rate_pct": 0,
+        "median_reasoning": 127
+      },
+      "512": {
+        "empty_rate_pct": 0,
+        "median_reasoning": 127
+      },
+      "1024": {
+        "empty_rate_pct": 0,
+        "median_reasoning": 131
+      },
+      "2048": {
+        "empty_rate_pct": 0,
+        "median_reasoning": 120
+      }
+    },
+    "moderate": {
+      "64": {
+        "empty_rate_pct": 100,
+        "median_reasoning": 64
+      },
+      "128": {
+        "empty_rate_pct": 100,
+        "median_reasoning": 128
+      },
+      "256": {
+        "empty_rate_pct": 100,
+        "median_reasoning": 256
+      },
+      "512": {
+        "empty_rate_pct": 60,
+        "median_reasoning": 512
+      },
+      "1024": {
+        "empty_rate_pct": 0,
+        "median_reasoning": 378
+      },
+      "2048": {
+        "empty_rate_pct": 0,
+        "median_reasoning": 640
+      }
+    }
+  },
+  "difficulty": {
+    "1_trivial": {
+      "median": 142,
+      "min": 106,
+      "max": 196,
+      "n": 9
+    },
+    "2_easy": {
+      "median": 410,
+      "min": 93,
+      "max": 523,
+      "n": 9
+    },
+    "3_medium": {
+      "median": 1403,
+      "min": 444,
+      "max": 1935,
+      "n": 9
+    },
+    "4_hard": {
+      "median": 1940,
+      "min": 1132,
+      "max": 2048,
+      "n": 9
+    }
+  }
+}

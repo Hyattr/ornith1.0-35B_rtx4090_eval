@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-8zoy8mxbjy20dizzx5efmj",
+  "object": "chat.completion",
+  "created": 1788609239,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - The user provides a long list of lines (from Line 000000 to Line 000141).\n   - Each line follows the exact same format, with only one part changing.\n   - Format: `Line [6-digit zero-padded number]: the quick brown fox jumps over the lazy dog near riverbank [6-digit zero-padded number].`\n   - The session reference at the top is irrelevant to the pattern itself.\n\n2.  **Identify Key Components of the Pattern:**\n   - **Structure/Template:** `Line {N}: the quick brown fox jumps over the lazy dog near riverbank {N}.`\n   - **Incrementing Variable:** `{N}` is a zero-padded 6-digit integer starting from `000000` and incrementing by 1 for each subsequent line.\n   - **Sequence Range:** From `000000` to `000141` (inclusive), which means 142 lines total.\n   - **Static Text:** The phrase \"the quick brown fox jumps over the lazy dog near",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4308,
+    "completion_tokens": 256,
+    "total_tokens": 4564,
+    "completion_tokens_details": {
+      "reasoning_tokens": 256
+    }
+  },
+  "stats": {
+    "tokens_per_second": 135.55040641201265,
+    "time_to_first_token": 0.6413840000000001,
+    "generation_time": 2.522603,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

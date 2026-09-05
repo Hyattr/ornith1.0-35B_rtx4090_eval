@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-lzkgezpzqjitanaja3f7",
+  "object": "chat.completion",
+  "created": 1788608939,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - The user provides a list of 36 lines (numbered 000000 to 000035).\n   - Each line follows the exact same format: `Line [6-digit-number]: the quick brown fox jumps over the lazy dog near riverbank [6-digit-number].`\n   - The pattern is highly repetitive and systematic.\n\n2.  **Identify Key Components of the Pattern:**\n   - **Structure/Format:** Each line starts with \"Line \", followed by a zero-padded 6-digit number, then \": the quick brown fox jumps over the lazy dog near riverbank \", then the same zero-padded 6-digit number again, and ends with \".\".\n   - **Numbering System:** The numbers range from 000000 to 000035 (inclusive), incrementing by 1 each line. They are consistently formatted as 6-digit zero-padded integers.\n   - **Text Content:** The textual part is identical across all lines: \"the quick brown fox jumps over the lazy dog near riverbank\".\n   - **Repetition/Consistency",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1099,
+    "completion_tokens": 256,
+    "total_tokens": 1355,
+    "completion_tokens_details": {
+      "reasoning_tokens": 256
+    }
+  },
+  "stats": {
+    "tokens_per_second": 138.2797350234913,
+    "time_to_first_token": 0.056982,
+    "generation_time": 1.90107,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

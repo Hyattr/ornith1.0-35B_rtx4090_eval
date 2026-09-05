@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-jikhfki881piacbz6lcuu",
+  "object": "chat.completion",
+  "created": 1788609448,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "4",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:** The user asks \"What is 2 + 2?\" and specifies \"Answer with just the number.\"\n2.  **Identify Core Task:** Simple arithmetic: 2 + 2 = 4.\n3.  **Check Constraints:** The constraint is strict: \"Answer with just the number.\" This means no extra words, explanations, or punctuation beyond what's necessary (though typically just the digit alone).\n4.  **Formulate Output:** Just \"4\".\n5.  **Final Verification:** Matches the arithmetic fact and strictly follows the constraint. Ready.✅\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 24,
+    "completion_tokens": 140,
+    "total_tokens": 164,
+    "completion_tokens_details": {
+      "reasoning_tokens": 136
+    }
+  },
+  "stats": {
+    "tokens_per_second": 141.3536801278081,
+    "time_to_first_token": 0.056067,
+    "generation_time": 1.039416,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

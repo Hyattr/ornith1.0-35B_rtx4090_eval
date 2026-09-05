@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-rv8ijh5m47878q0tr8qop",
+  "object": "chat.completion",
+  "created": 1788609297,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - The user provides a long list of lines, each starting with \"Line XXXXXX:\" followed by a sentence.\n   - There's a session ID at the top: \"Session 24576-2-2c91cf610948. Unique reference marker for this run.\"\n   - The pattern in the lines is highly repetitive but has systematic variations.\n\n2.  **Identify Key Components of Each Line:**\n   Let's look at a few examples:\n   - `Line 000000: the quick brown fox jumps over the lazy dog near riverbank 000000.`\n   - `Line 000001: the quick brown fox jumps over the lazy dog near riverbank 000001.`\n   - `Line 000150: the quick brown fox jumps over the lazy dog near riverbank 000150.`\n   - `Line 000853: the quick brown fox jumps over the lazy dog near riverbank 000853.`\n\n  ",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 25669,
+    "completion_tokens": 256,
+    "total_tokens": 25925,
+    "completion_tokens_details": {
+      "reasoning_tokens": 256
+    }
+  },
+  "stats": {
+    "tokens_per_second": 127.8003307773267,
+    "time_to_first_token": 3.780087,
+    "generation_time": 5.775386999999999,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-npn9r31kq899afwhbudw",
+  "object": "chat.completion",
+  "created": 1788609216,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Session ID/Reference:** \"Session 256-3-eed527b66816. Unique reference marker for this run.\"\n   - **Data Lines (000000 to 000008):** Each line follows the exact same template: `the quick brown fox jumps over the lazy dog near riverbank [NNNNNN].` where `[NNNNNN]` is a zero-padded 6-digit number matching the line identifier.\n   - **Request:** \"Summarise the pattern above in detail.\"\n\n2.  **Identify Key Pattern Elements:**\n   - **Structure/Template:** Fixed string prefix + variable numeric suffix\n   - **Prefix:** `\"the quick brown fox jumps over the lazy dog near riverbank \"` (note: no period at the end of the prefix, but there's a space before the number)\n   - **Suffix:** 6-digit zero-padded integer (`[NNNNNN]`)\n   - **Line Identifier Format:** `Line [NNNNNN]:` matches the suffix exactly\n   - **Range:** Lines 000",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 316,
+    "completion_tokens": 256,
+    "total_tokens": 572,
+    "completion_tokens_details": {
+      "reasoning_tokens": 256
+    }
+  },
+  "stats": {
+    "tokens_per_second": 138.20628833192058,
+    "time_to_first_token": 0.08935,
+    "generation_time": 1.934418,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

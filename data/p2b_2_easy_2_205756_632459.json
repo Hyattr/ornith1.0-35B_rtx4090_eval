@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-lwue3nmv4173437g3i91ho",
+  "object": "chat.completion",
+  "created": 1788609473,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "113",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Understand User Request:** The user wants to convert 45 degrees Celsius to Fahrenheit. They explicitly said \"Just the number.\"\n2.  **Identify Conversion Formula:** The formula to convert Celsius (°C) to Fahrenheit (°F) is: °F = (°C × 9/5) + 32\n3.  **Apply the Formula:** \n   - °C = 45\n   - °F = (45 × 9/5) + 32\n   - 45 × 9 = 405\n   - 405 / 5 = 81\n   - 81 + 32 = 113\n4.  **Verify Calculation:** \n   - Alternative: °F = (45 × 1.8) + 32 = 81 + 32 = 113. Correct.\n5.  **Format Output:** The user said \"Just the number.\" So I will output only \"113\". No extra text.\n6.  **Final Output Generation:** 113✅\n   - Check constraint: \"Just the number.\" -> Matches.\n   - All steps verified. Ready. \n   - Output: 113\n   - Self-Correction/Refinement during thought: None needed. The calculation is straightforward and matches the constraint.✅\n   - Proceed. \n   - Output matches response. \n   - [Done] \n   - *Self-Correction/Verification during process*: \n     - Formula: F = C * 9/5 + 32\n     - 45 * 1.8 = 81\n     - 81 + 32 = 113\n     - Correct.\n     - Constraint: \"Just the number.\" -> I will output exactly \"113\". No units, no explanation.\n   - All good.✅\n   - Output Generation. \n   - `113`\n   - [Done]\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 23,
+    "completion_tokens": 450,
+    "total_tokens": 473,
+    "completion_tokens_details": {
+      "reasoning_tokens": 444
+    }
+  },
+  "stats": {
+    "tokens_per_second": 141.49245867254234,
+    "time_to_first_token": 0.056317,
+    "generation_time": 3.229631,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

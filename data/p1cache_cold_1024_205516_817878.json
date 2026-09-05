@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-dqnyxaq1moepq8luvxtl",
+  "object": "chat.completion",
+  "created": 1788609315,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - The user provides a session cache header and then lines of text from \"Line 000000\" to \"Line 000034\".\n   - Each line follows the exact same pattern:",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1093,
+    "completion_tokens": 64,
+    "total_tokens": 1157,
+    "completion_tokens_details": {
+      "reasoning_tokens": 64
+    }
+  },
+  "stats": {
+    "tokens_per_second": 137.00566507551625,
+    "time_to_first_token": 0.21999000000000002,
+    "generation_time": 0.679825,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

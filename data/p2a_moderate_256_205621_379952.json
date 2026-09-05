@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-iiv4fr0ff9kjl226yowxm",
+  "object": "chat.completion",
+  "created": 1788609379,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's my thought process for solving this problem:\n\n1.  **Analyze the Request:**\n    *   Given data:\n        *   Part 1 of trip: Distance = 120 km, Time = 1.5 hours.\n        *   Part 2 of trip: Distance = 80 km, Time = 0.5 hours.\n    *   Goal: Calculate the average speed for the whole trip.\n    *   Output format: Just the number in km/h.\n\n2.  **Recall the Formula:**\n    *   Average Speed = (Total Distance) / (Total Time).\n    *   *Self-Correction/Note:* It is *not* the average of the speeds (i.e., $(v_1 + v_2) / 2$). I need to calculate totals first.\n\n3.  **Perform Calculations:**\n    *   **Step 1: Calculate Total Distance.**\n        *   $d_{total} = d_1 + d_2$\n        *   $d_{total} = 120 \\text{ km} + 80 \\text{ km}$\n        *   $d_{total",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 55,
+    "completion_tokens": 256,
+    "total_tokens": 311,
+    "completion_tokens_details": {
+      "reasoning_tokens": 256
+    }
+  },
+  "stats": {
+    "tokens_per_second": 140.3493322398928,
+    "time_to_first_token": 0.056192,
+    "generation_time": 1.873087,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

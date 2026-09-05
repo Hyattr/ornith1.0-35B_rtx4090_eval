@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-3hi1d2t9gj2gcwi4b1w94",
+  "object": "chat.completion",
+  "created": 1788609214,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Session ID/Marker:** `256-2-d3bb9e681401` (unique reference marker)\n   - **Data Lines:** 9 lines (000000 to 000008)\n   - **Pattern per line:** `the quick brown fox jumps over the lazy dog near riverbank [6-digit number].`\n   - **Task:** Summarize the pattern in detail.\n\n2.  **Identify Key Components of the Pattern:**\n   - **Static Text:** \"the quick brown fox jumps over the lazy dog near riverbank \" (followed by a period at the end)\n   - **Dynamic Element:** A 6-digit number starting from `000000` and incrementing by 1 for each subsequent line.\n   - **Line Count:** Exactly 9 lines shown (indices 0 through 8).\n   - **Formatting:** Each line follows the exact same structure, differing only in the trailing number.\n   - **Session/Run Context:** The marker suggests this is part of a larger automated or logged process,",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 316,
+    "completion_tokens": 256,
+    "total_tokens": 572,
+    "completion_tokens_details": {
+      "reasoning_tokens": 256
+    }
+  },
+  "stats": {
+    "tokens_per_second": 137.752431330413,
+    "time_to_first_token": 0.092439,
+    "generation_time": 1.943586,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

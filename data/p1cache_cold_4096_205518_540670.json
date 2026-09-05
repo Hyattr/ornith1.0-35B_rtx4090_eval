@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-69cfvjdxp2bukue6531lb",
+  "object": "chat.completion",
+  "created": 1788609317,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - The user provides a long list of lines (from Line 000000 to Line 000141).\n   - Each line follows the exact same format: `Line XXXXXX: the",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4306,
+    "completion_tokens": 64,
+    "total_tokens": 4370,
+    "completion_tokens_details": {
+      "reasoning_tokens": 64
+    }
+  },
+  "stats": {
+    "tokens_per_second": 131.54350644876382,
+    "time_to_first_token": 0.63891,
+    "generation_time": 1.117839,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

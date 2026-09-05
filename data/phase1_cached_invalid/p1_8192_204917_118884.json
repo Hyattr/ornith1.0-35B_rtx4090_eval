@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-as6rttn8xr70hy1vfxswdeu",
+  "object": "chat.completion",
+  "created": 1788608954,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - The user provides a list of lines, each starting with \"Line XXXXXX:\" followed by a sentence.\n   - The sentence is identical across all lines except for a number at the end: \"the quick brown fox jumps over the lazy dog near riverbank XXXXXX.\"\n   - The line numbers and the embedded numbers match exactly (e.g., Line 000000 matches ...riverbank 000000, Line 000001 matches ...riverbank 000001, etc.)\n   - The numbering goes from 000000 to 000284 (inclusive).\n   - The format is strictly consistent: `Line [6-digit padded number]: the quick brown fox jumps over the lazy dog near riverbank [6-digit padded number].`\n\n   I need to summarize this pattern in detail.\n\n2.  **Identify Key Components of the Pattern:**\n   - **Structure/Format:** Each line follows a fixed template: `Line <N>: the quick brown fox jumps over the lazy dog near riverbank <N>.`\n   -",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 8569,
+    "completion_tokens": 256,
+    "total_tokens": 8825,
+    "completion_tokens_details": {
+      "reasoning_tokens": 256
+    }
+  },
+  "stats": {
+    "tokens_per_second": 133.83044784391276,
+    "time_to_first_token": 1.164346,
+    "generation_time": 3.069742,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

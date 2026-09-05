@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-iilmzsgvbkcpodphnb4a8",
+  "object": "chat.completion",
+  "created": 1788609222,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Input Data:** A sequence of lines from \"Line 000000\" to \"Line 000034\".\n   - **Format per line:** `Line [6-digit zero-padded number]: the quick brown fox jumps over the lazy dog near riverbank [same 6-digit number].`\n   - **Session/Reference Header:** `Session 1024-1-988f506abc76. Unique reference marker for this run.`\n   - **Request:** \"Summarise the pattern above in detail.\"\n\n2.  **Identify Key Components of the Pattern:**\n   - **Header/Metadata:** Contains a session identifier and a note about it being a unique reference marker.\n   - **Line Numbering:** Sequential, starting at 000000, incrementing by 1 each line, zero-padded to 6 digits. Goes up to 000034 in the provided sample (implies continuation beyond).\n   - **Repetitive Text:** Every line contains the exact same pangram: \"the quick brown fox jumps",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1097,
+    "completion_tokens": 256,
+    "total_tokens": 1353,
+    "completion_tokens_details": {
+      "reasoning_tokens": 256
+    }
+  },
+  "stats": {
+    "tokens_per_second": 138.2414280827432,
+    "time_to_first_token": 0.219496,
+    "generation_time": 2.064095,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

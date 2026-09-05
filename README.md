@@ -16,3 +16,5 @@ cp .env.example .env   # ANTHROPIC_API_KEY を記入
 ## ドキュメント
 
 - [用語集](docs/glossary.md) — 本プロジェクトで登場する用語・略語・パラメータの解説と実測値まとめ
+
+- [Phase 1・2 計測結果](docs/phase1-2-results.md) — 速度・VRAM・思考トークンの実測とグラフ

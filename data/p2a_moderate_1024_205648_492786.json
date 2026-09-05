@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-jokkvmd0nol3kcc50uwcjm",
+  "object": "chat.completion",
+  "created": 1788609405,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "100",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - Train travels 120 km in 1.5 hours\n   - Then travels 80 km in 0.5 hours\n   - Question: Average speed for the whole trip?\n   - Format: Just the number in km/h\n\n2.  **Identify Key Concept:**\n   - Average speed = Total distance / Total time\n\n3.  **Calculate Total Distance:**\n   - Distance 1 = 120 km\n   - Distance 2 = 80 km\n   - Total distance = 120 + 80 = 200 km\n\n4.  **Calculate Total Time:**\n   - Time 1 = 1.5 hours\n   - Time 2 = 0.5 hours\n   - Total time = 1.5 + 0.5 = 2.0 hours\n\n5.  **Calculate Average Speed:**\n   - Average speed = 200 km / 2 h = 100 km/h\n\n6.  **Check Format Requirement:**\n   - \"Give just the number in km/h.\"\n   - So, output should be: 100\n\n7.  **Final Output Generation:**\n   - 100✅\n   - Self-Correction/Verification during thought: \n     - Is there any trick? No, standard average speed problem.\n     - Math: 200/2 = 100. Correct.\n     - Format matches request. Ready. \n   - Output: 100✅\n   - Proceed. \n   - [Output Generation] -> 100\n   - All steps verified. No extra text. Matches constraint.✅\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 55,
+    "completion_tokens": 383,
+    "total_tokens": 438,
+    "completion_tokens_details": {
+      "reasoning_tokens": 377
+    }
+  },
+  "stats": {
+    "tokens_per_second": 141.11505272789805,
+    "time_to_first_token": 0.056914,
+    "generation_time": 2.763925,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

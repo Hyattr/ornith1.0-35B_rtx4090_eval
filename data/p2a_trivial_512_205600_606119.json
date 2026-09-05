@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-tixyntjfbafb3hxrvddsi",
+  "object": "chat.completion",
+  "created": 1788609359,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "PONG",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:** The user says: \"Reply with exactly: PONG\"\n2.  **Identify Constraint:** The constraint is explicit and strict: \"exactly: PONG\". This means my entire response should be just the word \"PONG\", nothing else.\n3.  **Check for Ambiguity/Edge Cases:** No ambiguity. The instruction is clear.\n4.  **Formulate Response:** I will output exactly \"PONG\" with no additional text, punctuation, or formatting (unless it's part of the exact string, but the prompt says just PONG).\n5.  **Final Output Generation:** PONG✅\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 16,
+    "completion_tokens": 152,
+    "total_tokens": 168,
+    "completion_tokens_details": {
+      "reasoning_tokens": 147
+    }
+  },
+  "stats": {
+    "tokens_per_second": 140.06862434986363,
+    "time_to_first_token": 0.059222000000000004,
+    "generation_time": 1.137265,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

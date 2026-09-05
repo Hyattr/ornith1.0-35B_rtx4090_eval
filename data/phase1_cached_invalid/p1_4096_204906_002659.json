@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-jcljpr06fxfygbfhu57g4",
+  "object": "chat.completion",
+  "created": 1788608943,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - The user provides a list of lines, each starting with \"Line XXXXXX:\" followed by a sentence.\n   - The sentence is identical across all lines except for a number at the end before the period.\n   - The numbers range from 000000 to 000142.\n   - Each line's prefix number matches the suffix number in the sentence (e.g., Line 000000: ... riverbank 000000.).\n   - The user asks to \"Summarise the pattern above in detail.\"\n\n2.  **Identify Key Components of the Pattern:**\n   - **Structure:** Each entry follows a strict format: `Line [N]: the quick brown fox jumps over the lazy dog near riverbank [N].`\n   - **Numbering System:** Uses zero-padded 6-digit numbers (000000 to 000142).\n   - **Content Repetition:** The sentence text is completely static except for the embedded number.\n   - **Sequence:** Sequential, incrementing by 1 from start to",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4309,
+    "completion_tokens": 256,
+    "total_tokens": 4565,
+    "completion_tokens_details": {
+      "reasoning_tokens": 256
+    }
+  },
+  "stats": {
+    "tokens_per_second": 136.49487582177943,
+    "time_to_first_token": 0.578809,
+    "generation_time": 2.447011,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

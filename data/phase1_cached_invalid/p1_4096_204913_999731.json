@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-7fu271fm76chf273uz39n5",
+  "object": "chat.completion",
+  "created": 1788608952,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - The user provides a list of lines, each starting with \"Line XXXXXX:\" followed by a sentence.\n   - The sentence is identical across all lines except for a number at the end: \"the quick brown fox jumps over the lazy dog near riverbank XXXXXX.\"\n   - The line numbers range from 000000 to 000142 (inclusive), which is 143 lines total.\n   - The number embedded in the sentence matches the line number exactly.\n\n2.  **Identify Key Patterns:**\n   - **Structure:** `Line [NNNNNN]: the quick brown fox jumps over the lazy dog near riverbank [NNNNNN].`\n   - **Sequence:** Sequential integers from 0 to 142, zero-padded to 6 digits.\n   - **Repetition:** The sentence template is fixed except for the trailing number.\n   - **Content:** Uses the classic pangram \"the quick brown fox jumps over the lazy dog\" (note: missing capitalization and punctuation compared to the standard version, but structurally identical). Adds a location phrase \"near river",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4309,
+    "completion_tokens": 256,
+    "total_tokens": 4565,
+    "completion_tokens_details": {
+      "reasoning_tokens": 256
+    }
+  },
+  "stats": {
+    "tokens_per_second": 135.61261803615912,
+    "time_to_first_token": 0.058014,
+    "generation_time": 1.93837,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

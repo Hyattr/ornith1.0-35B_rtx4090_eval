@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-z1gkkti23x1ui91g5d5d1",
+  "object": "chat.completion",
+  "created": 1788609466,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "113",
+        "reasoning_content": "Thinking Process:\n1.  **Identify User Request:** The user wants to convert 45 degrees Celsius to Fahrenheit and explicitly requested \"Just the number.\"\n2.  **Recall Conversion Formula:** F = (C * 9/5) + 32\n3.  **Perform Calculation:**\n   - C = 45\n   - F = (45 * 9/5) + 32\n   - 45 / 5 = 9\n   - 9 * 9 = 81\n   - 81 + 32 = 113\n4.  **Verify Calculation:** (45 × 1.8) + 32 = 81 + 32 = 113. Correct.\n5.  **Format Output:** The user said \"Just the number.\" So I will output only `113`. No extra text. Ensure strict compliance.\n6.  **Final Output Generation:** 113✅\n   - Check constraints: \"Just the number.\" -> Output matches exactly.\n   - All steps verified. Proceed. \n   - Output: 113\n   - Self-Correction/Refinement during thought: None needed. Calculation is straightforward. Format matches constraint.✅\n   - Output Generation. \n   - [Output]: 113\n   - Done. \n   - *Self-Correction/Verification during generation*: Wait, let's double check the exact wording \"Just the number.\" I will output exactly `113`. No period unless necessary, but usually just the digit is fine. I'll stick to `113`.✅\n   - Proceeds. \n   - Output matches response.✅\n   - [Final Check of the Prompt]: \"Convert 45 degrees Celsius to Fahrenheit. Just the number.\" -> Response: 113. Perfect. \n   - Output Generation. \n   - [Done.] \n   - *Output Generation*: 113\n   - *(Note: I'll make sure there's absolutely no extra text, as requested.)*\n   - All good. \n   - Proceeds. \n   - [Final Answer Text]: 113\n   - *(Done.)*\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 23,
+    "completion_tokens": 484,
+    "total_tokens": 507,
+    "completion_tokens_details": {
+      "reasoning_tokens": 478
+    }
+  },
+  "stats": {
+    "tokens_per_second": 141.56206558690664,
+    "time_to_first_token": 0.072071,
+    "generation_time": 3.484002,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

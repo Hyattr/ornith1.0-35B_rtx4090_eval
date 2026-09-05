@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-4ef6qtvch76czq7bxx658u",
+  "object": "chat.completion",
+  "created": 1788608959,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - The user provides a list of lines, each starting with \"Line XXXXXX:\" followed by a sentence.\n   - The sentence is identical across all lines except for a number at the end before the period: \"000000\", \"000001\", ..., up to \"000284\".\n   - The format of each line is: `Line [6-digit-index]: the quick brown fox jumps over the lazy dog near riverbank [6-digit-number].`\n   - The index in \"Line XXXXXX\" matches the number at the end of the sentence.\n   - The numbers range from 000000 to 000284 (inclusive), which is 285 lines total.\n   - All other text is exactly the same.\n\n2.  **Identify Key Pattern Elements:**\n   - **Structure:** Each line follows a strict template: `Line [ID]: the quick brown fox jumps over the lazy dog near riverbank [ID].`\n   - **Incrementing ID:** The `[ID]` is a zero-padded 6-digit integer",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 8569,
+    "completion_tokens": 256,
+    "total_tokens": 8825,
+    "completion_tokens_details": {
+      "reasoning_tokens": 256
+    }
+  },
+  "stats": {
+    "tokens_per_second": 133.79835695617655,
+    "time_to_first_token": 0.057824,
+    "generation_time": 1.9636770000000001,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

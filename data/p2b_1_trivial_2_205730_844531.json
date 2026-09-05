@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-w2i5ctxwgkcm7bz0028zk",
+  "object": "chat.completion",
+  "created": 1788609449,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "apple",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:** The user explicitly says: \"Output the single word: apple\"\n2.  **Identify Key Constraints:** \n   - Must output exactly one word\n   - That word must be \"apple\"\n   - No additional text, explanations, or formatting should be included (implied by \"single word\")\n3.  **Formulate Response:** Just the word \"apple\".\n4.  **Verify Against Constraints:** Does it match exactly? Yes. Is it a single word? Yes. Does it contain only what was requested? Yes.\n5.  **Output Generation:** apple\n   - Self-Correction/Refinement during thought: I need to make sure there's absolutely no extra text, not even quotes unless specified. The prompt says \"apple\" but in context just means the word itself. I'll output exactly `apple` with nothing else.✅\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 16,
+    "completion_tokens": 200,
+    "total_tokens": 216,
+    "completion_tokens_details": {
+      "reasoning_tokens": 196
+    }
+  },
+  "stats": {
+    "tokens_per_second": 140.64290060787417,
+    "time_to_first_token": 0.072202,
+    "generation_time": 1.487133,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

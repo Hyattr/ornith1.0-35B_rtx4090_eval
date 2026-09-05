@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-nyji3yb5dndw7tkfq92mt",
+  "object": "chat.completion",
+  "created": 1788608925,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - The user provides 9 lines of text (Line 000000 to Line 000008).\n   - Each line follows the exact same structure, with only one part changing.\n   - Structure per line: `Line XXXXXX: the quick brown fox jumps over the lazy dog near riverbank XXXXXX.`\n   - The changing part is a 6-digit number at two positions: after \"Line\" and before \".\" at the end.\n   - The numbers increment sequentially from 000000 to 000008.\n\n2.  **Identify Key Patterns:**\n   - **Prefix:** `Line ` followed by a 6-digit zero-padded number, then `: `\n   - **Body/Text:** Fixed sentence: `the quick brown fox jumps over the lazy dog near riverbank `\n   - **Suffix/Number:** The same 6-digit number as in the prefix, followed by `.`\n   - **Increment:** Sequential integers from 0 to 8, zero-padded to 6 digits.\n   - **Format:** Consistent across all",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 289,
+    "completion_tokens": 256,
+    "total_tokens": 545,
+    "completion_tokens_details": {
+      "reasoning_tokens": 256
+    }
+  },
+  "stats": {
+    "tokens_per_second": 137.0882246053472,
+    "time_to_first_token": 0.054737,
+    "generation_time": 1.9148530000000001,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

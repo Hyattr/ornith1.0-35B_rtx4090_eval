@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-ohwpmj0pxqs751209prhxn",
+  "object": "chat.completion",
+  "created": 1788609371,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Understand the User's Request:**\n   - The train travels two segments:\n     - Segment 1: 120 km in 1.5 hours\n     - Segment 2: 80 km in 0.5 hours\n  ",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 55,
+    "completion_tokens": 64,
+    "total_tokens": 119,
+    "completion_tokens_details": {
+      "reasoning_tokens": 64
+    }
+  },
+  "stats": {
+    "tokens_per_second": 138.7371833268736,
+    "time_to_first_token": 0.053704,
+    "generation_time": 0.5078,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

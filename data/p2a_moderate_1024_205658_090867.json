@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-j79emamaxjhaftczs0rfxl",
+  "object": "chat.completion",
+  "created": 1788609415,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "100",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Understand the User's Question:**\n   - A train travels two segments:\n     - Segment 1: 120 km in 1.5 hours\n     - Segment 2: 80 km in 0.5 hours\n   - Need to find the average speed for the whole trip.\n   - Output format: Just the number in km/h.\n\n2.  **Recall the Formula for Average Speed:**\n   - Average speed = Total distance / Total time\n\n3.  **Calculate Total Distance:**\n   - Distance1 + Distance2 = 120 km + 80 km = 200 km\n\n4.  **Calculate Total Time:**\n   - Time1 + Time2 = 1.5 hours + 0.5 hours = 2.0 hours\n\n5.  **Calculate Average Speed:**\n   - Average speed = 200 km / 2.0 h = 100 km/h\n\n6.  **Verify:**\n   - Segment 1 speed: 120/1.5 = 80 km/h\n   - Segment 2 speed: 80/0.5 = 160 km/h\n   - Average of speeds would be (80+160)/2 = 120, but that's wrong because times are different. Correct method is total distance / total time.\n   - Total distance = 200 km, total time = 2 h -> 100 km/h. Correct.\n\n7.  **Format Output:**\n   - The user said: \"Give just the number in km/h.\"\n   - So output should be: `100`\n\n8.  **Final Check:**\n   - Math is correct.\n   - Format matches request.\n   - Ready.✅\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 55,
+    "completion_tokens": 407,
+    "total_tokens": 462,
+    "completion_tokens_details": {
+      "reasoning_tokens": 401
+    }
+  },
+  "stats": {
+    "tokens_per_second": 141.6458762384856,
+    "time_to_first_token": 0.05819,
+    "generation_time": 2.924493,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-mut685maxgk9xqibnm3yqg",
+  "object": "chat.completion",
+  "created": 1788608935,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - The user provides a list of lines (Line 000000 to Line 000035).\n   - Each line follows the exact same format: `Line XXXXXX: the quick brown fox jumps over the lazy dog near riverbank XXXXXX.`\n   - The only difference between lines is the 6-digit number at the end of both the line identifier and the sentence.\n   - The numbers increment sequentially from 000000 to 000035 (36 lines total).\n\n2.  **Identify Key Patterns:**\n   - **Line Count/Range:** Lines are numbered 000000 through 000035, totaling 36 lines.\n   - **Format Structure:** `Line [6-digit number]: the quick brown fox jumps over the lazy dog near riverbank [same 6-digit number].`\n   - **Static Text:** The phrase \"the quick brown fox jumps over the lazy dog near riverbank\" is identical across all lines, except for the embedded numbers. Note: It's missing an article (\"a\" or \"",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 1099,
+    "completion_tokens": 256,
+    "total_tokens": 1355,
+    "completion_tokens_details": {
+      "reasoning_tokens": 256
+    }
+  },
+  "stats": {
+    "tokens_per_second": 137.43200484191817,
+    "time_to_first_token": 0.056326999999999995,
+    "generation_time": 1.9117899999999999,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

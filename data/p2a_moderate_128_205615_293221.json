@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-bx6cc04u4n6d5y82700y6n",
+  "object": "chat.completion",
+  "created": 1788609374,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's my thought process for solving this problem:\n\n1.  **Analyze the Request:**\n    *   Input: A train travels two segments.\n        *   Segment 1: Distance = 120 km, Time = 1.5 hours.\n        *   Segment 2: Distance = 80 km, Time = 0.5 hours.\n    *   Goal: Calculate the average speed for the whole trip.\n    *   Output format: Just the number in km/h.\n\n2.  **Recall the Formula:**\n    *   Average Speed is defined as Total",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 55,
+    "completion_tokens": 128,
+    "total_tokens": 183,
+    "completion_tokens_details": {
+      "reasoning_tokens": 128
+    }
+  },
+  "stats": {
+    "tokens_per_second": 140.7699785298072,
+    "time_to_first_token": 0.055997,
+    "generation_time": 0.958178,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

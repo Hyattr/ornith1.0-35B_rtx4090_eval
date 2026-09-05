@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-pjcmf0xzyybpk546z5p7i",
+  "object": "chat.completion",
+  "created": 1788609245,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - The user provides a long list of lines, each starting with \"Line XXXXXX:\" followed by a sentence that ends with \"...riverbank XXXXXX.\"\n   - The session ID is at the top: `Session 8192-0-605ee7037422. Unique reference marker for this run.`\n   - The lines range from Line 000000 to Line 000283 (I should verify the exact count/range).\n   - Each line follows a strict, repetitive pattern: `the quick brown fox jumps over the lazy dog near riverbank [LINE_NUMBER].`\n   - The line number in the prefix matches the line number at the end of the sentence.\n\n2.  **Identify Key Patterns:**\n   - **Structure:** `[Prefix]: [Fixed Sentence] [Suffix Number].`\n   - **Prefix Format:** `Line [6-digit zero-padded number]:`\n   - **Sentence Content:** `the quick brown fox jumps over the lazy dog near riverbank`\n   - **Suffix Format:** `[Same 6-digit zero-padded number",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 8568,
+    "completion_tokens": 256,
+    "total_tokens": 8824,
+    "completion_tokens_details": {
+      "reasoning_tokens": 256
+    }
+  },
+  "stats": {
+    "tokens_per_second": 133.97149296781004,
+    "time_to_first_token": 1.213815,
+    "generation_time": 3.117205,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

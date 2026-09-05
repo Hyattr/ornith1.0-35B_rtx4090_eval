@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-yh0bimd2t9eoyj06yavec",
+  "object": "chat.completion",
+  "created": 1788609231,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - The user provides a log-like output with lines numbered from `Line 000000:` to `Line 000141:`.\n   - Each line contains the same sentence: \"the quick brown fox jumps over the lazy dog near riverbank [number].\" where [number] matches the line number (zero-padded to 6 digits).\n   - There's a session reference at the top: \"Session 4096-0-35926867729a. Unique reference marker for this run.\"\n   - The user asks: \"Summarise the pattern above in detail.\"\n\n2.  **Identify Key Components of the Pattern:**\n   - **Header/Metadata:** Session ID and unique reference marker.\n   - **Line Numbering:** Sequential, zero-padded to 6 digits (`000000` to `000141`). Format: `Line XXXXXX:`\n   - **Repetitive Content/Sentence Structure:** Every line contains the exact same pangram sentence with a trailing number.\n   - **Sentence Template:**",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4309,
+    "completion_tokens": 256,
+    "total_tokens": 4565,
+    "completion_tokens_details": {
+      "reasoning_tokens": 256
+    }
+  },
+  "stats": {
+    "tokens_per_second": 137.04652380148784,
+    "time_to_first_token": 0.635641,
+    "generation_time": 2.496323,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

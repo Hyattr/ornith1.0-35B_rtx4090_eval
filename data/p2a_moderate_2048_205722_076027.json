@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-l2qiqirlk1qc1tz64sdon",
+  "object": "chat.completion",
+  "created": 1788609439,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "100",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Understand the User's Request:**\n   - The train travels two segments:\n     - Segment 1: 120 km in 1.5 hours\n     - Segment 2: 80 km in 0.5 hours\n   - Need to find the average speed for the whole trip.\n   - Output format: Just the number in km/h.\n\n2.  **Recall/Apply Formula:**\n   - Average speed = Total distance / Total time\n   - Total distance = 120 km + 80 km = 200 km\n   - Total time = 1.5 hours + 0.5 hours = 2.0 hours\n   - Average speed = 200 km / 2 h = 100 km/h\n\n3.  **Verify Calculation:**\n   - 120 + 80 = 200 ✓\n   - 1.5 + 0.5 = 2.0 ✓\n   - 200 / 2 = 100 ✓\n   - Units: km/h ✓\n\n4.  **Format Output:**\n   - The user explicitly said: \"Give just the number in km/h.\"\n   - So, output should be: 100\n\n5.  **Final Response Generation:**\n   - Just \"100\" as requested.✅\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 55,
+    "completion_tokens": 312,
+    "total_tokens": 367,
+    "completion_tokens_details": {
+      "reasoning_tokens": 306
+    }
+  },
+  "stats": {
+    "tokens_per_second": 141.6313840574067,
+    "time_to_first_token": 0.057453000000000004,
+    "generation_time": 2.253294,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

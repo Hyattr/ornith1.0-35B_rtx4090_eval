@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-smjbvdkydmzhb87kf2xkl",
+  "object": "chat.completion",
+  "created": 1788609392,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - Train travels 120 km in 1.5 hours\n   - Then travels 80 km in 0.5 hours\n   - Question: What is the average speed for the whole trip?\n   - Format: Just the number in km/h\n\n2.  **Identify Key Concepts:**\n   - Average speed = Total distance / Total time\n   - Need to calculate total distance and total time from the given segments.\n\n3.  **Calculate Total Distance:**\n   - Segment 1: 120 km\n   - Segment 2: 80 km\n   - Total distance = 120 + 80 = 200 km\n\n4.  **Calculate Total Time:**\n   - Segment 1: 1.5 hours\n   - Segment 2: 0.5 hours\n   - Total time = 1.5 + 0.5 = 2.0 hours\n\n5.  **Calculate Average Speed:**\n   - Average speed = 200 km / 2 hours = 100 km/h\n\n6.  **Verify:**\n   - Check math: 120+80=200, 1.5+0.5=2, 200/2=100. Correct.\n   - Format requirement: \"Give just the number in km/h.\" -> Output should be \"100\"\n\n7.  **Generate Response:**\n   - Just output the number as requested.\n   - \"100\"✅\n   - Double-check constraint: \"Give just the number in km/h.\" -> I will output exactly \"100\". No extra text. All good. \n   - Proceed. \n   - Output matches expectation.✅\n   - Self-Correction/Refinement during thought: None needed. The calculation is straightforward. The prompt explicitly says \"Give just the number in km/h.\" so I'll strictly follow that.✅\n   - Final Answer: 100. \n   - Output Generation. \n   - [Done] \n   - *Self-Correction/Verification during generation prep*: \n     - Total distance = 200 km\n     - Total time = 2 h\n     - Avg speed = 100 km/h\n     - Matches request format. All",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 55,
+    "completion_tokens": 512,
+    "total_tokens": 567,
+    "completion_tokens_details": {
+      "reasoning_tokens": 512
+    }
+  },
+  "stats": {
+    "tokens_per_second": 140.51238901308605,
+    "time_to_first_token": 0.056839,
+    "generation_time": 3.693529,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-yul1ikyi37rlermjjk1lj",
+  "object": "chat.completion",
+  "created": 1788608986,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - The user provides a long list of lines, each starting with \"Line XXXXXX:\" followed by a sentence.\n   - The sentence is identical across all lines except for the number at the end: \"the quick brown fox jumps over the lazy dog near riverbank [NUMBER].\"\n   - The numbers increment sequentially from 000000 to 000854.\n   - The user asks: \"Summarise the pattern above in detail.\"\n\n2.  **Identify Key Components of the Pattern:**\n   - **Structure/Format:** Each line follows a strict template: `Line [LINE_NUMBER]: the quick brown fox jumps over the lazy dog near riverbank [REPEATING_NUMBER].`\n   - **Line Numbering:** Starts at 000000, increments by 1 each line, formatted as 6-digit zero-padded integers. Ends at 000854. Total lines = 855.\n   - **Content/Text:** The base sentence is constant: \"the quick brown fox jumps over the lazy dog near riverbank\".\n   - **Repeating",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 25669,
+    "completion_tokens": 256,
+    "total_tokens": 25925,
+    "completion_tokens_details": {
+      "reasoning_tokens": 256
+    }
+  },
+  "stats": {
+    "tokens_per_second": 125.66937422565488,
+    "time_to_first_token": 0.061902,
+    "generation_time": 2.091036,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

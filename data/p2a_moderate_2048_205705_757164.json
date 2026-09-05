@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-qq8lo5eqszbbi3y9o0tpmo",
+  "object": "chat.completion",
+  "created": 1788609420,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "100",
+        "reasoning_content": "Here's my thought process for solving this problem:\n\n1.  **Analyze the Request:**\n    *   Input: A train travels two segments of a journey.\n        *   Segment 1: Distance = 120 km, Time = 1.5 hours.\n        *   Segment 2: Distance = 80 km, Time = 0.5 hours.\n    *   Goal: Calculate the average speed for the whole trip.\n    *   Output Format: Just the number in km/h.\n\n2.  **Recall the Formula:**\n    *   Average Speed is defined as Total Distance divided by Total Time.\n    *   $v_{avg} = \\frac{d_{total}}{t_{total}}$\n    *   *Self-Correction/Warning:* A common mistake is to average the speeds of the two segments (i.e., $\\frac{v_1 + v_2}{2}$). This is incorrect unless the time intervals are equal. I must use total distance / total time.\n\n3.  **Perform Calculations:**\n    *   *Step 1: Calculate Total Distance ($d_{total}$)*\n        *   $d_1 = 120$ km\n        *   $d_2 = 80$ km\n        *   $d_{total} = 120 + 80 = 200$ km\n\n    *   *Step 2: Calculate Total Time ($t_{total}$)*\n        *   $t_1 = 1.5$ hours\n        *   $t_2 = 0.5$ hours\n        *   $t_{total} = 1.5 + 0.5 = 2.0$ hours\n\n    *   *Step 3: Calculate Average Speed*\n        *   $v_{avg} = \\frac{200 \\text{ km}}{2 \\text{ h}}$\n        *   $v_{avg} = 100$ km/h\n\n4.  **Verify the Result:**\n    *   Segment 1 speed: $120 / 1.5 = 80$ km/h.\n    *   Segment 2 speed: $80 / 0.5 = 160$ km/h.\n    *   The average of speeds is $(80+160)/2 = 120$. This is wrong (as expected).\n    *   Total distance = 200. Total time = 2. $200/2 = 100$.\n    *   Does 100 make sense? Yes, it's between 80 and 160, weighted more towards the slower speed because that leg took longer (1.5h vs 0.5h).\n\n5.  **Format Output:**\n    *   The user requested \"just the number in km/h\".\n    *   Result: 100.\n\n6.  **Final Output Generation:**\n    *   100\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 55,
+    "completion_tokens": 664,
+    "total_tokens": 719,
+    "completion_tokens_details": {
+      "reasoning_tokens": 658
+    }
+  },
+  "stats": {
+    "tokens_per_second": 141.20148621485885,
+    "time_to_first_token": 0.056256,
+    "generation_time": 4.751674,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

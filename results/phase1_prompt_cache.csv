@@ -1,0 +1,4 @@
+target_tokens,prompt_tokens,cold_ttft_s,warm_ttft_s,speedup
+1024,1093,0.22,0.0569,3.9
+4096,4306,0.6389,0.0569,11.2
+16384,17115,2.4702,0.0602,41.0

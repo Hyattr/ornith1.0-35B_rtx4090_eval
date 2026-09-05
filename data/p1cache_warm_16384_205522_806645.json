@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-p2drk88aj9ejzddolvgu6",
+  "object": "chat.completion",
+  "created": 1788609322,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - The user provides a long list of lines, each following a specific format.\n   - Each line starts with `Line XXXXXX:` followed by a sentence: `the quick brown fox jumps over the lazy dog near riverbank",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 17115,
+    "completion_tokens": 64,
+    "total_tokens": 17179,
+    "completion_tokens_details": {
+      "reasoning_tokens": 64
+    }
+  },
+  "stats": {
+    "tokens_per_second": 124.64116205131654,
+    "time_to_first_token": 0.060214,
+    "generation_time": 0.565665,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

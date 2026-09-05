@@ -1,0 +1,96 @@
+{
+  "config": {
+    "timestamp": "2026-09-05T20:53:28",
+    "model": "ornith-1.0-35b",
+    "arch": "qwen35moe",
+    "quantization": "IQ4_XS",
+    "loaded_context": 32768,
+    "max_context": 262144,
+    "vram_used_mib": 20855,
+    "vram_free_mib": 3284,
+    "gpu_util_pct": 3,
+    "gpu_temp_c": 42,
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20
+  },
+  "summary": [
+    {
+      "target": 256,
+      "prompt_tokens": 316,
+      "ttft_s": 0.092,
+      "decode_tok_s": 137.8,
+      "prefill_tok_s": 3418.0,
+      "vram_free_mib": 3284,
+      "n": 5
+    },
+    {
+      "target": 1024,
+      "prompt_tokens": 1097,
+      "ttft_s": 0.22,
+      "decode_tok_s": 138.2,
+      "prefill_tok_s": 4988.0,
+      "vram_free_mib": 3284,
+      "n": 5
+    },
+    {
+      "target": 4096,
+      "prompt_tokens": 4308,
+      "ttft_s": 0.639,
+      "decode_tok_s": 136.4,
+      "prefill_tok_s": 6741.0,
+      "vram_free_mib": 3284,
+      "n": 5
+    },
+    {
+      "target": 8192,
+      "prompt_tokens": 8568,
+      "ttft_s": 1.216,
+      "decode_tok_s": 134.1,
+      "prefill_tok_s": 7044.0,
+      "vram_free_mib": 3284,
+      "n": 5
+    },
+    {
+      "target": 16384,
+      "prompt_tokens": 17117,
+      "ttft_s": 2.462,
+      "decode_tok_s": 130.5,
+      "prefill_tok_s": 6954.0,
+      "vram_free_mib": 3284,
+      "n": 5
+    },
+    {
+      "target": 24576,
+      "prompt_tokens": 25669,
+      "ttft_s": 3.78,
+      "decode_tok_s": 127.2,
+      "prefill_tok_s": 6790.0,
+      "vram_free_mib": 3284,
+      "n": 5
+    }
+  ],
+  "prompt_cache": [
+    {
+      "target_tokens": 1024,
+      "prompt_tokens": 1093,
+      "cold_ttft_s": 0.22,
+      "warm_ttft_s": 0.0569,
+      "speedup": 3.9
+    },
+    {
+      "target_tokens": 4096,
+      "prompt_tokens": 4306,
+      "cold_ttft_s": 0.6389,
+      "warm_ttft_s": 0.0569,
+      "speedup": 11.2
+    },
+    {
+      "target_tokens": 16384,
+      "prompt_tokens": 17115,
+      "cold_ttft_s": 2.4702,
+      "warm_ttft_s": 0.0602,
+      "speedup": 41.0
+    }
+  ]
+}

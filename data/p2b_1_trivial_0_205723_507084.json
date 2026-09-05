@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-ebwdd32pvk37uoi18jz65",
+  "object": "chat.completion",
+  "created": 1788609442,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "PONG",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:** The user explicitly says \"Reply with exactly: PONG\". This is a direct instruction to output only the word \"PONG\" without any additional text, explanation, or formatting.\n2.  **Identify Constraints:** The constraint is strict: \"exactly: PONG\". This means I must output only the four characters P-O-N-G, with no extra words, punctuation, spaces (unless part of the exact string, but it's just \"PONG\"), or markdown.\n3.  **Formulate Response:** I will generate exactly \"PONG\" as requested.\n4.  **Verify against Constraints:** Does the response match exactly? Yes. No extra text. Just PONG.\n5.  **Output Generation:** Proceed. \n   Output: PONG✅\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 16,
+    "completion_tokens": 182,
+    "total_tokens": 198,
+    "completion_tokens_details": {
+      "reasoning_tokens": 177
+    }
+  },
+  "stats": {
+    "tokens_per_second": 140.79094955328043,
+    "time_to_first_token": 0.07137,
+    "generation_time": 1.3569639999999998,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-7welolvtznjqwl8uj786vl",
+  "object": "chat.completion",
+  "created": 1788609285,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - The user provides a long list of lines, numbered from `Line 000000:` to `Line 000853:`.\n   - Each line follows the exact same pattern: `the quick brown fox jumps over the lazy dog near riverbank [number].`\n   - The `[number]` matches the line number (e.g., Line 000000 has `000000`, Line 000001 has `000001`, ..., Line 000853 has `000853`).\n   - The session marker is at the top: `Session 24576-0-9dfe4863b41b. Unique reference marker for this run.`\n   - The user asks to \"Summarise the pattern above in detail.\"\n\n2.  **Identify Key Components of the Pattern:**\n   - **Structure/Format:** `Line [NNNNNN]: the quick brown fox jumps over the lazy dog near riverbank [NNNNNN].`\n   - **",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 25669,
+    "completion_tokens": 256,
+    "total_tokens": 25925,
+    "completion_tokens_details": {
+      "reasoning_tokens": 256
+    }
+  },
+  "stats": {
+    "tokens_per_second": 127.30439679432551,
+    "time_to_first_token": 3.781041,
+    "generation_time": 5.784114000000001,
+    "stop_reason": "maxPredictedTokensReached"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

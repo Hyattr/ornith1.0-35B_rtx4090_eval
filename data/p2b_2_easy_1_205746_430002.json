@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-h2ml44g0vstu4lixtou4s",
+  "object": "chat.completion",
+  "created": 1788609465,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Paris",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - Question: \"What is the capital of France?\"\n   - Constraint: \"One word.\"\n\n2.  **Identify Key Information:**\n   - The capital of France is Paris.\n\n3.  **Apply Constraints:**\n   - Must be exactly one word.\n   - \"Paris\" is one word.\n\n4.  **Formulate Response:**\n   - Just output: Paris\n\n5.  **Self-Correction/Verification:**\n   - Does it answer the question? Yes.\n   - Is it one word? Yes.\n   - Any extra text? No.\n   - Matches constraint perfectly.\n\n   Output matches exactly.✅\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 20,
+    "completion_tokens": 162,
+    "total_tokens": 182,
+    "completion_tokens_details": {
+      "reasoning_tokens": 158
+    }
+  },
+  "stats": {
+    "tokens_per_second": 141.19834420823688,
+    "time_to_first_token": 0.05747,
+    "generation_time": 1.19771,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

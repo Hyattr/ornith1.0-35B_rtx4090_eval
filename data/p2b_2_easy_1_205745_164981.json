@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-le8mgr0bzklpq50ak6ida",
+  "object": "chat.completion",
+  "created": 1788609463,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Paris",
+        "reasoning_content": "Thinking Process:\n1.  **Identify the user's core question**: The user asks \"What is the capital of France?\" with a constraint \"One word.\"\n2.  **Retrieve knowledge**: Capital of France = Paris.\n3.  **Apply constraints**: Check if \"Paris\" is one word. Yes.\n4.  **Formulate response**: Output only \"Paris\". Ensure no extra text to strictly follow the constraint. (Though usually, a direct answer is fine, I'll just output the word as requested).\n5.  **Final verification**: Capital of France -> Paris. One word -> Paris. Matches perfectly.✅\nOutput: Paris. \n(Self-Correction/Refinement during thought: The prompt says \"One word.\" so I will literally just output that one word.) \nProceed. \nOutput Generation. \n\"Paris\" matches all criteria.✅\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 20,
+    "completion_tokens": 187,
+    "total_tokens": 207,
+    "completion_tokens_details": {
+      "reasoning_tokens": 183
+    }
+  },
+  "stats": {
+    "tokens_per_second": 141.09026363398453,
+    "time_to_first_token": 0.053194000000000005,
+    "generation_time": 1.371499,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

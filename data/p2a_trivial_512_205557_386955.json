@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-y37ke66r0mnsy408c4tg",
+  "object": "chat.completion",
+  "created": 1788609356,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "PONG",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:** The user says \"Reply with exactly: PONG\"\n2.  **Identify Constraint:** The constraint is explicit and strict: I must reply with *exactly* \"PONG\". No extra text, no explanations, just the word.\n3.  **Formulate Response:** Based on the constraint, my response should be exactly: PONG\n4.  **Verify:** Does it match the requirement? Yes. Exactly \"PONG\" with nothing else.\n5.  **Output Generation:** Output \"PONG\".✅\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 16,
+    "completion_tokens": 132,
+    "total_tokens": 148,
+    "completion_tokens_details": {
+      "reasoning_tokens": 127
+    }
+  },
+  "stats": {
+    "tokens_per_second": 137.2790043814009,
+    "time_to_first_token": 0.061672,
+    "generation_time": 1.015933,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

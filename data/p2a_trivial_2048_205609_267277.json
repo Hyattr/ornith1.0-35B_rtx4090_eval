@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-ajkctlupedawvee8li58ta",
+  "object": "chat.completion",
+  "created": 1788609368,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "PONG",
+        "reasoning_content": "Thinking Process:\n1.  **Analyze the Input:** The user explicitly asked to reply with *exactly* \"PONG\".\n2.  **Identify Constraints:** \"reply with exactly: PONG\" means no extra text, just the word PONG.\n3.  **Formulate Response:** Output \"PONG\". No additional words, punctuation (unless part of the exact string, but usually just the word), or formatting.\n4.  **Final Verification:** Does the output match the constraint? Yes. Output: PONG.✅\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 16,
+    "completion_tokens": 121,
+    "total_tokens": 137,
+    "completion_tokens_details": {
+      "reasoning_tokens": 116
+    }
+  },
+  "stats": {
+    "tokens_per_second": 140.3937342276414,
+    "time_to_first_token": 0.056176000000000004,
+    "generation_time": 0.910915,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}
