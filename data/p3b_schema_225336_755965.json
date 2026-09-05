@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-96o29zab64a533k48szr6",
+  "object": "chat.completion",
+  "created": 1788616402,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"title\": \"CSV importer crashes when file contains UTF-8 BOM\",\n  \"priority\": \"high\",\n  \"estimated_hours\": 4,\n  \"tags\": [\"bug\", \"csv-importer\", \"utf-8-bom\"],\n  \"assignee\": {\n    \"name\": \"Dana Wu\",\n    \"email\": \"dana.wu@example.com\"\n  },\n  \"blocked\": false\n}",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Input Text:** A bug report describing an issue with a CSV importer crashing when a file has a UTF-8 BOM.\n   - **Key Information to Extract:**\n     - Issue/Bug: CSV importer crashes when file has UTF-8 BOM\n     - Reporter: Dana Wu (dana.wu@example.com)\n     - Assignee/Pickup: Dana Wu\n     - Estimated Effort: ~half a day\n     - Priority/Impact: Holding up the release\n     - Affected Components: Parser, File-IO layer\n     - Blockers for Start: None\n   - **Output Format:** Task object (JSON is standard and widely used)\n\n2.  **Identify Required Fields for a Task Object:**\n   A typical task object includes fields like:\n   - `id` (optional/generate placeholder)\n   - `title` / `summary`\n   - `description`\n   - `status`\n   - `priority` / `severity`\n   - `assignee`\n   - `reporter`\n   - `estimated_effort` / `story_points` / `time_estimate`\n   - `components_affected` / `tags`\n   - `blockers`\n   - `release_impact` / `milestone`\n   - `contact_info` (for the reporter)\n\n3.  **Map Input to Fields:**\n   - `title`: CSV importer crashes on UTF-8 BOM files\n   - `description`: The CSV importer crashes when processing a file that contains a UTF-8 Byte Order Mark (BOM). \n   - `reporter`: Dana Wu (dana.wu@example.com)\n   - `assignee`: Dana Wu\n   - `estimated_effort`: 0.5 days / Half day\n   - `priority`: High (holding up the release)\n   - `components_affected`: [\"Parser\", \"File-IO Layer\"]\n   - `blockers_for_start`: None\n   - `release_impact`: Blocks current release\n   - `status`: Open / Ready for work\n\n4.  **Structure as JSON Task Object:**\n   I'll create a clean, well-typed JSON object. I should make it realistic but focused on the extracted data.\n\n   ```json\n   {\n     \"id\": \"TASK-1234\",\n     \"title\": \"CSV importer crashes when file contains UTF-8 BOM\",\n     \"description\": \"The CSV importer crashes when processing a file that has a UTF-8 Byte Order Mark (BOM). Investigation indicates the issue touches both the parser and the file-io layer.\",\n     \"status\": \"Open\",\n     \"priority\": \"High\",\n     \"reporter\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"assignee\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"estimated_effort\": \"0.5 days\",\n     \"components_affected\": [\n       \"Parser\",\n       \"File-IO Layer\"\n     ],\n     \"blockers\": [],\n     \"release_impact\": \"Blocks current release\",\n     \"ready_to_start\": true,\n     \"created_at\": \"2024-05-20T00:00:00Z\"\n   }\n   ```\n\n5.  **Refine & Validate:**\n   - Does it capture all info from the prompt? Yes.\n   - Is it in a standard task object format? Yes, JSON is appropriate. I'll make sure field names are conventional (e.g., `title`, `description`, `assignee`, `priority`, `estimated_effort`, `components`, `blockers`, `status`).\n   - Should I add any missing inferred fields? The prompt says \"holding up the release\", so priority is High/Critical. I'll set it to \"High\".\n   - I'll keep dates minimal or omit if not provided. I'll stick strictly to extracted data + standard task schema.\n   - I'll present it as a clean JSON object, possibly with a brief explanation if needed, but the prompt just says \"Convert... into a task object.\"\n\n   Let's draft it carefully:\n   ```json\n   {\n     \"title\": \"CSV importer crashes on UTF-8 BOM files\",\n     \"description\": \"The CSV importer crashes when processing a file that contains a UTF-8 Byte Order Mark (BOM). The fix is expected to touch the parser and file-io layer.\",\n     \"status\": \"Open / Ready for Work\",\n     \"priority\": \"High\",\n     \"reporter\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"assignee\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"estimated_effort\": \"0.5 days\",\n     \"components_affected\": [\n       \"Parser\",\n       \"File-IO Layer\"\n     ],\n     \"release_impact\": \"Blocks current release\",\n     \"blockers_for_start\": [],\n     \"labels\": [\"bug\", \"csv-importer\", \"utf8-bom\"]\n   }\n   ```\n\n6.  **Self-Correction/Verification during thought:**\n   - Is JSON the best format? Yes, it's the standard for task objects in APIs/dev tools.\n   - Should I include an `id`? I'll add a placeholder like `\"id\": \"TICKET-001\"` or just omit it. Omitting is safer unless requested.\n   - The prompt says \"task object\", which implies a structured data representation. JSON is perfect.\n   - All constraints from the prompt are mapped accurately.\n   - I'll output just the JSON block for clarity, maybe with a short note if needed.\n\n   Final check of the mapping:\n   - Bug: CSV importer crashes on UTF-8 BOM -> title/description\n   - Reporter: Dana Wu (email) -> reporter\n   - Picking it up: Dana Wu -> assignee\n   - Est: half day -> estimated_effort\n   - Impact: holding up release -> priority: High, release_impact: Blocks current release\n   - Touches: parser & file-io -> components_affected\n   - Nothing blocking start -> blockers_for_start: [] / ready_to_start: true\n\n   Looks solid. I'll generate it.✅\n   Output matches the refined JSON. I'll present it cleanly.👇🏼\n   *Self-Correction/Refinement during generation prep*: \n   I should make sure the format is explicitly a \"task object\" as requested. JSON is standard. I'll wrap it in a code block and ensure field names are conventional for project management systems (Jira, Linear, GitHub Issues style). I'll keep it concise. No extra fluff.✅\n   Output Generation. \n   ```json\n   {\n     \"title\": \"CSV importer crashes when file contains UTF-8 BOM\",\n     ...\n   }\n   ```\n   All good.✅\n   Proceeds. \n   [Output Generation] -> *See response.* \n   *(Note: I'll make sure the JSON is valid and directly usable as a task object schema.)*\n   Structure:\n   - id (optional)\n   - title\n   - description\n   - status\n   - priority\n   - assignee / reporter\n   - estimated_effort\n   - components_affected\n   - blockers\n   - release_impact\n   - labels/tags\n   All mapped correctly.✅\n   Output matches response. \n   [Done.] \n   *Self-Correction/Note during thought*: I should ensure the output is strictly the task object as requested, without unnecessary commentary. I'll provide just the JSON block, maybe with a brief note that it's in standard JSON format for task trackers. Actually, the prompt says \"Convert the following bug report into a task object.\" so I'll just output the structured object directly. I'll use JSON. It's the most universal.✅\n   Final Output Generation. \n   *(Proceeds)*\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 92,
+    "completion_tokens": 1890,
+    "total_tokens": 1982,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1786
+    }
+  },
+  "stats": {
+    "tokens_per_second": 134.9719359834324,
+    "time_to_first_token": 0.075762,
+    "generation_time": 14.071264000000001,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

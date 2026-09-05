@@ -1,0 +1,55 @@
+{
+  "id": "chatcmpl-wlz17f4sthf52sk4mddsg",
+  "object": "chat.completion",
+  "created": 1788615850,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "The user wants to know the current temperature in Boston in Fahrenheit.\nI should use the `get_weather` function with `city=\"Boston\"` and `unit=\"fahrenheit\"`.\nBoth required parameters are available or can be inferred from the prompt.\nLet's call the function. \nWait, let me double check the parameters for get_weather:\n- city (required): \"Boston\"\n- unit (optional but specified by user): \"fahrenheit\"\nAll good. I will make the tool call. \nProceeding. \n`get_weather(city=\"Boston\", unit=\"fahrenheit\")` -> calling it. \nDone. \nWait, let's just output the function call. \nNo extra thoughts needed. \nProceeds. \n[Tool Call] get_weather(city: \"Boston\", unit: \"fahrenheit\")\n",
+        "tool_calls": [
+          {
+            "type": "function",
+            "id": "QMCLz3w1x43IbiWRYAEgZRhnGTZgd11z",
+            "function": {
+              "name": "get_weather",
+              "arguments": "{\"city\":\"Boston\",\"unit\":\"fahrenheit\"}"
+            }
+          }
+        ]
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 632,
+    "completion_tokens": 211,
+    "total_tokens": 843,
+    "completion_tokens_details": {
+      "reasoning_tokens": 170
+    }
+  },
+  "stats": {
+    "tokens_per_second": 137.28020458672773,
+    "time_to_first_token": 0.208198,
+    "generation_time": 1.7379160000000002,
+    "stop_reason": "toolCalls"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

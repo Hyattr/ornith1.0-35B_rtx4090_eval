@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-yv75ssnc999ebc5mqt2jlq",
+  "object": "chat.completion",
+  "created": 1788616337,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"title\": \"CSV importer crashes when file has UTF-8 BOM\",\n  \"priority\": \"high\",\n  \"estimated_hours\": 4,\n  \"tags\": [\"csv-importer\", \"parser\", \"file-io\", \"utf-8-bom\"],\n  \"assignee\": {\n    \"name\": \"Dana Wu\",\n    \"email\": \"dana.wu@example.com\"\n  },\n  \"blocked\": false\n}",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Input Text:** Bug report about CSV importer crashing with UTF-8 BOM. Reported by Dana Wu (dana.wu@example.com), who is picking it up. Estimated half a day. Holding up release. Touches parser and file-io layer. Nothing blocking her from starting.\n   - **Required Output:** Single JSON object matching a specific schema.\n   - **Schema Requirements:**\n     - `title` (string)\n     - `priority` (enum: \"low\", \"medium\", \"high\")\n     - `estimated_hours` (number)\n     - `tags` (array of strings)\n     - `assignee` (object with `name`, `email`)\n     - `blocked` (boolean)\n     - No extra properties, no markdown fences, no commentary.\n\n2.  **Extract Information from Input:**\n   - *Title:* CSV importer crashes when file has UTF-8 BOM\n   - *Priority:* \"It is holding up the release\" -> high\n   - *Estimated Hours:* \"about half a day of work\" -> 4 hours (standard half-day)\n   - *Tags:* Touches parser and file-io layer. Could be: [\"parser\", \"file-io\", \"csv-importer\", \"utf-8-bom\"]\n   - *Assignee:* Dana Wu, dana.wu@example.com\n   - *Blocked:* \"Nothing is blocking her from starting.\" -> false\n\n3.  **Map to Schema:**\n   ```json\n   {\n     \"title\": \"CSV importer crashes when file has UTF-8 BOM\",\n     \"priority\": \"high\",\n     \"estimated_hours\": 4,\n     \"tags\": [\"csv-importer\", \"parser\", \"file-io\", \"utf-8-bom\"],\n     \"assignee\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"blocked\": false\n   }\n   ```\n\n4.  **Validate against Schema:**\n   - `title`: string? Yes.\n   - `priority`: enum [\"low\", \"medium\", \"high\"]? Yes, \"high\".\n   - `estimated_hours`: number? Yes, 4.\n   - `tags`: array of strings? Yes.\n   - `assignee`: object with required name/email, no additional properties? Yes.\n   - `blocked`: boolean? Yes, false.\n   - Required fields present? Yes.\n   - No extra properties? Checked.\n   - Format: Single JSON object, no markdown fences, no commentary? I will output raw JSON only.\n\n   One minor consideration: \"half a day\" could be 4 or 0.5 depending on convention. Usually, in engineering contexts, half a day = 4 hours. I'll stick with 4. Alternatively, I could use 0.5 if it's in days, but the field is `estimated_hours`, so 4 is correct.\n\n   Tags: I'll keep them relevant and concise based on the text: [\"csv-importer\", \"parser\", \"file-io\", \"utf-8-bom\"]. Could also just use [\"parser\", \"file-io\"] as explicitly mentioned. I'll include both functional area tags and bug-related tags. Let's stick with [\"csv-importer\", \"parser\", \"file-io\", \"utf-8-bom\"].\n\n   Priority: \"holding up the release\" -> high. Makes sense.\n\n   All checks pass. Output matches exactly. I will generate just the JSON string.✅\n   Double-checking schema constraints: `additionalProperties: false` means I must not add anything else. The output will be strictly the JSON. No markdown code blocks as per instruction \"no markdown fences\". I'll output raw JSON text.\n   Wait, the prompt says \"Respond with a single JSON object matching exactly this schema (no extra properties, no markdown fences, no commentary):\"\n   I will output just the JSON string.\n   Let's construct it carefully. \n   `{\"title\":\"CSV importer crashes when file has UTF-8 BOM\",\"priority\":\"high\",\"estimated_hours\":4,\"tags\":[\"csv-importer\",\"parser\",\"file-io\",\"utf-8-bom\"],\"assignee\":{\"name\":\"Dana Wu\",\"email\":\"dana.wu@example.com\"},\"blocked\":false}`\n   Looks good. Output matches request.✅\n   One thing: \"half a day\" -> 4 hours is standard. I'll use 4.0 or 4. Both are numbers. I'll use 4.\n   All set. Output matches exactly. \n   Proceeds. \n   [Output Generation] -> *outputs JSON*\n   *(Self-Correction/Refinement during thought)*: \n   Should I format it with newlines? The prompt says \"single JSON object\", formatting doesn't matter for JSON, but pretty-printing is fine. I'll keep it compact or standard pretty-printed. I'll use standard pretty printing for readability, but ensure no markdown fences.\n   Actually, to be strictly safe against parsers that might choke on whitespace outside the JSON, I'll just output valid JSON. Pretty print is fine.\n   I will verify the schema one more time:\n   - title: string\n   - priority: enum [\"low\",\"medium\",\"high\"]\n   - estimated_hours: number\n   - tags: array of strings\n   - assignee: {name, email}\n   - blocked: boolean\n   All match.\n   Output matches exactly.✅\n   Proceeds. \n   [Output Generation] -> *outputs JSON* (no markdown)\n   `{\"title\":\"CSV importer crashes when file has UTF-8 BOM\",\"priority\":\"high\",\"estimated_hours\":4,\"tags\":[\"csv-importer\",\"parser\",\"file-io\",\"utf-8-bom\"],\"assignee\":{\"name\":\"Dana Wu\",\"email\":\"dana.wu@example.com\"},\"blocked\":false}`\n   Done. \n   Self-Correction/Note during thought: I'll make sure the JSON is properly formatted but without markdown fences as explicitly requested. I will output raw text. All good. \n   Final Check of the prompt: \"Respond with a single JSON object matching exactly this schema (no extra properties, no markdown fences, no commentary):\"\n   Ready. \n   Output matches response.✅\n   [Output Generation] -> *Proceeds*\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 398,
+    "completion_tokens": 1468,
+    "total_tokens": 1866,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1365
+    }
+  },
+  "stats": {
+    "tokens_per_second": 140.656968718638,
+    "time_to_first_token": 0.058281999999999994,
+    "generation_time": 10.487911,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

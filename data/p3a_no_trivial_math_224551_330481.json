@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-cqv4khis1rsneoeq9gd3wa",
+  "object": "chat.completion",
+  "created": 1788615950,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "2 + 2 = 4",
+        "reasoning_content": "The user is asking a simple arithmetic question: \"What is 2 + 2?\"\nThey explicitly requested a direct answer without using any tools or functions.\nI will simply provide the answer \"4\".\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 636,
+    "completion_tokens": 53,
+    "total_tokens": 689,
+    "completion_tokens_details": {
+      "reasoning_tokens": 43
+    }
+  },
+  "stats": {
+    "tokens_per_second": 134.2406625293006,
+    "time_to_first_token": 0.107232,
+    "generation_time": 0.494596,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

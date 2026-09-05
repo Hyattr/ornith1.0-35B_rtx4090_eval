@@ -1,0 +1,55 @@
+{
+  "id": "chatcmpl-1cb41a7lf4gpqck1sfi7wh",
+  "object": "chat.completion",
+  "created": 1788615877,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "The user wants to compute the value of the expression $(1234 \\times 5678) + 91011$.\nI can use the `calculate` function to evaluate this arithmetic expression.\n\nExpression: `(1234 * 5678) + 91011`\n",
+        "tool_calls": [
+          {
+            "type": "function",
+            "id": "iwpzSCxpyY2k0wr3cJtBM6tnVLPSHHHj",
+            "function": {
+              "name": "calculate",
+              "arguments": "{\"expression\":\"(1234 * 5678) + 91011\"}"
+            }
+          }
+        ]
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 643,
+    "completion_tokens": 116,
+    "total_tokens": 759,
+    "completion_tokens_details": {
+      "reasoning_tokens": 70
+    }
+  },
+  "stats": {
+    "tokens_per_second": 139.20007165777602,
+    "time_to_first_token": 0.057930999999999996,
+    "generation_time": 0.8840800000000001,
+    "stop_reason": "toolCalls"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

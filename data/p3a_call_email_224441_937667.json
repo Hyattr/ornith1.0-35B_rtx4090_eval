@@ -1,0 +1,55 @@
+{
+  "id": "chatcmpl-4f2my79yxzmz3wysrn5l5d",
+  "object": "chat.completion",
+  "created": 1788615880,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "The user wants me to send an email to alice@example.com with:\n- Subject: 'Build failed'\n- Body: explaining that the nightly build failed\n\nI have the `send_email` function available which requires `to`, `subject`, and `body` parameters.\nAll required parameters are provided or can be reasonably constructed from the prompt.\n- to: alice@example.com\n- subject: Build failed\n- body: I will draft a brief explanation about the nightly build failing as requested.\n\nLet's construct the call.\nBody: \"The nightly build has failed. Please investigate the issue and take necessary action.\" (or similar)\nI'll proceed with the function call. \nChecking constraints: The user provided exact subject, so I will use 'Build failed'. Body is described generally, so I'll write something appropriate.\nAll good.✅\n",
+        "tool_calls": [
+          {
+            "type": "function",
+            "id": "HI8ozpMvweu0iwc3Dn9EVAPu9dY2uMud",
+            "function": {
+              "name": "send_email",
+              "arguments": "{\"to\":\"alice@example.com\",\"subject\":\"Build failed\",\"body\":\"The nightly build has failed. Please investigate the issue and take necessary action to resolve it.\"}"
+            }
+          }
+        ]
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 645,
+    "completion_tokens": 250,
+    "total_tokens": 895,
+    "completion_tokens_details": {
+      "reasoning_tokens": 177
+    }
+  },
+  "stats": {
+    "tokens_per_second": 137.05687695264768,
+    "time_to_first_token": 0.063126,
+    "generation_time": 1.8798899999999998,
+    "stop_reason": "toolCalls"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

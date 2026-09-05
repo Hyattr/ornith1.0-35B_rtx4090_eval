@@ -1,0 +1,62 @@
+[
+  {
+    "id": "t01_duration",
+    "level": "easy",
+    "prompt": "Write a Python function `parse_duration(s: str) -> int` that converts a duration string like '1h30m', '45s', or '2h' into a number of seconds. Support the units h, m and s in any combination and order. Raise ValueError with a clear message for input that is empty, has an unknown unit, or has no digits."
+  },
+  {
+    "id": "t02_merge",
+    "level": "easy",
+    "prompt": "Write a Python function `merge_sorted(a: list[int], b: list[int]) -> list[int]` that merges two already-sorted lists into one sorted list without using sorted() or list.sort(). It must run in O(len(a)+len(b)) and handle empty inputs."
+  },
+  {
+    "id": "t03_lru",
+    "level": "medium",
+    "prompt": "Implement an LRU cache in Python as a class `LRUCache` with `__init__(self, capacity)`, `get(key)` and `put(key, value)`. Both operations must be O(1). `get` returns None for a missing key. Evict the least recently used entry when capacity is exceeded; `get` counts as a use."
+  },
+  {
+    "id": "t04_findbug",
+    "level": "medium",
+    "prompt": "The function below is supposed to remove every item with a negative value from the dict, but it behaves incorrectly. Identify the bug, explain why it happens, and give a corrected version.\n\ndef drop_negatives(d):\n    for key in d:\n        if d[key] < 0:\n            del d[key]\n    return d"
+  },
+  {
+    "id": "t05_retry",
+    "level": "medium",
+    "prompt": "Write a Python decorator `retry` that re-runs the wrapped function on exception. It must accept `max_attempts`, `base_delay` and `exceptions` (a tuple of exception types), use exponential backoff with jitter, re-raise the last exception when attempts are exhausted, and preserve the wrapped function's name and docstring."
+  },
+  {
+    "id": "t06_flatten",
+    "level": "medium",
+    "prompt": "Write `flatten(d: dict, sep: str = '.') -> dict` that flattens a nested dict into dotted keys, e.g. {'a': {'b': 1}} becomes {'a.b': 1}. Lists must be indexed, so {'a': [10, 20]} becomes {'a.0': 10, 'a.1': 20}. Empty dicts and empty lists must be preserved as their own leaf values rather than disappearing."
+  },
+  {
+    "id": "t07_bucket",
+    "level": "medium",
+    "prompt": "Implement a token-bucket rate limiter class `RateLimiter(rate, capacity)` in Python, where `rate` is tokens added per second. Provide `allow(cost: int = 1) -> bool` that consumes tokens if available. Refill lazily based on elapsed time rather than using a background thread, and never let the bucket exceed capacity."
+  },
+  {
+    "id": "t08_cycle",
+    "level": "hard",
+    "prompt": "Write a Python function `find_cycle(graph: dict[str, list[str]]) -> list[str] | None` that detects a cycle in a directed graph given as an adjacency map. Return the nodes of one cycle in order if a cycle exists, otherwise None. It must handle self-loops, disconnected components, and nodes that appear only as targets."
+  },
+  {
+    "id": "t09_race",
+    "level": "hard",
+    "prompt": "The counter below loses increments when used from multiple threads. Explain precisely which interleaving causes the loss, then give a corrected implementation. Explain why making only `value()` thread-safe would not be enough.\n\nclass Counter:\n    def __init__(self):\n        self.n = 0\n    def increment(self):\n        self.n += 1\n    def value(self):\n        return self.n"
+  },
+  {
+    "id": "t10_diff",
+    "level": "hard",
+    "prompt": "Write a Python function `diff(a: list[str], b: list[str]) -> list[tuple[str, str]]` that produces a line diff using the longest common subsequence. Each returned tuple is (op, line) where op is ' ' for unchanged, '-' for removed and '+' for added. The output, read in order, must reconstruct both inputs."
+  },
+  {
+    "id": "t11_median",
+    "level": "hard",
+    "prompt": "Implement a streaming median class `MedianStream` in Python with `add(x)` and `median()`. Use two heaps so that `add` is O(log n) and `median` is O(1). Return the average of the two middle values for an even count, and raise a clear error if `median()` is called before any value is added."
+  },
+  {
+    "id": "t12_bsearch",
+    "level": "hard",
+    "prompt": "The binary search below is meant to return the index of the FIRST occurrence of target in a sorted list that may contain duplicates, or -1 if absent. It does not always do so. Identify the defect, give a concrete input that triggers it, and provide a corrected implementation.\n\ndef first_index(xs, target):\n    lo, hi = 0, len(xs) - 1\n    while lo <= hi:\n        mid = (lo + hi) // 2\n        if xs[mid] == target:\n            return mid\n        elif xs[mid] < target:\n            lo = mid + 1\n        else:\n            hi = mid - 1\n    return -1"
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-evraejirgxep5h6zecjkms",
+  "object": "chat.completion",
+  "created": 1788616014,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Here's a draft you can adapt before sending. Per your instructions, nothing has been sent.\n\n---\n\n**Subject:** Service Outage Update – [Date/Time]\n\nDear [Recipient Name / Team],\n\nWe are writing to inform you of an ongoing outage affecting **[specific service/platform/system]**. At approximately **[time]** on **[date]**, our team detected an issue that has resulted in **[brief description of impact, e.g., degraded performance / complete unavailability]** for some users.\n\nOur engineering team is actively investigating the root cause and working to restore full functionality as quickly as possible. We understand this disruption may impact your workflow or operations, and we sincerely apologize for any inconvenience this causes.\n\n**Current Status:** [Investigating / Restoring service / Monitoring]  \n**Estimated Resolution:** [Timeframe or \"We will provide a status update within the next X hours\"]  \n**Workaround (if applicable):** [Brief steps or \"None at this time\"]  \n\nWe will continue to monitor the situation closely and share updates as they become available. For real-time information, please visit our status page at **[link]** or reply directly to this email with any questions.\n\nThank you for your patience and understanding.\n\nBest regards,  \n**[Your Name/Title]**  \n**[Team/Department]**  \n**[Contact Information]**\n\n---\n\nLet me know if you'd like it tailored for a specific audience (customers, internal team, leadership), service type, or current incident status.",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Task:** Draft the text of an email about \"the outage\"\n   - **Constraint:** Do NOT send it (explicitly stated)\n   - **Key Information Needed:** Who is it for? What outage? What tone? What details should be included? The user hasn't specified these, so I need to make reasonable assumptions or create a template that covers common scenarios.\n\n2.  **Identify Missing Information:**\n   - Recipient (internal team, customers, stakeholders?)\n   - Type of outage (service/platform/network/system?)\n   - Duration/Status (ongoing, resolved, investigating?)\n   - Impact description\n   - Next steps/timeline for resolution\n   - Contact info for updates\n\n3.  **Determine Approach:**\n   Since the user didn't specify details, I'll draft a professional, adaptable email template about an outage. I'll make it clear where they need to fill in specifics. I will explicitly follow the constraint \"do not send anything\" by only providing the drafted text.\n\n4.  **Draft - Mental Refinement:**\n   *Subject:* Service Outage Update – [Date/Time]\n   *Body:*\n   Dear [Recipient Name/Team],\n   \n   We are writing to inform you of an ongoing outage affecting [specific service/platform/system]. At approximately [time] on [date], our team detected unusual activity that has resulted in [brief description of impact, e.g., reduced performance / complete unavailability] for some users.\n   \n   Our engineering team is actively investigating the root cause and working to restore full functionality as quickly as possible. We understand this disruption may impact your workflow, and we sincerely apologize for any inconvenience this may cause.\n   \n   **Current Status:** [Investigating / Restoring service / Monitoring]\n   **Estimated Resolution:** [Timeframe or \"We will provide an update within the next X hours\"]\n   **Workaround (if applicable):** [Brief description or \"None at this time\"]\n   \n   We will continue to monitor the situation closely and share updates as they become available. For the most current information, please visit our status page at [link] or reply to this email with any questions.\n   \n   Thank you for your patience and understanding.\n   \n   Best regards,\n   [Your Name/Team]\n   [Contact Information]\n\n5.  **Check Against Constraints:**\n   - Drafts an email about the outage? Yes.\n   - Does not send anything? Yes, I'm just providing the text.\n   - Professional and adaptable? Yes.\n   - Clear placeholders for missing details? Yes.\n\n6.  **Final Output Generation:** (matches the refined draft) I'll present it clearly as a draft ready for review, explicitly noting that no email has been sent per their request. I'll keep it concise.✅\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 637,
+    "completion_tokens": 919,
+    "total_tokens": 1556,
+    "completion_tokens_details": {
+      "reasoning_tokens": 610
+    }
+  },
+  "stats": {
+    "tokens_per_second": 137.8229380607502,
+    "time_to_first_token": 0.057555999999999996,
+    "generation_time": 6.7182759999999995,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

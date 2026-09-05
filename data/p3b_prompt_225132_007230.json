@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-ckxrol45eynodajzqv55g",
+  "object": "chat.completion",
+  "created": 1788616281,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"title\": \"CSV importer crashes when a file has a UTF-8 BOM\",\n  \"priority\": \"high\",\n  \"estimated_hours\": 4,\n  \"tags\": [\"csv\", \"parser\", \"file-io\", \"utf-8-bom\"],\n  \"assignee\": {\n    \"name\": \"Dana Wu\",\n    \"email\": \"dana.wu@example.com\"\n  },\n  \"blocked\": false\n}",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Input Text:** Bug report describing a CSV importer crash when encountering a UTF-8 BOM. Reported by Dana Wu (dana.wu@example.com), who is also picking it up. Estimated ~half day of work. It's holding up the release, touches parser and file-io layer. Nothing blocking her from starting.\n   - **Required Output:** A single JSON object matching a specific schema.\n   - **Schema Requirements:**\n     - `title` (string)\n     - `priority` (enum: \"low\", \"medium\", \"high\")\n     - `estimated_hours` (number)\n     - `tags` (array of strings)\n     - `assignee` (object with `name` and `email`)\n     - `blocked` (boolean)\n     - No extra properties, no markdown fences, no commentary.\n\n2.  **Extract Information from Input:**\n   - *Title:* \"CSV importer crashes when a file has a UTF-8 BOM\" or similar concise version.\n   - *Priority:* \"It is holding up the release\" -> implies high priority.\n   - *Estimated Hours:* \"about half a day of work\" -> 4 hours (assuming an 8-hour workday). I'll use 4.0.\n   - *Tags:* From text: touches parser, file-io layer, CSV importer, UTF-8 BOM. Good tags: [\"csv\", \"parser\", \"file-io\", \"utf-8-bom\"] or similar.\n   - *Assignee:* Dana Wu (dana.wu@example.com)\n   - *Blocked:* \"Nothing is blocking her from starting.\" -> false\n\n3.  **Map to Schema:**\n   ```json\n   {\n     \"title\": \"CSV importer crashes when a file has a UTF-8 BOM\",\n     \"priority\": \"high\",\n     \"estimated_hours\": 4,\n     \"tags\": [\"csv\", \"parser\", \"file-io\", \"utf-8-bom\"],\n     \"assignee\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"blocked\": false\n   }\n   ```\n\n4.  **Validate against Schema:**\n   - `title`: string? Yes.\n   - `priority`: enum [\"low\", \"medium\", \"high\"]? \"high\" matches.\n   - `estimated_hours`: number? 4 matches.\n   - `tags`: array of strings? Yes.\n   - `assignee`: object with required name/email, no extra props? Yes.\n   - `blocked`: boolean? false matches.\n   - Required fields present? Yes.\n   - No extra properties? Checked.\n   - Format: Single JSON object, no fences, no commentary? Will ensure output is just the raw JSON.\n\n   All constraints met. I will generate exactly this JSON. \n   One minor consideration: \"half a day\" could be 4 hours. Standard assumption in task tracking. I'll stick with 4.\n   Tags: I'll keep them relevant and concise based on the text: [\"csv-importer\", \"parser\", \"file-io\", \"utf-8-bom\"] or just [\"csv\", \"parser\", \"file-io\"]. I'll use [\"csv\", \"parser\", \"file-io\", \"utf-8-bom\"].\n   Priority: \"holding up the release\" strongly implies high.\n   Blocked: false.\n\n   Everything looks solid. Output matches exactly.✅\n   Proceed. \n   Output generation. \n   ```json\n   {\n     \"title\": \"CSV importer crashes when a file has a UTF-8 BOM\",\n     \"priority\": \"high\",\n     \"estimated_hours\": 4,\n     \"tags\": [\"csv\", \"parser\", \"file-io\", \"utf-8-bom\"],\n     \"assignee\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"blocked\": false\n   }\n   ```\n   Matches schema perfectly. No extra text. Ready. \n   Self-Correction/Refinement during thought: \n   Check schema strictly: `additionalProperties: false` at root level means I can't have any other keys. The output has exactly the required keys. All good.\n   \"estimated_hours\": 4 (number) - correct.\n   \"tags\": array of strings - correct.\n   \"assignee\": object with name/email - correct.\n   \"blocked\": boolean - correct.\n   I will output just the JSON string. No markdown code blocks as requested (\"no markdown fences\"). Wait, the prompt says \"no markdown fences\", so I must literally output raw JSON text without ````json ... ````.\n\n   Final check of the prompt: \"Respond with a single JSON object matching exactly this schema (no extra properties, no markdown fences, no commentary):\"\n   I will produce raw JSON.✅\n   Proceeds. \n   Output matches response. \n   [Done] \n   *Self-Correction/Note during generation prep*: I'll make sure the formatting is exact. The prompt says \"no markdown fences\", so I will literally just output the JSON text. All good. \n   Output Generation. \n   `{\n  \"title\": \"CSV importer crashes when a file has a UTF-8 BOM\",\n  \"priority\": \"high\",\n  \"estimated_hours\": 4,\n  \"tags\": [\"csv\", \"parser\", \"file-io\", \"utf-8-bom\"],\n  \"assignee\": {\n    \"name\": \"Dana Wu\",\n    \"email\": \"dana.wu@example.com\"\n  },\n  \"blocked\": false\n}` -> matches perfectly.✅\n   Proceeds. \n   [Output Generation] -> *Proceeds* (matches the final response)\n   *(Note: I'll format it nicely with standard JSON indentation, which is fine as long as there are no fences)*\n   All constraints met. Output matches exactly. \n   [Done]\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 398,
+    "completion_tokens": 1415,
+    "total_tokens": 1813,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1312
+    }
+  },
+  "stats": {
+    "tokens_per_second": 140.48262039231412,
+    "time_to_first_token": 0.05511,
+    "generation_time": 10.120412,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

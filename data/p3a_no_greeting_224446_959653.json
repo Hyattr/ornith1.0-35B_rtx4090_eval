@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-yxqq7tlovpb3w288f6bm",
+  "object": "chat.completion",
+  "created": 1788615885,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Hi! I'm doing well, thank you for asking. 😊 How is your day going so far? Is there anything specific I can help you with today?",
+        "reasoning_content": "Thinking Process:\n1.  **Analyze Input**: The user said \"Hi there! How are you doing today?\" - a standard greeting and inquiry about my state.\n2.  **Identify Intent**: Social/Conversational. No tools needed.\n3.  **Formulate Response**: Acknowledge the greeting, respond politely to the question (as an AI), and ask how I can help them or how they are doing. Keep it friendly and conversational.\n4.  **Draft**: Hi! I'm doing great, thank you for asking. I'm ready to help you with whatever you need. How is your day going so far? Is there anything specific I can assist you with today?\n5.  **Refine**: Matches the draft. Simple and direct. No tools required. Output matches response.✅\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 630,
+    "completion_tokens": 209,
+    "total_tokens": 839,
+    "completion_tokens_details": {
+      "reasoning_tokens": 173
+    }
+  },
+  "stats": {
+    "tokens_per_second": 138.08386071852735,
+    "time_to_first_token": 0.06348,
+    "generation_time": 1.5698109999999998,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

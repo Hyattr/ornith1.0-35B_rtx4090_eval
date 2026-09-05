@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-qcdl3vrq9jq2z51k0ch9",
+  "object": "chat.completion",
+  "created": 1788616477,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"title\": \"Fix CSV importer crash when file contains UTF-8 BOM\",\n  \"priority\": \"high\",\n  \"estimated_hours\": 4,\n  \"tags\": [\"parser\", \"file-io\"],\n  \"assignee\": {\n    \"name\": \"Dana Wu\",\n    \"email\": \"dana.wu@example.com\"\n  },\n  \"blocked\": false\n}",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Input Text:** A bug report description.\n   - **Key Information Extracted:**\n     - *Issue:* CSV importer crashes when a file has a UTF-8 BOM (Byte Order Mark)\n     - *Reporter:* Dana Wu (dana.wu@example.com)\n     - *Assignee/Pickup:* Dana Wu\n     - *Estimated Effort:* ~half a day\n     - *Priority/Urgency:* Holding up the release (high priority/critical for current milestone)\n     - *Affected Components:* Parser, file-io layer\n     - *Blockers:* None, ready to start immediately\n   - **Task:** Convert this into a structured \"task object\"\n\n2.  **Identify Target Format:**\n   - The user wants a \"task object\". This typically implies a JSON or similar structured format commonly used in project management/development tools (like Jira, Linear, GitHub Issues, etc.).\n   - I'll create a clean, well-structured JSON object with standard task fields.\n\n3.  **Map Fields to Standard Task Object Schema:**\n   Common fields for a development task:\n   - `id` / `key` (optional, can leave null/generate)\n   - `title` / `summary`\n   - `description`\n   - `status` / `state`\n   - `priority`\n   - `assignee`\n   - `reporter`\n   - `components` / `tags`\n   - `estimated_effort` / `story_points` / `time_estimate`\n   - `milestone` / `release`\n   - `blockers`\n   - `links` (optional)\n\n   Let's map the extracted info:\n   - `title`: \"Fix CSV importer crash on UTF-8 BOM files\"\n   - `description`: \"The CSV importer crashes when processing a file that contains a UTF-8 Byte Order Mark (BOM). Reported by Dana Wu.\"\n   - `assignee`: \"Dana Wu\" / email: \"dana.wu@example.com\"\n   - `reporter`: \"Dana Wu\" / email: \"dana.wu@example.com\"\n   - `priority`: \"High\" or \"Critical\" (due to release block)\n   - `estimated_effort`: \"~0.5 days\" or \"Half day\"\n   - `components`: [\"parser\", \"file-io\"]\n   - `milestone` / `release`: \"Current release\" (blocking it)\n   - `status`: \"Ready for development\" / \"Open\"\n   - `blockers`: [] (None blocking start)\n\n4.  **Draft the Task Object (JSON):**\n   ```json\n   {\n     \"id\": null,\n     \"title\": \"Fix CSV importer crash when file contains UTF-8 BOM\",\n     \"description\": \"The CSV importer crashes during processing if the input file includes a UTF-8 Byte Order Mark (BOM). Investigation suggests it touches both the parser and the file-io layer.\",\n     \"status\": \"Open\",\n     \"priority\": \"High\",\n     \"assignee\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"reporter\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"estimated_effort\": \"0.5 days\",\n     \"components\": [\"parser\", \"file-io\"],\n     \"milestone\": \"Current release (blocking)\",\n     \"blockers\": [],\n     \"ready_to_start\": true,\n     \"metadata\": {\n       \"source\": \"Bug Report\"\n     }\n   }\n   ```\n\n5.  **Refine & Self-Correction/Verification:**\n   - *Does it capture all info?* Yes: crash on UTF-8 BOM, reporter/assignee Dana Wu with email, ~half day effort, release-blocking priority, touches parser & file-io, no blockers to start.\n   - *Is the format appropriate?* JSON is standard for \"task objects\". I'll make it clean and well-commented if needed, but plain JSON is best.\n   - *Should I add schema notes?* Briefly explain the fields or just output the object. The prompt says \"Convert the following bug report into a task object.\" I'll provide the JSON directly, maybe with a brief explanation of the field mappings.\n   - *Check accuracy:* \"picking it up\" -> assignee. \"half a day\" -> estimated effort. \"holding up the release\" -> priority/milestone. \"touches parser and file-io layer\" -> components/tags. \"Nothing is blocking her from starting\" -> blockers: [], status: Ready/Open.\n   - All matches well. I'll structure it professionally.\n\n   One minor adjustment: I'll make sure the JSON keys are standard and the values accurately reflect the prompt without over-assuming. I'll keep `milestone` as \"Current release (blocking)\" since that's directly stated. I'll add a `type` field to indicate it's a bug fix task.\n\n   Final structure looks solid. I'll output just the JSON object, maybe with a short note on how it maps. I'll format it cleanly.✅\n   Let's generate. \n   Self-Correction/Refinement during thought: \n   Should I include `type: \"Bug\"` or `type: \"Task\"`? The prompt says \"bug report\" -> \"task object\", so `type: \"Bug Fix\"` works.\n   I'll stick to a clean, standard schema. No extra fluff. Provide the JSON directly. Optionally add a markdown table mapping if helpful, but JSON is primary. I'll just output the JSON. All fields are well-justified.✅\n   Output matches the refined version. \n   Proceeds. \n   [Output Generation] -> *See response.* \n   Structure:\n   ```json\n   {\n     \"id\": null,\n     \"type\": \"Bug Fix\",\n     \"title\": \"...\",\n     ...\n   }\n   ```\n   All good. \n   Output matches the final refined version.✅\n   *(Self-Correction/Verification during drafting)*: \n   - Check if any implicit info should be explicit: \"holding up the release\" -> priority: High/Critical, milestone: Current Release (blocking). Good.\n   - \"Nothing is blocking her from starting\" -> blockers: [], status: Ready for Development. Good.\n   - Format: JSON is standard. I'll present it cleanly. I'll also add a brief field description if needed, but the prompt just says \"convert into a task object\", so direct output is best.\n   All set.✅\n   Output Generation. \n   *(Done.)*\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 92,
+    "completion_tokens": 1563,
+    "total_tokens": 1655,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1470
+    }
+  },
+  "stats": {
+    "tokens_per_second": 115.22208392785444,
+    "time_to_first_token": 0.058626,
+    "generation_time": 13.615055,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

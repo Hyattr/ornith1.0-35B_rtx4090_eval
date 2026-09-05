@@ -1,0 +1,55 @@
+{
+  "id": "chatcmpl-8c7luout3kjk38wsompzfn",
+  "object": "chat.completion",
+  "created": 1788615872,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "The user wants me to run the test suite located in the `tests` directory. I should use the `run_tests` tool with the path \"tests\".\n",
+        "tool_calls": [
+          {
+            "type": "function",
+            "id": "y2bPXqNAhWEa9LtASXM4TENsbAQRwrWo",
+            "function": {
+              "name": "run_tests",
+              "arguments": "{\"test_path\":\"tests\"}"
+            }
+          }
+        ]
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 632,
+    "completion_tokens": 62,
+    "total_tokens": 694,
+    "completion_tokens_details": {
+      "reasoning_tokens": 33
+    }
+  },
+  "stats": {
+    "tokens_per_second": 135.90831313275345,
+    "time_to_first_token": 0.062126,
+    "generation_time": 0.510958,
+    "stop_reason": "toolCalls"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

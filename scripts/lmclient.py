@@ -58,7 +58,8 @@ def _get(path, timeout=30):
         return json.loads(resp.read().decode("utf-8"))
 
 
-def chat(messages, max_tokens=2048, sampling=None, tools=None, tag="run", save=True):
+def chat(messages, max_tokens=2048, sampling=None, tools=None, tag="run", save=True,
+         extra=None):
     """1 リクエストを送り、結果を正規化した dict で返す。
 
     LM Studio は存在しないエンドポイントにも HTTP 200 を返すため、
@@ -72,6 +73,9 @@ def chat(messages, max_tokens=2048, sampling=None, tools=None, tag="run", save=T
     }
     if tools:
         payload["tools"] = tools
+    if extra:
+        # response_format など、呼び出し側が追加で渡したいパラメータ
+        payload.update(extra)
 
     t0 = time.perf_counter()
     body = _post("/api/v0/chat/completions", payload)

@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-ck1ag8v2u52piqdhm9tff",
+  "object": "chat.completion",
+  "created": 1788615883,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Hi! I'm doing well, thanks for asking. 😊 How's your day going? Is there anything I can help you with today?",
+        "reasoning_content": "Thinking Process:\n1.  **Analyze User Input**: The user said \"Hi there! How are you doing today?\" - a casual, friendly greeting.\n2.  **Identify Intent**: Social conversation/greeting. No specific task or tool needed.\n3.  **Determine Response Strategy**: Respond warmly and casually in return. Ask how they're doing or offer help with something. Keep it conversational.\n4.  **Check Constraints/Tools**: I have access to weather, file search, test runner, email sender, and calculator tools. None are relevant here. No system instructions requiring a specific persona or format.\n5.  **Draft Response**: \"Hi! I'm doing well, thanks for asking! How's your day going? Is there anything I can help you with today?\" (Friendly, open-ended, ready to assist).\n6.  **Refine**: Keep it natural and concise. Matches the drafted response. No tools needed. Proceed.✅\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 630,
+    "completion_tokens": 236,
+    "total_tokens": 866,
+    "completion_tokens_details": {
+      "reasoning_tokens": 204
+    }
+  },
+  "stats": {
+    "tokens_per_second": 137.59354165190706,
+    "time_to_first_token": 0.185625,
+    "generation_time": 1.8935540000000002,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

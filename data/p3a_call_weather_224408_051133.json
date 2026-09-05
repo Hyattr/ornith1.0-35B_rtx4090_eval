@@ -1,0 +1,55 @@
+{
+  "id": "chatcmpl-bsywr4deev4slkuvw7vypo",
+  "object": "chat.completion",
+  "created": 1788615846,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "The user is asking for the current weather in Kyoto. I have a `get_weather` tool available that takes a city name (required) and an optional unit parameter. Since no specific temperature unit was requested, I will use the default or omit the optional unit parameter.\n\nParameters:\n- city: \"Kyoto\"\n- unit: not specified, so I'll omit it.\n\nI will call `get_weather` with city=\"Kyoto\".\n",
+        "tool_calls": [
+          {
+            "type": "function",
+            "id": "A1xjU3se4ZNS0D8OiVk1567HgJGcw908",
+            "function": {
+              "name": "get_weather",
+              "arguments": "{\"city\":\"Kyoto\"}"
+            }
+          }
+        ]
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 631,
+    "completion_tokens": 122,
+    "total_tokens": 753,
+    "completion_tokens_details": {
+      "reasoning_tokens": 93
+    }
+  },
+  "stats": {
+    "tokens_per_second": 136.46380551313774,
+    "time_to_first_token": 0.215251,
+    "generation_time": 1.101933,
+    "stop_reason": "toolCalls"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

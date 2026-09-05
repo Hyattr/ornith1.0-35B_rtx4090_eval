@@ -1,0 +1,55 @@
+{
+  "id": "chatcmpl-z7fla95l9ukajyk5pmj0su",
+  "object": "chat.completion",
+  "created": 1788615979,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "The user wants to know which test files exist in the repository without executing any tests or other actions. I should use the `search_files` function to find files that match a pattern for test files. Common patterns for test files include `test_*.py`, `*_test.py`, `*.test.js`, etc., but since I don't know what language the project uses, I'll search for common test file patterns. Let me start by searching for files with \"test\" in the name.\n\nActually, let me think about this more carefully. The user said \"Just list them, don't execute anything.\" This means they want to see a list of test files without running any tests or other operations. I should use `search_files` with a pattern that matches test files.\n\nI'll search for common test file patterns. Let me try `test_*.py`, `*_test.py`, and maybe just `*test*` to be comprehensive. But actually, the simplest approach is to search for files containing \"test\" in their name across the repository.\n\nLet me use a glob pattern like `*test*` or I could search multiple patterns. Let me start with a broad search for test files.\n",
+        "tool_calls": [
+          {
+            "type": "function",
+            "id": "ZjySSpw4EcbAHMKKHjkzhJDaVZB64czh",
+            "function": {
+              "name": "search_files",
+              "arguments": "{\"pattern\":\"*test*\"}"
+            }
+          }
+        ]
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 639,
+    "completion_tokens": 278,
+    "total_tokens": 917,
+    "completion_tokens_details": {
+      "reasoning_tokens": 248
+    }
+  },
+  "stats": {
+    "tokens_per_second": 138.13711380204205,
+    "time_to_first_token": 0.062879,
+    "generation_time": 2.068133,
+    "stop_reason": "toolCalls"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

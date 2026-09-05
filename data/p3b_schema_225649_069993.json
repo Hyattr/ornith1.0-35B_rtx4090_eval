@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-pirl9omqdup32rahfwj1p5",
+  "object": "chat.completion",
+  "created": 1788616596,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"title\": \"CSV importer crashes when file contains UTF-8 BOM\",\n  \"priority\": \"high\",\n  \"estimated_hours\": 4,\n  \"tags\": [\"bug\", \"parser\", \"file-io\", \"utf-8\"],\n  \"assignee\": {\n    \"name\": \"Dana Wu\",\n    \"email\": \"dana.wu@example.com\"\n  },\n  \"blocked\": false\n}",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Input Text:** A bug report describing an issue with a CSV importer crashing when a file has a UTF-8 BOM.\n   - **Key Details to Extract:**\n     - Issue/Summary: CSV importer crashes on UTF-8 BOM files\n     - Reporter: Dana Wu (dana.wu@example.com)\n     - Assignee/Pickup: Dana Wu\n     - Estimated Effort: ~0.5 days (half a day)\n     - Priority/Urgency: High (holding up the release)\n     - Affected Components: Parser, file-io layer\n     - Blocking Status: Not blocking her from starting\n   - **Output Requirement:** Convert into a \"task object\"\n\n2.  **Define \"Task Object\":**\n   - A task object typically has structured fields like: title/summary, description, assignee, reporter, priority, effort/time estimate, components/tags, status, dependencies/blockers, etc.\n   - I'll structure it as a JSON-like or clearly formatted key-value object that captures all relevant information in a standardized way.\n\n3.  **Map Details to Task Fields:**\n   - `id`: (not provided, can omit or use placeholder)\n   - `title` / `summary`: \"CSV importer crashes when file contains UTF-8 BOM\"\n   - `description`: Expand slightly for clarity, include context from the report\n   - `reporter`: Dana Wu (dana.wu@example.com)\n   - `assignee`: Dana Wu\n   - `priority`: High / Critical (due to release blockage)\n   - `effort_estimate`: 0.5 days\n   - `components` / `tags`: [\"CSV Importer\", \"Parser\", \"File IO\"]\n   - `status`: Open / Ready for work\n   - `blocking_release`: true\n   - `dependencies`: None\n   - `notes`: \"Nothing is blocking her from starting.\"\n\n4.  **Draft the Task Object (Mental Refinement):**\n   ```json\n   {\n     \"title\": \"CSV importer crashes when file contains UTF-8 BOM\",\n     \"description\": \"The CSV importer crashes when processing files that contain a UTF-8 Byte Order Mark (BOM). Fix is needed to unblock the upcoming release.\",\n     \"reporter\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"assignee\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"priority\": \"High\",\n     \"effort_estimate\": \"0.5 days\",\n     \"components\": [\"Parser\", \"File IO\"],\n     \"status\": \"Open / Ready for Work\",\n     \"blocking_release\": true,\n     \"dependencies\": [],\n     \"notes\": \"Reporter estimates ~half a day of work. Nothing is blocking her from starting immediately.\"\n   }\n   ```\n\n5.  **Self-Correction/Verification:**\n   - Does it capture all info? Yes.\n   - Is it structured as a task object? Yes, JSON format is standard and clean.\n   - Are field names reasonable for a task management system? Yes (title, description, assignee, priority, effort_estimate, components, status, dependencies, notes).\n   - Should I add an ID or type? Could add `\"type\": \"Bug\"` to clarify it's a bug report converted to a task.\n   - The prompt says \"Convert the following bug report into a task object.\" JSON is appropriate. I'll make it clean and professional.\n\n   Let's refine:\n   ```json\n   {\n     \"id\": null,\n     \"type\": \"Bug\",\n     \"title\": \"CSV importer crashes when file contains UTF-8 BOM\",\n     \"description\": \"The CSV importer crashes when processing files that contain a UTF-8 Byte Order Mark (BOM). This issue is currently blocking the upcoming release.\",\n     \"reporter\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"assignee\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"priority\": \"High\",\n     \"effort_estimate\": \"0.5 days\",\n     \"components\": [\"Parser\", \"File IO\"],\n     \"status\": \"Open / Ready for Work\",\n     \"blocking_release\": true,\n     \"dependencies\": [],\n     \"notes\": \"Reporter estimates ~half a day of work. Nothing is blocking her from starting immediately.\"\n   }\n   ```\n\n6.  **Final Output Generation:** \n   - I'll present it as a clean JSON object since that's the most standard representation of a \"task object\" in software/project management contexts.\n   - I'll also add a brief note if needed, but keep it direct. The prompt just asks to convert it, so I'll output the structured object directly.✅\n   - Check against original: UTF-8 BOM? Yes. Dana Wu reporter/assignee? Yes. Half day estimate? Yes. Holding up release -> High priority/blocking_release true? Yes. Parser + file-io layer -> components? Yes. Nothing blocking her -> status/notes? Yes. All match. \n   - Ready. Output matches the refined version.✅\n   - I will format it clearly as JSON. Optionally, I can provide a markdown representation if JSON isn't strictly required, but JSON is standard for \"task object\". I'll stick with JSON.👍🏼\n   - One minor adjustment: I'll make sure field names are conventional and the structure is immediately usable in a ticketing system (Jira/Linear/GitHub Issues style). All good. \n   - Output matches response.✅\n   - Proceeds. \n   - *Self-Correction/Refinement during thought*: \n     - Should I include `\"type\": \"Bug\"`? Yes, since the input explicitly says \"bug report\".\n     - Should `status` be something more standard like `\"TODO\"` or `\"Open\"`? I'll use `\"Status\": \"Open / Ready for Work\"`.\n     - The prompt is straightforward. I'll just output the JSON object directly. No fluff.✅\n   - Final check of the prompt: \"Convert the following bug report into a task object.\" -> Direct conversion expected.\n   - Output generation. \n   - [Done] \n   - *Output Generation* (matches the final refined version)✅\n   - `{ \"title\": \"...\", ... }` format. All fields properly mapped. Ready. \n   - Proceeds. \n   - *[Output Generation]* -> *See response.* \n   - *(Note: I'll make sure the JSON is valid and well-formatted.)*✅\n   - All steps verified. Output matches response. \n   - [End of Thought Process]\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 92,
+    "completion_tokens": 1607,
+    "total_tokens": 1699,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1502
+    }
+  },
+  "stats": {
+    "tokens_per_second": 133.62948155921475,
+    "time_to_first_token": 0.056575,
+    "generation_time": 12.074881000000001,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

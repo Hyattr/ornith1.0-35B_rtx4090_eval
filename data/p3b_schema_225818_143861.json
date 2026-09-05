@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-lu66ahr8p8i6gyiqrdfpux",
+  "object": "chat.completion",
+  "created": 1788616684,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"title\": \"CSV importer crashes on files with UTF-8 BOM\",\n  \"priority\": \"high\",\n  \"estimated_hours\": 4,\n  \"tags\": [\"bug\"],\n  \"assignee\": {\n    \"name\": \"Dana Wu\",\n    \"email\": \"dana.wu@example.com\"\n  },\n  \"blocked\": false\n}",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Input Text:** A bug report describing an issue with a CSV importer crashing when a file has a UTF-8 BOM.\n   - **Key Information to Extract:**\n     - Issue/Problem: CSV importer crashes on files with UTF-8 BOM\n     - Reported by: Dana Wu (dana.wu@example.com)\n     - Assignee/Picking up: Dana Wu\n     - Estimated effort: ~half a day\n     - Priority/Urgency: Holding up the release (high priority/blocking)\n     - Components touched: Parser, file-io layer\n     - Blockers: None\n   - **Output Required:** A \"task object\" (structured format like JSON is typical for this kind of request)\n\n2.  **Identify Key Fields for a Task Object:**\n   Standard task/project management fields usually include:\n   - title/summary\n   - description\n   - assignee\n   - reporter\n   - priority/severity\n   - effort/estimation\n   - components/labels/tags\n   - status (usually \"open\" or \"todo\")\n   - blockers/blocking items\n   - related_to_release (optional)\n\n3.  **Map Input to Fields:**\n   - `title`: CSV importer crashes on files with UTF-8 BOM\n   - `description`: The CSV importer crashes when processing a file that contains a UTF-8 Byte Order Mark (BOM). The issue touches the parser and file-io layer. No blockers for development. Estimated at ~0.5 days. Holding up the current release.\n   - `assignee`: Dana Wu (dana.wu@example.com)\n   - `reporter`: Dana Wu (dana.wu@example.com)\n   - `priority`: High / Critical (holding up release)\n   - `effort_estimate`: 0.5 days\n   - `components`: parser, file-io\n   - `status`: Open / Todo\n   - `blockers`: None\n   - `blocking_release`: Current release\n   - `type`: Bug\n\n4.  **Structure as JSON (Task Object):**\n   I'll create a clean, well-typed JSON object that represents this task effectively. I'll use standard field names commonly seen in issue trackers (like Jira, Linear, GitHub Issues).\n\n   ```json\n   {\n     \"id\": null,\n     \"type\": \"bug\",\n     \"title\": \"CSV importer crashes on files with UTF-8 BOM\",\n     \"description\": \"The CSV importer crashes when processing a file that contains a UTF-8 Byte Order Mark (BOM). The fix requires changes to the parser and file-io layer. Estimated at ~0.5 days of work. No blockers for starting development.\",\n     \"reporter\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"assignee\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"priority\": \"high\",\n     \"status\": \"open\",\n     \"effort_estimate\": \"0.5 days\",\n     \"components\": [\"parser\", \"file-io\"],\n     \"dependencies\": [],\n     \"blockers\": {\n       \"self\": false,\n       \"blocking_release\": true,\n       \"notes\": \"Holding up the current release\"\n     },\n     \"created_at\": null,\n     \"updated_at\": null\n   }\n   ```\n\n5.  **Refine & Validate:**\n   - Does it capture all info from the prompt? Yes.\n   - Is it structured as a task object? Yes, JSON is standard and unambiguous. I'll also add a brief explanation if needed, but the prompt just says \"Convert the following bug report into a task object.\" so the JSON itself is sufficient.\n   - Field names are clear and consistent with common PM/issue tracking systems.\n   - I'll make sure to handle missing fields gracefully (use null or omit them, but keeping them explicit is fine).\n   - I should ensure the format matches what's typically expected for \"task objects\" in software engineering contexts.\n\n   Let's adjust slightly to be more concise and production-ready:\n   ```json\n   {\n     \"type\": \"bug\",\n     \"title\": \"CSV importer crashes on files with UTF-8 BOM\",\n     \"description\": \"The CSV importer crashes when processing a file that contains a UTF-8 Byte Order Mark (BOM). The fix touches the parser and file-io layer. ~0.5 days of work required. No blockers for starting.\",\n     \"reporter\": { \"name\": \"Dana Wu\", \"email\": \"dana.wu@example.com\" },\n     \"assignee\": { \"name\": \"Dana Wu\", \"email\": \"dana.wu@example.com\" },\n     \"priority\": \"high\",\n     \"status\": \"open\",\n     \"effort_estimate\": \"0.5 days\",\n     \"components\": [\"parser\", \"file-io\"],\n     \"release_impact\": { \"blocking_release\": true, \"notes\": \"Holding up the current release\" },\n     \"blockers\": []\n   }\n   ```\n\n6.  **Final Output Generation:** (matches the refined version)\n   I'll present it cleanly as a JSON object, which is the standard representation for task objects in engineering workflows. I'll also add a brief note that fields can be adjusted to match their specific schema if needed. All constraints and info from the prompt are preserved accurately.✅\n   Self-Correction/Verification during thought:\n   - \"Reported by Dana Wu, who is picking it up.\" -> Both reporter and assignee are Dana.\n   - \"half a day of work\" -> effort_estimate: 0.5 days\n   - \"holding up the release\" -> priority: high/critical, blocking_release: true\n   - \"touches parser and file-io layer\" -> components/tags\n   - \"Nothing is blocking her from starting.\" -> blockers: [] / no_blockers: true\n   Everything maps correctly. I'll output the JSON.✅\n   Output matches the refined version.👇🏼\n   *Self-Correction/Note during generation prep*: I should make sure the format is strictly what was asked. \"task object\" usually implies a structured data format like JSON or YAML. I'll provide JSON as it's the most common. I'll keep it clean and well-commented if needed, but raw JSON is better. I'll just output the JSON directly.✅\n   Proceeds. \n   Output Generation. \n   ```json\n   {\n     \"type\": \"bug\",\n     \"title\": \"CSV importer crashes on files with UTF-8 BOM\",\n     \"description\": \"The CSV importer crashes when processing a file that contains a UTF-8 Byte Order Mark (BOM). The fix requires changes to both the parser and file-io layer. Estimated at ~0.5 days of work. No blockers preventing development from starting.\",\n     \"reporter\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"assignee\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"priority\": \"high\",\n     \"status\": \"open\",\n     \"effort_estimate\": \"0.5 days\",\n     \"components\": [\"parser\", \"file-io\"],\n     \"release_impact\": {\n       \"blocking_release\": true,\n       \"note\": \"Holding up the current release\"\n     },\n     \"blockers\": []\n   }\n   ```\n   This looks solid. I'll output it exactly like this.✅\n   All steps verified. Output matches response. \n   [Done] \n   *Self-Correction/Refinement during thought*: Actually, I should make sure the JSON keys are standard and the structure is immediately usable. I'll add a brief introductory sentence and present the JSON block. No extra fluff. The prompt is straightforward. I'll deliver exactly that.✅\n   Output Generation. \n   *(Proceeds)*\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 92,
+    "completion_tokens": 1863,
+    "total_tokens": 1955,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1771
+    }
+  },
+  "stats": {
+    "tokens_per_second": 134.83529130541922,
+    "time_to_first_token": 0.056625,
+    "generation_time": 13.866066,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

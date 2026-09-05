@@ -1,0 +1,10 @@
+{
+  "model": "gemini-3.8-flash",
+  "scores": {
+    "correctness": 1,
+    "completeness": 2,
+    "code_quality": 3,
+    "overall": 1,
+    "justification": "The function performs subtraction (`a - b`) rather than addition (`a + b`), failing to return the sum of the two integers. While the function signature and syntax are valid, the implementation produces incorrect results for virtually all inputs."
+  }
+}

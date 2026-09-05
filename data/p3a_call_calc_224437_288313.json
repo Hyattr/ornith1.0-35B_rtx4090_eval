@@ -1,0 +1,55 @@
+{
+  "id": "chatcmpl-a95xx5hnoavcs735p1kvl",
+  "object": "chat.completion",
+  "created": 1788615875,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "The user wants to compute `(1234 * 5678) + 91011` exactly using the `calculate` function.\nI need to call `calculate` with the expression `(1234 * 5678) + 91011`.\nLet's prepare the function call.\nExpression: `(1234 * 5678) + 91011`\nWait, I should double check if `calculate` supports this format. Yes, it says \"e.g. (3+4)*2\".\nI will make the tool call.\n",
+        "tool_calls": [
+          {
+            "type": "function",
+            "id": "39lNwPBSOtOqLZHln5wTON4vGARsVllM",
+            "function": {
+              "name": "calculate",
+              "arguments": "{\"expression\":\"(1234 * 5678) + 91011\"}"
+            }
+          }
+        ]
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 643,
+    "completion_tokens": 180,
+    "total_tokens": 823,
+    "completion_tokens_details": {
+      "reasoning_tokens": 134
+    }
+  },
+  "stats": {
+    "tokens_per_second": 138.68518694995635,
+    "time_to_first_token": 0.069861,
+    "generation_time": 1.360554,
+    "stop_reason": "toolCalls"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

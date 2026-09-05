@@ -1,0 +1,87 @@
+{
+  "config": {
+    "timestamp": "2026-09-05T22:48:13",
+    "model": "ornith-1.0-35b",
+    "arch": "qwen35moe",
+    "quantization": "IQ4_XS",
+    "loaded_context": 32768,
+    "max_context": 262144,
+    "vram_used_mib": 21086,
+    "vram_free_mib": 3053,
+    "gpu_util_pct": 5,
+    "gpu_temp_c": 41,
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20
+  },
+  "n_per_mode": 30,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "title": {
+        "type": "string"
+      },
+      "priority": {
+        "type": "string",
+        "enum": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "estimated_hours": {
+        "type": "number"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "assignee": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "email"
+        ],
+        "additionalProperties": false
+      },
+      "blocked": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "title",
+      "priority",
+      "estimated_hours",
+      "tags",
+      "assignee",
+      "blocked"
+    ],
+    "additionalProperties": false
+  },
+  "prompt": {
+    "runs": 30,
+    "strict_json_pct": 100.0,
+    "lenient_json_pct": 100.0,
+    "schema_valid_pct": 100.0,
+    "markdown_fence_pct": 0.0,
+    "top_errors": []
+  },
+  "schema_enforced": {
+    "runs": 30,
+    "strict_json_pct": 100.0,
+    "lenient_json_pct": 100.0,
+    "schema_valid_pct": 100.0,
+    "markdown_fence_pct": 0.0,
+    "top_errors": []
+  }
+}

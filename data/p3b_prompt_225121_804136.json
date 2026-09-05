@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-ilpbmnsusatcqqyytn8z",
+  "object": "chat.completion",
+  "created": 1788616271,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"title\": \"CSV importer crashes when file contains UTF-8 BOM\",\n  \"priority\": \"high\",\n  \"estimated_hours\": 4,\n  \"tags\": [\"csv-importer\", \"parser\", \"file-io\"],\n  \"assignee\": {\n    \"name\": \"Dana Wu\",\n    \"email\": \"dana.wu@example.com\"\n  },\n  \"blocked\": false\n}",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Input Text:** Bug report about CSV importer crashing with UTF-8 BOM. Reported by Dana Wu (dana.wu@example.com), who is picking it up. Est: half a day. Holding up release. Touches parser and file-io layer. Not blocked from starting.\n   - **Output Format:** Single JSON object matching a specific schema. No extra properties, no markdown fences, no commentary.\n\n2.  **Extract Fields for Schema:**\n   - `title`: \"CSV importer crashes when a file has a UTF-8 BOM\" (or similar concise title)\n   - `priority`: The report says \"It is holding up the release\", which implies high priority. I'll use \"high\".\n   - `estimated_hours`: \"about half a day of work\" -> 4 hours\n   - `tags`: Touches parser and file-io layer, CSV importer, UTF-8 BOM. I'll extract relevant tags: [\"csv-importer\", \"parser\", \"file-io\", \"utf-8-bom\"] or similar. Let's keep it simple: [\"csv-importer\", \"parser\", \"file-io\"]\n   - `assignee`: { \"name\": \"Dana Wu\", \"email\": \"dana.wu@example.com\" }\n   - `blocked`: \"Nothing is blocking her from starting.\" -> false\n\n3.  **Map to Schema:**\n   ```json\n   {\n     \"title\": \"CSV importer crashes when a file has a UTF-8 BOM\",\n     \"priority\": \"high\",\n     \"estimated_hours\": 4,\n     \"tags\": [\"csv-importer\", \"parser\", \"file-io\"],\n     \"assignee\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"blocked\": false\n   }\n   ```\n\n4.  **Validate against Schema:**\n   - `title`: string ✓\n   - `priority`: enum [\"low\", \"medium\", \"high\"] -> \"high\" ✓\n   - `estimated_hours`: number -> 4 ✓\n   - `tags`: array of strings ✓\n   - `assignee`: object with required name/email, no additional properties ✓\n   - `blocked`: boolean -> false ✓\n   - All required fields present ✓\n   - No extra properties ✓\n\n5.  **Final Output Generation:** (Ensure exact JSON format, no markdown, no commentary)\n   I will output just the raw JSON string as requested. Double-check constraints: \"Respond with a single JSON object matching exactly this schema (no extra properties, no markdown fences, no commentary):\" -> I must not use ```json ... ```.\n\n   Let's construct it carefully.\n   Title: \"CSV importer crashes when file contains UTF-8 BOM\"\n   Priority: \"high\"\n   Estimated hours: 4\n   Tags: [\"csv-importer\", \"parser\", \"file-io\"]\n   Assignee: {\"name\": \"Dana Wu\", \"email\": \"dana.wu@example.com\"}\n   Blocked: false\n\n   All matches. Output matches exactly.✅\n   One minor consideration: half a day is typically 4 hours in standard work contexts (8 hour day). I'll use 4.0 or 4. Both are fine as number type.\n   Tags: I'll keep them relevant to the text. \"csv-importer\", \"parser\", \"file-io\" covers it.\n   Priority: \"high\" because it's holding up the release.\n   All good. Output matches request.✅\n   Proceed. \n   Output generation: raw JSON only.✅\n   `{ \"title\": \"CSV importer crashes when file contains UTF-8 BOM\", \"priority\": \"high\", \"estimated_hours\": 4, \"tags\": [\"csv-importer\", \"parser\", \"file-io\"], \"assignee\": { \"name\": \"Dana Wu\", \"email\": \"dana.wu@example.com\" }, \"blocked\": false }` -> formatted properly.✅\n   Ready. \n   Self-Correction/Refinement during thought: \n   Check schema strictly: `additionalProperties: false`. I must not include any extra fields. The extracted fields match exactly.\n   Tags: I'll use exactly what's implied: [\"csv-importer\", \"parser\", \"file-io\"]. Could also add \"utf-8\". I'll stick with 3 relevant ones.\n   Estimated hours: 4 is standard for half a day.\n   All good. Output matches. \n   Proceeds. \n   [Output Generation] -> *outputs raw JSON*\n   `{\n  \"title\": \"CSV importer crashes when file contains UTF-8 BOM\",\n  \"priority\": \"high\",\n  \"estimated_hours\": 4,\n  \"tags\": [\"csv-importer\", \"parser\", \"file-io\"],\n  \"assignee\": {\n    \"name\": \"Dana Wu\",\n    \"email\": \"dana.wu@example.com\"\n  },\n  \"blocked\": false\n}` (without markdown) -> exactly as requested.✅\n   Final check of the prompt: \"no markdown fences, no commentary\". I will output just the JSON string. All constraints met. \n   Proceeds. \n   [Output Generation] (matches response)\n   `{\n  \"title\": \"CSV importer crashes when file contains UTF-8 BOM\",\n  \"priority\": \"high\",\n  \"estimated_hours\": 4,\n  \"tags\": [\"csv-importer\", \"parser\", \"file-io\"],\n  \"assignee\": {\n    \"name\": \"Dana Wu\",\n    \"email\": \"dana.wu@example.com\"\n  },\n  \"blocked\": false\n}` -> valid.✅\n   Done. \n   *Self-Correction/Note during generation prep*: I'll make sure the JSON is perfectly formatted and strictly matches the schema. No extra whitespace issues. The prompt says \"no markdown fences\", so I will literally just output the raw JSON text. All good. \n   Output matches response. \n   [Proceeds]\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 398,
+    "completion_tokens": 1406,
+    "total_tokens": 1804,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1310
+    }
+  },
+  "stats": {
+    "tokens_per_second": 140.09984681751982,
+    "time_to_first_token": 0.057719,
+    "generation_time": 10.086281,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

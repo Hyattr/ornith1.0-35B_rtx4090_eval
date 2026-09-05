@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-3j1w6ll53ooc83eqa5llvl",
+  "object": "chat.completion",
+  "created": 1788615952,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "4",
+        "reasoning_content": "Thinking Process:\n1.  **Analyze Request:** The user asks a simple arithmetic question (\"What is 2 + 2?\") and explicitly instructs to \"Just answer directly without calling anything.\"\n2.  **Identify Constraints:** Do not call any tools (like `calculate`). Answer directly.\n3.  **Compute Result:** 2 + 2 = 4.\n4.  **Formulate Response:** State the result clearly and concisely, respecting the constraint. \"2 + 2 is 4.\" or just \"4\". Keep it direct.✅\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 636,
+    "completion_tokens": 127,
+    "total_tokens": 763,
+    "completion_tokens_details": {
+      "reasoning_tokens": 123
+    }
+  },
+  "stats": {
+    "tokens_per_second": 138.1154908580699,
+    "time_to_first_token": 0.057772,
+    "generation_time": 0.970052,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

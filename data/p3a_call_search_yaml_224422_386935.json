@@ -1,0 +1,63 @@
+{
+  "id": "chatcmpl-05euswho7fjnns35om5sfh",
+  "object": "chat.completion",
+  "created": 1788615856,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "The user wants to find all YAML configuration files in the repository. I should use the `search_files` function with a glob pattern that matches YAML files. The common extensions for YAML are `.yaml` and `.yml`.\n\nI will search for `*.yaml` first, then `*.yml`, or try to combine them if possible. Since the tool takes a single pattern, I'll run two searches: one for `*.yaml` and one for `*.yml`. Or I can just look for `*.yaml` as it's often sufficient, but to be thorough \"every YAML config file\" suggests checking both extensions.\n\nLet's do two calls.\nPattern 1: `*.yaml`\nPattern 2: `*.yml`\nDirectory is not specified, so default (root) is fine.\nActually, I can just run one call for `*.yaml` and another for `*.yml`. Let's check the tool definition again. It takes a `pattern` string.\n\nI will execute both searches.\nWait, sometimes glob patterns support `{*,*}` but standard glob usually doesn't in simple tools. I'll stick to two calls or just one if I think it covers everything. To be safe, I'll search for both extensions.\nActually, the prompt says \"every YAML config file\". I will search for `*.yaml` and `*.yml`.\n\nLet's proceed. \nI'll make two function calls.\nWait, let's look at the tool: `search_files(pattern, directory)`.\nI'll call it twice.\n1. pattern: `*.yaml`\n2. pattern: `*.yml`\nBoth without specifying directory will search the whole repo.\nLet's do it. \nActually, I can just use one call for each extension.\nProceeding. \nWait, is there a way to combine? `*.{yaml,yml}` might not work. I'll do two calls.\nOr maybe just `*.yaml` and assume `.yml` are less common or vice versa? No, better to be thorough.\nI will make both calls.\nLet's generate the response. \nActually, I'll just call search_files for `*.yaml` first. If needed, I can do another. But doing both at once is fine.\nWait, the system allows multiple tool calls in one turn? Yes.\nI will call it twice.\nDone. \nProceeding. \n(Self-Correction/Refinement during thought)\nActually, `search_files` might just take a simple glob. I'll run two calls: one for `*.yaml` and one for `*.yml`. This covers the vast majority of YAML files.\nLet's execute. \n[Output Generation] -> Tool calls. \nWait, let's verify if `directory` is required. No, only `pattern` is required.\nI will call `search_files` with pattern `*.yaml` and `*.yml`.\nAll good. \nProceeds. \n*Self-Correction/Note during generation*: I'll just make the two calls now.\nActually, sometimes repos use `.yaml` exclusively or `.yml` exclusively. I'll search for both to be safe.\nLet's do it. \n[Tool Call 1]: `search_files(pattern=\"*.yaml\")`\n[Tool Call 2]: `search_files(pattern=\"*.yml\")`\nDone. \nOutput matches response. \nProceeds. \n*(Done)*\n",
+        "tool_calls": [
+          {
+            "type": "function",
+            "id": "Vbe5HUI1shuSI2KfZHMTsJ9lR0zwPKDe",
+            "function": {
+              "name": "search_files",
+              "arguments": "{\"pattern\":\"*.yaml\"}"
+            }
+          },
+          {
+            "type": "function",
+            "id": "Al63w2KdphISaI4Zmctwc2UVfwPH3LWA",
+            "function": {
+              "name": "search_files",
+              "arguments": "{\"pattern\":\"*.yml\"}"
+            }
+          }
+        ]
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 631,
+    "completion_tokens": 786,
+    "total_tokens": 1417,
+    "completion_tokens_details": {
+      "reasoning_tokens": 729
+    }
+  },
+  "stats": {
+    "tokens_per_second": 135.8262379263884,
+    "time_to_first_token": 0.18835,
+    "generation_time": 5.967793,
+    "stop_reason": "toolCalls"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

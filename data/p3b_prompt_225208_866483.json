@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-bfajn8yo6jfjaj2uupvboe",
+  "object": "chat.completion",
+  "created": 1788616319,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"title\": \"CSV importer crashes when a file has a UTF-8 BOM\",\n  \"priority\": \"high\",\n  \"estimated_hours\": 4,\n  \"tags\": [\"csv-importer\", \"utf-8-bom\", \"parser\", \"file-io\"],\n  \"assignee\": {\n    \"name\": \"Dana Wu\",\n    \"email\": \"dana.wu@example.com\"\n  },\n  \"blocked\": false\n}",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Input Text:** Bug report about CSV importer crashing with UTF-8 BOM. Reported by Dana Wu (dana.wu@example.com), who is picking it up. Estimated half a day. Holding up the release. Touches parser and file-io layer. Nothing blocking her from starting.\n   - **Required Output Format:** JSON object matching a specific schema exactly. No markdown fences, no extra properties, no commentary.\n\n2.  **Extract Information from Input:**\n   - *Title:* CSV importer crashes when a file has a UTF-8 BOM\n   - *Priority:* \"It is holding up the release\" -> high\n   - *Estimated Hours:* \"about half a day of work\" -> 4 hours (half a day is typically 4 hours in software estimation, but could also be 0.5 days = 4 hours. I'll use 4.0 or just 4)\n   - *Tags:* CSV importer, UTF-8 BOM, parser, file-io, bug\n   - *Assignee:* Dana Wu (dana.wu@example.com) -> She's picking it up and reported it.\n   - *Blocked:* \"Nothing is blocking her from starting.\" -> false\n\n3.  **Map to Schema:**\n   ```json\n   {\n     \"title\": \"CSV importer crashes when a file has a UTF-8 BOM\",\n     \"priority\": \"high\",\n     \"estimated_hours\": 4,\n     \"tags\": [\"csv-importer\", \"utf-8-bom\", \"parser\", \"file-io\"],\n     \"assignee\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"blocked\": false\n   }\n   ```\n\n4.  **Validate against Schema:**\n   - `type`: object (implicit in JSON)\n   - `title`: string ✓\n   - `priority`: enum [\"low\", \"medium\", \"high\"] -> \"high\" ✓\n   - `estimated_hours`: number -> 4 ✓\n   - `tags`: array of strings ✓\n   - `assignee`: object with required name & email, no additional properties ✓\n   - `blocked`: boolean -> false ✓\n   - All required fields present ✓\n   - No extra properties ✓\n\n5.  **Refine Output:**\n   Check exact formatting requirements: \"Respond with a single JSON object matching exactly this schema (no extra properties, no markdown fences, no commentary):\"\n   I will output just the raw JSON string.\n\n   Let's double-check the estimated hours. \"half a day\" -> typically 4 hours in agile/dev contexts. I'll use 4.0 or 4. Both are numbers. I'll stick with 4.\n   Tags: I'll keep them relevant and concise based on the text: [\"csv-importer\", \"utf-8-bom\", \"parser\", \"file-io\"]\n   Priority: high (holding up release)\n   Assignee: Dana Wu, dana.wu@example.com\n   Blocked: false\n\n   All matches. Construct final JSON.✅\n   One minor thing: sometimes \"half a day\" is interpreted as 4 hours. I'll use 4.0 to be safe as a number. Actually, 4 is fine.\n   Let's ensure no markdown formatting like ```json ... ```. The prompt says \"no markdown fences\". So just raw JSON.\n\n   Final check of the text: \"The CSV importer crashes when a file has a UTF-8 BOM.\" -> title matches.\n   \"Reported by Dana Wu (dana.wu@example.com), who is picking it up.\" -> assignee\n   \"She thinks it is about half a day of work.\" -> estimated_hours: 4\n   \"It is holding up the release\" -> priority: high\n   \"touches the parser and the file-io layer\" -> tags\n   \"Nothing is blocking her from starting.\" -> blocked: false\n\n   All good. Output matches exactly.✅\n   Proceed. \n   Output generation. \n   `{ \"title\": \"CSV importer crashes when a file has a UTF-8 BOM\", \"priority\": \"high\", \"estimated_hours\": 4, \"tags\": [\"csv-importer\", \"utf-8-bom\", \"parser\", \"file-io\"], \"assignee\": { \"name\": \"Dana Wu\", \"email\": \"dana.wu@example.com\" }, \"blocked\": false }` (formatted properly)\n   I will make sure it's valid JSON. No extra spaces or newlines if not needed, but pretty printing is fine as long as it's a single JSON object. The prompt says \"single JSON object\", so standard formatting is okay. I'll output it directly.✅\n   One detail: `estimated_hours` as 4.0 vs 4. Both are numbers. I'll use 4.\n   All set. \n   Output matches response. \n   Proceeds. \n   [Output Generation] -> *Self-Correction/Verification during thought*: \n   Wait, should I include \"bug\" or \"crash\" in tags? The prompt says tags array of strings. I'll keep it relevant: `[\"csv-importer\", \"utf-8-bom\", \"parser\", \"file-io\"]`. That's fine.\n   Priority: high is correct for release-blocking.\n   Blocked: false is explicitly stated.\n   Estimated hours: 4 (half day)\n   All good. Output matches exactly.✅\n   Generating. \n   `[Output]` -> raw JSON string.✅\n   *(Done.)*\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 398,
+    "completion_tokens": 1311,
+    "total_tokens": 1709,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1206
+    }
+  },
+  "stats": {
+    "tokens_per_second": 140.11882076000447,
+    "time_to_first_token": 0.056337000000000005,
+    "generation_time": 9.405545,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

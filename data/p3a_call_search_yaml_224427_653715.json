@@ -1,0 +1,63 @@
+{
+  "id": "chatcmpl-3pg6grrstvrjr8hldn60qb",
+  "object": "chat.completion",
+  "created": 1788615863,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "The user wants to find all YAML configuration files in the repository. I should use the `search_files` function with a glob pattern for YAML files. The common extensions for YAML are `.yaml` and `.yml`. I'll search for both patterns, or perhaps just run one search first. Let's try searching for `*.yaml` first. Actually, I can do multiple searches or pick the most common one. Let me search for both to be thorough.\n\nWait, looking at the function signature:\n```json\n{\n  \"description\": \"Search for files matching a glob pattern in the repository.\",\n  \"name\": \"search_files\",\n  \"parameters\": {\n    \"properties\": {\n      \"directory\": {\"description\": \"Directory to search in\", \"type\": \"string\"},\n      \"pattern\": {\"description\": \"Glob pattern, e.g. *.py\", \"type\": \"string\"}\n    },\n    \"required\": [\"pattern\"],\n    \"type\": \"object\"\n  }\n}\n```\n\nI can only pass one pattern at a time. I'll search for `*.yaml` and `*.yml`. Or maybe just `*.{yaml,yml}` if glob supports it, but standard globs usually don't support braces in all implementations unless specifically noted. Let's stick to separate calls or just the most common ones. Actually, I'll run two searches: one for `*.yaml` and one for `*.yml`.\n\nWait, let's think about this. The prompt says \"every YAML config file\". I will search for both extensions.\nPattern 1: `*.yaml`\nPattern 2: `*.yml`\n\nLet's execute both searches. No directory specified means root or default.\nI'll make the calls. \nActually, sometimes just one pattern is enough, but to be safe and accurate as requested (\"every\"), I'll search for both.\nLet's do it. \nWait, I can also just use `*.{yaml,yml}` if the underlying tool supports extended globs, but standard `search_files` usually expects simple globs. I'll stick to two calls.\nActually, let's just try `*.yaml` first. If the repo uses `.yml`, I might miss it. I'll do both.\nLet's proceed. \nCalling search_files for `*.yaml` and `*.yml`.\nAll good.✅\n",
+        "tool_calls": [
+          {
+            "type": "function",
+            "id": "QncHl9ClbvBfdYOg0zYEx28l62KsNtSz",
+            "function": {
+              "name": "search_files",
+              "arguments": "{\"pattern\":\"*.yaml\"}"
+            }
+          },
+          {
+            "type": "function",
+            "id": "uR6xzk8WQ7XsJebkELHJsRd67gjJLB9E",
+            "function": {
+              "name": "search_files",
+              "arguments": "{\"pattern\":\"*.yml\"}"
+            }
+          }
+        ]
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 631,
+    "completion_tokens": 562,
+    "total_tokens": 1193,
+    "completion_tokens_details": {
+      "reasoning_tokens": 505
+    }
+  },
+  "stats": {
+    "tokens_per_second": 137.62024906566646,
+    "time_to_first_token": 0.059142,
+    "generation_time": 4.1355770000000005,
+    "stop_reason": "toolCalls"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "config": {
+    "timestamp": "2026-09-05T22:44:05",
+    "model": "ornith-1.0-35b",
+    "arch": "qwen35moe",
+    "quantization": "IQ4_XS",
+    "loaded_context": 32768,
+    "max_context": 262144,
+    "vram_used_mib": 21086,
+    "vram_free_mib": 3053,
+    "gpu_util_pct": 3,
+    "gpu_temp_c": 39,
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20
+  },
+  "n_per_case": 3,
+  "total_runs": 60,
+  "overall_accuracy_pct": 100.0,
+  "should_call": {
+    "runs": 36,
+    "accuracy_pct": 100.0,
+    "breakdown": {
+      "correct": 36
+    }
+  },
+  "should_not_call": {
+    "runs": 24,
+    "accuracy_pct": 100.0,
+    "false_positive_pct": 0.0
+  },
+  "verdicts": {
+    "correct": 60
+  },
+  "median_reasoning_tokens": 138.0
+}

@@ -1,0 +1,55 @@
+{
+  "id": "chatcmpl-xjs3pztqm6qwc5zjmorpe",
+  "object": "chat.completion",
+  "created": 1788615981,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "The user wants to find test files in the repository without executing them. I should use the `search_files` tool with a pattern that matches common test file naming conventions (like `test_*.py`, `*_test.py`, `tests/`, etc.). Let me search for typical test file patterns.\n\nI'll search for:\n- `*test*.py` - common Python test files\n- Maybe also check if there's a specific tests directory structure\n\nLet me start with a broad pattern to find test files.\n",
+        "tool_calls": [
+          {
+            "type": "function",
+            "id": "zBi5UbHz1uHLdgc1CWID5HtXjNNfYEFY",
+            "function": {
+              "name": "search_files",
+              "arguments": "{\"pattern\":\"**/*test*.py\"}"
+            }
+          }
+        ]
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 639,
+    "completion_tokens": 139,
+    "total_tokens": 778,
+    "completion_tokens_details": {
+      "reasoning_tokens": 107
+    }
+  },
+  "stats": {
+    "tokens_per_second": 135.27740690855836,
+    "time_to_first_token": 0.063096,
+    "generation_time": 1.083222,
+    "stop_reason": "toolCalls"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

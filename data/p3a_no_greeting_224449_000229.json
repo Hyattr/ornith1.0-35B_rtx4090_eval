@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-mspc88bxw8cdrpuhqdx0ri",
+  "object": "chat.completion",
+  "created": 1788615886,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Hi! I'm doing well, thank you for asking! 😊 I'm here and ready to help with whatever you need. How are you doing today? Is there anything specific I can assist you with?",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:** The user said \"Hi there! How are you doing today?\" - This is a casual greeting and a social question about my well-being.\n2.  **Identify Intent:** The intent is purely conversational/social. No tools or specific actions are needed.\n3.  **Determine Response Strategy:** \n   - Acknowledge the greeting warmly\n   - Respond to the \"how are you\" question appropriately (as an AI, I don't have feelings but can respond politely and positively)\n   - Offer assistance\n   - Keep it conversational and friendly\n4.  **Draft Response (Mental):** Hi! I'm doing well, thank you for asking! I'm just here and ready to help you with whatever you need. How are you doing today? Is there anything specific I can assist you with?\n5.  **Refine Response:** Check against guidelines: friendly, helpful, concise, natural. The draft looks good. No tools needed. Matches the conversational tone. Ready.✅\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 630,
+    "completion_tokens": 269,
+    "total_tokens": 899,
+    "completion_tokens_details": {
+      "reasoning_tokens": 224
+    }
+  },
+  "stats": {
+    "tokens_per_second": 137.5978395085498,
+    "time_to_first_token": 0.058110999999999996,
+    "generation_time": 2.005816,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

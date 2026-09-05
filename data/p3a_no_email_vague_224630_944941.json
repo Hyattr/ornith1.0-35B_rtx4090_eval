@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-piy8l8o674dchs2uc99oow",
+  "object": "chat.completion",
+  "created": 1788615987,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "I can help you get that out quickly. To make sure the message hits right, could you share a few details?\n\n- **Who should receive it?** (email addresses, distribution list, Slack channel, etc.)\n- **What happened?** (system/service name, nature of the outage)\n- **Current impact?** (who/what is affected, workarounds if any)\n- **ETA for resolution or next update?**\n- **Tone/format preference?** (brief status page style, formal email, casual team chat?)\n\nOnce you give me those details, I can draft it for your review or send it directly. Just let me know how you'd like to handle it.",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:** The user says \"I should probably let the team know about the outage at some point.\" This is a statement implying they want to communicate information (about an outage) to their team but haven't done it yet. It suggests they might need help drafting a message or sending it.\n\n2.  **Identify Available Tools:** I have access to:\n   - `get_weather`\n   - `search_files`\n   - `run_tests`\n   - `send_email`\n   - `calculate`\n\n3.  **Match Intent to Tools:** The user wants to notify their team about an outage. The most relevant tool is `send_email`. However, I don't have:\n   - The team's email address(es)\n   - The exact details of the outage (duration, impact, ETA for resolution, etc.)\n   - Confirmation that they want it sent via email specifically\n\n4.  **Determine Next Steps:** I should ask clarifying questions to help them effectively communicate this information:\n   - Who exactly should receive the message? (email addresses, team name, channel?)\n   - What details about the outage should be included? (what happened, impact, estimated resolution time, next update)\n   - Do they want me to draft it for review first, or send it directly?\n\n5.  **Formulate Response:** Keep it helpful and action-oriented. Acknowledge their intent, ask for necessary details, and offer to draft/send the message once I have them. Mention that I can help via email if that's what they need. Keep it concise.✅\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 635,
+    "completion_tokens": 490,
+    "total_tokens": 1125,
+    "completion_tokens_details": {
+      "reasoning_tokens": 345
+    }
+  },
+  "stats": {
+    "tokens_per_second": 138.79805989264014,
+    "time_to_first_token": 0.21911699999999998,
+    "generation_time": 3.742221,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

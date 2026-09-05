@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-9xzcx2wqp3hp5f3ian7r0e",
+  "object": "chat.completion",
+  "created": 1788616735,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"title\":\"CSV importer crashes on files with UTF-8 BOM\",\"priority\":\"high\",\"estimated_hours\":4,\"tags\":[\"bug\",\"csv-importer\"],\"assignee\":{\"name\":\"Dana Wu\",\"email\":\"dana.wu@example.com\"},\"blocked\":false}",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Input Text:** A bug report describing an issue with a CSV importer crashing when a file has a UTF-8 BOM.\n   - **Key Details to Extract:**\n     - Issue/Description: CSV importer crashes on files with UTF-8 BOM\n     - Reported by: Dana Wu (dana.wu@example.com)\n     - Assignee/Picking up: Dana Wu\n     - Estimated effort: ~half a day\n     - Priority/Urgency: Holding up the release (high priority/urgent)\n     - Components/Affected areas: Parser, file-io layer\n     - Blockers: None\n   - **Output Requirement:** Convert into a \"task object\"\n\n2.  **Define \"Task Object\" Structure:**\n   A standard task object typically includes fields like:\n   - `id` (optional/placeholder)\n   - `title` / `summary`\n   - `description`\n   - `assignee`\n   - `reporter`\n   - `status`\n   - `priority` / `severity`\n   - `estimatedEffort` / `storyPoints` / `timeEstimate`\n   - `components` / `tags` / `affectedModules`\n   - `blockers`\n   - `dependencies`\n   - `dueDate` (optional, not mentioned)\n   - `metadata` (original text)\n\n   I'll structure it as a clean JSON object since that's the most common \"task object\" format in software development.\n\n3.  **Map Details to Fields:**\n   - `title`: CSV importer crashes on UTF-8 BOM files\n   - `description`: The CSV importer crashes when processing a file that contains a UTF-8 Byte Order Mark (BOM). This issue is blocking the upcoming release and requires changes in both the parser and the file-io layer.\n   - `assignee`: Dana Wu (dana.wu@example.com)\n   - `reporter`: Dana Wu (dana.wu@example.com)\n   - `status`: Open / To Do\n   - `priority`: High (holding up release)\n   - `estimatedEffort`: 0.5 days\n   - `components` / `affectedModules`: CSV Importer, Parser, File IO Layer\n   - `blockers`: None\n   - `dependencies`: None\n\n4.  **Draft the Task Object (JSON):**\n   ```json\n   {\n     \"id\": null,\n     \"title\": \"CSV importer crashes when file contains UTF-8 BOM\",\n     \"description\": \"The CSV importer crashes when processing a file that has a UTF-8 Byte Order Mark. The issue touches the parser and the file-io layer.\",\n     \"reporter\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"assignee\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"status\": \"Open\",\n     \"priority\": \"High\",\n     \"estimatedEffort\": \"0.5 days\",\n     \"components\": [\n       \"CSV Importer\",\n       \"Parser\",\n       \"File IO Layer\"\n     ],\n     \"blockers\": [],\n     \"dependencies\": []\n   }\n   ```\n\n5.  **Refine & Self-Correction/Verification:**\n   - Does it capture all info from the prompt? Yes.\n   - Is it structured as a task object? Yes, JSON is standard and clean.\n   - Are field names reasonable and consistent with common issue trackers (Jira, Linear, GitHub)? Yes.\n   - Should I add any missing fields or adjust? I'll make it slightly more standardized and add comments/notes if needed. The prompt says \"task object\", so a structured format is expected. I'll provide JSON as the primary output, but also mention that it can be adapted to other formats (YAML, markdown table) if needed. Actually, just providing the JSON directly is best.\n   - Check priority: \"holding up the release\" -> High/Critical. I'll use \"High\".\n   - Check effort: \"half a day\" -> 0.5 days or 4 hours. I'll stick with 0.5 days.\n   - Check assignee/reporter: Same person for both.\n   - All good.\n\n   I will format it clearly as a JSON object, which is the industry standard for programmatic task objects. I'll also include brief field descriptions if helpful, but keep it concise.\n\n6.  **Final Output Generation:** (matches the drafted JSON)\n   I'll present it cleanly. I might add a note that it's in JSON format and can be easily adapted to YAML/Markdown or specific issue trackers. But the core will be the structured object.✅\n   Structure:\n   ```json\n   {\n     \"title\": \"...\",\n     \"description\": \"...\",\n     \"reporter\": {...},\n     \"assignee\": {...},\n     \"status\": \"...\",\n     \"priority\": \"...\",\n     \"estimatedEffort\": \"...\",\n     \"components\": [...],\n     \"blockers\": [],\n     \"dependencies\": []\n   }\n   ```\n   All details accurately mapped. Ready. \n   I will output just the JSON object as requested, maybe with a short introductory sentence. No fluff.✅\n   Self-Correction/Refinement during thought: \n   Should I include `id`? Not provided, so I'll omit or set to null. I'll keep it clean.\n   The prompt says \"task object\" - JSON is perfect. I'll output it directly.\n   All fields match the source text precisely. No assumptions beyond standard task tracking conventions. \n   Proceed. \n   Output matches the refined version.✅\n   *Self-Correction/Verification during drafting*: \n   Let's double-check the exact wording: \"The CSV importer crashes when a file has a UTF-8 BOM.\" -> Title: \"CSV importer crashes on files with UTF-8 BOM\"\n   \"Reported by Dana Wu (dana.wu@example.com), who is picking it up.\" -> reporter & assignee same.\n   \"She thinks it is about half a day of work.\" -> estimatedEffort: 0.5 days\n   \"It is holding up the release\" -> priority: High/Critical\n   \"touches the parser and the file-io layer\" -> components/affectedModules\n   \"Nothing is blocking her from starting.\" -> blockers: none, dependencies: none\n   All accurate. Output matches.✅\n   I'll generate it now. \n   Output Generation. \n   ```json\n   {\n     \"title\": \"CSV importer crashes on files with UTF-8 BOM\",\n     \"description\": \"...\",\n     ...\n   }\n   ```\n   Perfect. \n   [Proceeds]\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 92,
+    "completion_tokens": 1556,
+    "total_tokens": 1648,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1498
+    }
+  },
+  "stats": {
+    "tokens_per_second": 134.6585582874549,
+    "time_to_first_token": 0.057027999999999995,
+    "generation_time": 11.604753,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

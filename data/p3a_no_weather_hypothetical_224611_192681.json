@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-p5pz26w6lfcsigf0qs33ho",
+  "object": "chat.completion",
+  "created": 1788615967,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Fog near coastlines typically forms through a process involving temperature differences between the land and the ocean, often creating what is known as **advection fog**. Here's how it generally works:\n\n1.  **Moisture Source:** The ocean provides a constant supply of warm, moisture-laden air.\n2.  **Cooling Surface:** As this warm, moist air moves over a colder surface—such as cold ocean currents or the cooler land mass at night—it cools down rapidly.\n3.  **Condensation:** When the air reaches its dew point (the temperature at which it can no longer hold all its water vapor), the excess moisture condenses into tiny water droplets, forming fog.\n\nA common example is seen along the California coast, where cold ocean currents meet warm onshore winds, creating dense, frequent fog banks that roll inland. Other factors like wind speed and the specific topography of the coastline also play significant roles in how thick the fog becomes and how far it penetrates onto land.",
+        "reasoning_content": "The user is asking a general science question about meteorology (fog formation near coastlines).\nI don't need any tools for this. I can answer directly from my knowledge base.\n\nFog near coastlines is often caused by advection fog or radiation fog, but the most common specific mechanism related to \"coastlines\" usually involves the meeting of warm and cold air/moisture.\n\nKey factors:\n1.  **Temperature difference:** Cold ocean currents vs. warmer land/air.\n2.  **Moisture source:** The ocean provides abundant moisture.\n3.  **Wind direction:** Onshore winds pushing moist air over the cold surface.\n4.  **Specific type:** Advection fog is very common (e.g., San Francisco).\n\nI will provide a concise explanation covering these points. No tools needed.\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 633,
+    "completion_tokens": 386,
+    "total_tokens": 1019,
+    "completion_tokens_details": {
+      "reasoning_tokens": 175
+    }
+  },
+  "stats": {
+    "tokens_per_second": 132.5383328399006,
+    "time_to_first_token": 0.06623699999999999,
+    "generation_time": 2.971057,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

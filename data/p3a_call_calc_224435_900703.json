@@ -1,0 +1,55 @@
+{
+  "id": "chatcmpl-pzkjupcqqpg3kfrgcel2g",
+  "object": "chat.completion",
+  "created": 1788615873,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "The user wants to compute the value of the expression `(1234 * 5678) + 91011`.\nI can use the `calculate` function for this.\n\nExpression: `(1234 * 5678) + 91011`\nLet's verify the calculation manually to ensure correctness if needed, but the tool is reliable.\n1234 * 5678 = ?\n1234 * 5000 = 6,170,000\n1234 * 600 = 740,400\n1234 * 70 = 86,380\n1234 * 8 = 9,872\nSum: 6,170,000 + 740,400 + 86,380 + 9,872 = 7,006,652\n\nThen add 91011:\n7,006,652 + 91,011 = 7,097,663.\n\nI will use the `calculate` tool to provide the exact result.\nExpression string: \"(1234 * 5678) + 91011\"\n",
+        "tool_calls": [
+          {
+            "type": "function",
+            "id": "cYXmGeeux7edFC19WODifttIsEBenDTJ",
+            "function": {
+              "name": "calculate",
+              "arguments": "{\"expression\":\"(1234 * 5678) + 91011\"}"
+            }
+          }
+        ]
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 643,
+    "completion_tokens": 344,
+    "total_tokens": 987,
+    "completion_tokens_details": {
+      "reasoning_tokens": 298
+    }
+  },
+  "stats": {
+    "tokens_per_second": 140.9701044740541,
+    "time_to_first_token": 0.21024199999999998,
+    "generation_time": 2.643382,
+    "stop_reason": "toolCalls"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

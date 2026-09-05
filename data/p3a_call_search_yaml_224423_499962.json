@@ -1,0 +1,63 @@
+{
+  "id": "chatcmpl-qxvovbolebcszjglmxktv",
+  "object": "chat.completion",
+  "created": 1788615862,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "The user wants to find all YAML configuration files in the repository. I should use the `search_files` function with a glob pattern that matches YAML files. Common extensions for YAML are `.yaml` and `.yml`. I'll search for both patterns.\n\nLet's start by searching for `*.yaml` and `*.yml` files.\n",
+        "tool_calls": [
+          {
+            "type": "function",
+            "id": "R0sazyhzaB6icsEesvRjlqpXQze287mC",
+            "function": {
+              "name": "search_files",
+              "arguments": "{\"pattern\":\"*.yaml\"}"
+            }
+          },
+          {
+            "type": "function",
+            "id": "TJWjgSkHnli0uNRMgaq4Gf9LhK9evOng",
+            "function": {
+              "name": "search_files",
+              "arguments": "{\"pattern\":\"*.yml\"}"
+            }
+          }
+        ]
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 631,
+    "completion_tokens": 128,
+    "total_tokens": 759,
+    "completion_tokens_details": {
+      "reasoning_tokens": 71
+    }
+  },
+  "stats": {
+    "tokens_per_second": 135.40124078711835,
+    "time_to_first_token": 0.06702,
+    "generation_time": 1.004973,
+    "stop_reason": "toolCalls"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

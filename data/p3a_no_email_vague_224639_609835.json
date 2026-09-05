@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-8fa4wbpc2si197p3chyf5n",
+  "object": "chat.completion",
+  "created": 1788615994,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "I can help you get that out to your team. Since sending an email is irreversible, I'd recommend we draft it first before hitting send. \n\nTo put together a clear notification, I'll need:\n- **Who should receive it?** (email addresses, distribution list, or team name)\n- **What happened?** (service/system affected, scope of impact)\n- **Current status & next steps** (is it being worked on? any ETA for resolution?)\n- **Tone preference** (formal incident update vs. quick heads-up)\n\nOnce you share those details, I'll draft a message for your review before sending.",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:** The user says \"I should probably let the team know about the outage at some point.\" This is a statement implying they want to notify their team about an outage, but they haven't explicitly asked me to do anything yet. It's somewhat open-ended.\n\n2.  **Identify Key Information Needed:**\n   - Who is \"the team\"? (email addresses, Slack channel, etc.)\n   - What exactly is the outage? (details, impact, duration, ETA)\n   - How should they be notified? (email, chat, etc.)\n   - The user has a `send_email` tool available.\n\n3.  **Evaluate Available Tools:** I have `send_email`, but I don't have enough information to use it yet. I need:\n   - Recipient(s) (`to`)\n   - Subject line\n   - Body content (outage details)\n\n4.  **Formulate Response:** I should acknowledge their statement and ask for the necessary details to help them draft/send the notification. I'll be helpful and proactive, offering to draft it or send it once they provide the info.\n\n   Key questions to ask:\n   - Who should receive this message? (email addresses/team name)\n   - What are the key details about the outage? (what happened, impact, current status, ETA for resolution)\n   - Do you want me to draft it first or send it directly?\n\n5.  **Draft Response (Mental Refinement):** \"I can help with that. To get a notification out to your team, I'll need a few details:\n   - Who should receive this? (email addresses or distribution list)\n   - What are the key details about the outage? (what happened, what systems/services are affected, current status, and any ETA for resolution)\n   - Would you like me to draft it for your review first, or go ahead and send it once you provide the info?\"\n\n   This is clear, actionable, and respects that sending emails is irreversible (as noted in the tool description). I'll make sure to mention I can draft it first since email sending is final.\n\n6.  **Final Check:** Does it match the user's intent? Yes. Does it ask for necessary info without being overwhelming? Yes. Does it account for the irreversible nature of `send_email`? Yes, by offering a draft-first option. Ready.✅\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 635,
+    "completion_tokens": 650,
+    "total_tokens": 1285,
+    "completion_tokens_details": {
+      "reasoning_tokens": 515
+    }
+  },
+  "stats": {
+    "tokens_per_second": 137.2532059409278,
+    "time_to_first_token": 0.058925,
+    "generation_time": 4.787412000000001,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

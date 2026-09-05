@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-5m3m5ncgs7dk3muja1kl",
+  "object": "chat.completion",
+  "created": 1788616708,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"title\": \"CSV importer crashes when file contains UTF-8 BOM\",\n  \"priority\": \"high\",\n  \"estimated_hours\": 4,\n  \"tags\": [\"bug\", \"parser\", \"file-io\", \"release-blocker\"],\n  \"assignee\": {\n    \"name\": \"Dana Wu\",\n    \"email\": \"dana.wu@example.com\"\n  },\n  \"blocked\": false\n}",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Input Text:** A bug report description.\n   - **Key Information Extracted:**\n     - *Issue:* CSV importer crashes when a file has a UTF-8 BOM.\n     - *Reporter/Assignee:* Dana Wu (dana.wu@example.com) - she's picking it up.\n     - *Estimated Effort:* ~half a day of work.\n     - *Priority/Urgency:* Holding up the release (high priority).\n     - *Affected Components:* Parser and file-io layer.\n     - *Blockers:* None blocking her from starting.\n   - **Goal:** Convert this into a structured \"task object\" format.\n\n2.  **Identify Task Object Fields:**\n   A standard task/issue tracking object typically includes fields like:\n   - `id` (optional, can be generated or omitted)\n   - `title` / `summary`\n   - `description`\n   - `status` / `state`\n   - `priority` / `severity`\n   - `assignee`\n   - `reporter`\n   - `estimated_time` / `effort_estimate`\n   - `components_affected` / `tags` / `labels`\n   - `dependencies` / `blockers`\n   - `created_at` (optional)\n\n3.  **Map Information to Fields:**\n   - `title`: CSV importer crashes when file contains UTF-8 BOM\n   - `description`: The CSV importer crashes when processing a file that starts with a UTF-8 Byte Order Mark (BOM). \n   - `assignee`: Dana Wu (dana.wu@example.com)\n   - `reporter`: Dana Wu (dana.wu@example.com) [or just note she's the reporter/assignee]\n   - `priority`: High / Critical (holding up release)\n   - `estimated_effort`: 0.5 days\n   - `components_affected`: [\"parser\", \"file-io layer\"]\n   - `blockers`: None\n   - `status`: Open / Ready for Work\n   - `type`: Bug\n\n4.  **Structure as a Task Object (JSON format is standard and widely usable):**\n   I'll create a clean, structured JSON object representing the task. I'll include common fields used in issue trackers like Jira, GitHub Issues, etc.\n\n   ```json\n   {\n     \"type\": \"Bug\",\n     \"title\": \"CSV importer crashes when file contains UTF-8 BOM\",\n     \"description\": \"The CSV importer crashes when processing a file that includes a UTF-8 Byte Order Mark (BOM).\",\n     \"status\": \"Open\",\n     \"priority\": \"High\",\n     \"assignee\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"reporter\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"estimated_effort\": \"0.5 days\",\n     \"components_affected\": [\n       \"parser\",\n       \"file-io layer\"\n     ],\n     \"blockers\": [],\n     \"release_impact\": \"Blocking current release\",\n     \"ready_to_start\": true,\n     \"notes\": \"Reporter self-assigns. No blockers preventing immediate start.\"\n   }\n   ```\n\n5.  **Refine & Self-Correction/Verification:**\n   - *Check against input:* \n     - CSV importer crashes with UTF-8 BOM? ✓\n     - Reported by Dana Wu, picking it up? ✓ (assignee/reporter)\n     - Half a day estimate? ✓\n     - Holding up release? ✓ (priority/release_impact)\n     - Touches parser & file-io? ✓\n     - Nothing blocking start? ✓\n   - *Format:* JSON is standard for \"task object\". I'll present it clearly. I should also make sure the fields are intuitive and match common project management schemas.\n   - *Improvement:* I could add a `metadata` section or keep it flat. Flat with logical grouping is better. I'll stick with the JSON structure but ensure field names are standard (e.g., `priority`, `effort_estimate_days`, `affected_components`).\n   - I'll also provide a brief explanation of the mapping so the user understands how each piece was extracted.\n\n   Let's draft it out carefully.\n   Structure:\n   ```json\n   {\n     \"id\": null,\n     \"type\": \"Bug\",\n     \"summary\": \"CSV importer crashes when file contains UTF-8 BOM\",\n     \"description\": \"...\",\n     \"status\": \"Open / Ready for Work\",\n     \"priority\": \"High (Release Blocker)\",\n     \"assignee\": { ... },\n     \"reporter\": { ... },\n     \"effort_estimate\": { \"value\": 0.5, \"unit\": \"days\" },\n     \"affected_components\": [\"parser\", \"file-io layer\"],\n     \"dependencies\": [],\n     \"blockers\": \"None\",\n     \"release_impact\": \"Blocking current release\",\n     \"metadata\": { ... }\n   }\n   ```\n   This looks solid. I'll output it cleanly. I'll also mention that the format follows standard issue-tracking conventions (like Jira/GitHub) and can be easily adapted. All constraints from the prompt are met. No extra fluff.✅\n   One minor thing: The prompt says \"Reported by Dana Wu... who is picking it up.\" So reporter = assignee = Dana Wu. I'll reflect that accurately.\n   I'll generate the response now. \n   Structure of response: JSON object first, then a quick field-by-field breakdown if needed, but keep it concise. Actually, just the JSON with clear keys is usually what's expected for \"task object\". I'll add a brief note on how to use/adapt it.✅\n   Proceed. \n   Output matches the refined version. \n   Self-Correction/Verification during thought: \n   - Should I include timestamps? Not in source, so skip or mark as `null`/`auto-generated`.\n   - \"task object\" implies a structured data format. JSON is standard.\n   - I'll make sure field names are camelCase or snake_case consistently. I'll use camelCase as it's common in JS/JSON APIs.\n   - All good.✅\n   Output Generation. \n   ```json\n   {\n     \"type\": \"Bug\",\n     \"title\": \"CSV importer crashes when file contains UTF-8 BOM\",\n     \"description\": \"The CSV importer crashes when processing a file that starts with a UTF-8 Byte Order Mark (BOM).\",\n     \"status\": \"Open\",\n     \"priority\": \"High - Release Blocker\",\n     \"assignee\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"reporter\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"effort_estimate\": {\n       \"value\": 0.5,\n       \"unit\": \"days\"\n     },\n     \"affected_components\": [\n       \"parser\",\n       \"file-io layer\"\n     ],\n     \"blockers\": [],\n     \"dependencies\": [],\n     \"release_impact\": \"Blocking current release\",\n     \"ready_to_start\": true,\n     \"metadata\": {\n       \"source\": \"Manual bug report\",\n       \"created_at\": null\n     }\n   }\n   ```\n   This is clean, complete, and directly maps to the prompt. I'll present it.✅\n   Output matches response. \n   Proceeds. \n   [Done] \n   *Self-Correction/Note during generation prep*: I should make sure the output is exactly what was asked: a task object. JSON is perfect. I'll just output the JSON and add a very brief mapping explanation if needed, but keep it tight. The prompt says \"Convert the following bug report into a task object.\" so JSON is ideal. I'll provide it directly.✅\n   All steps verified. Output matches the final JSON. \n   [Output Generation] -> *Proceeds*\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 92,
+    "completion_tokens": 1909,
+    "total_tokens": 2001,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1809
+    }
+  },
+  "stats": {
+    "tokens_per_second": 134.90376016656796,
+    "time_to_first_token": 0.056761000000000006,
+    "generation_time": 14.200177,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

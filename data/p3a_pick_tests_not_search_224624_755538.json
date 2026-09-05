@@ -1,0 +1,55 @@
+{
+  "id": "chatcmpl-5z6xp7ih5279imbc0pdr4d",
+  "object": "chat.completion",
+  "created": 1788615984,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "The user wants to check if a specific test file (`tests/test_api.py`) passes. I should use the `run_tests` tool with the path `tests/test_api.py`.\n",
+        "tool_calls": [
+          {
+            "type": "function",
+            "id": "0xnQJEayb9ZeS886lPtXHyx8fPyWB6WR",
+            "function": {
+              "name": "run_tests",
+              "arguments": "{\"test_path\":\"tests/test_api.py\"}"
+            }
+          }
+        ]
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 630,
+    "completion_tokens": 69,
+    "total_tokens": 699,
+    "completion_tokens_details": {
+      "reasoning_tokens": 37
+    }
+  },
+  "stats": {
+    "tokens_per_second": 136.10289378770352,
+    "time_to_first_token": 0.055798,
+    "generation_time": 0.55542,
+    "stop_reason": "toolCalls"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-3ofpprqd469kffw0972gsc",
+  "object": "chat.completion",
+  "created": 1788616467,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"title\": \"CSV importer crashes when file contains UTF-8 BOM\",\n  \"priority\": \"high\",\n  \"estimated_hours\": 4,\n  \"tags\": [\"bug\", \"csv-importer\", \"utf8-bom\", \"release-blocker\"],\n  \"assignee\": {\n    \"name\": \"Dana Wu\",\n    \"email\": \"dana.wu@example.com\"\n  },\n  \"blocked\": false\n}",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Input Text:** A bug report describing an issue with a CSV importer crashing when a file has a UTF-8 BOM.\n   - **Key Information to Extract:**\n     - Issue/Title: CSV importer crashes on files with UTF-8 BOM\n     - Reporter: Dana Wu (dana.wu@example.com)\n     - Assignee/Pickup: Dana Wu\n     - Estimated Effort: ~half a day\n     - Priority/Urgency: Holding up the release, high priority\n     - Affected Components/Layers: Parser, File-IO layer\n     - Prerequisites/Blockers: None (nothing blocking her from starting)\n   - **Output Format:** Task object (typically JSON or structured format with standard fields like title, description, assignee, reporter, priority, effort estimate, components/tags, status, blockers, etc.)\n\n2.  **Identify Standard Task Object Fields:**\n   Common fields for a task/issue tracking system:\n   - `id` (optional/generate placeholder)\n   - `title` / `summary`\n   - `description`\n   - `reporter`\n   - `assignee`\n   - `priority`\n   - `effort_estimate` / `story_points` / `time_estimate`\n   - `components` / `tags` / `labels`\n   - `status`\n   - `blockers` / `dependencies`\n   - `release_context` / `milestone`\n\n3.  **Map Input to Fields:**\n   - `title`: CSV importer crashes when file contains UTF-8 BOM\n   - `description`: The CSV importer crashes when processing a file that includes a UTF-8 Byte Order Mark (BOM). Affects both the parser and file-io layer. Holding up the current release.\n   - `reporter`: Dana Wu (dana.wu@example.com)\n   - `assignee`: Dana Wu\n   - `priority`: High / Critical (holding up release)\n   - `effort_estimate`: 0.5 days\n   - `components`: Parser, File-IO\n   - `status`: Open / Ready to start\n   - `blockers`: None\n   - `labels/tags`: bug, csv-importer, utf8-bom, release-blocker\n\n4.  **Structure as JSON Task Object:**\n   I'll create a clean, well-typed JSON object that represents a standard task/issue tracking entry.\n\n   ```json\n   {\n     \"id\": null,\n     \"title\": \"CSV importer crashes when file contains UTF-8 BOM\",\n     \"description\": \"The CSV importer crashes when processing files that include a UTF-8 Byte Order Mark (BOM). The fix is expected to touch both the parser and the file-io layer.\",\n     \"reporter\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"assignee\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"priority\": \"High\",\n     \"effort_estimate\": {\n       \"value\": 0.5,\n       \"unit\": \"days\"\n     },\n     \"components\": [\n       \"Parser\",\n       \"File-IO\"\n     ],\n     \"labels\": [\n       \"bug\",\n       \"csv-importer\",\n       \"utf8-bom\",\n       \"release-blocker\"\n     ],\n     \"status\": \"Open\",\n     \"blockers\": [],\n     \"dependencies\": []\n   }\n   ```\n\n5.  **Refine & Validate:**\n   - Does it capture all info from the prompt? Yes.\n   - Is it in a standard task object format? Yes, JSON is widely used and easily parseable.\n   - Are fields appropriately named/typed? Yes.\n   - Should I add any context like `release_context` or `milestone`? The prompt says \"holding up the release\", so adding `\"release_context\": \"Current release\"` or similar could be useful, but not strictly necessary. I'll keep it clean.\n   - I'll make sure the output is clearly a task object, possibly with a brief explanation if needed, but the JSON itself should stand alone.\n\n   Let's double-check the prompt: \"Convert the following bug report into a task object.\" -> Direct conversion expected.\n\n   I'll structure it as a clean JSON object with logical fields. I might add a `type` field to explicitly mark it as a bug/task.\n\n   Final check of the mapping:\n   - Title/Summary: ✓\n   - Description: ✓\n   - Reporter: ✓\n   - Assignee: ✓\n   - Priority/Urgency: High (release blocker) ✓\n   - Estimate: 0.5 days ✓\n   - Components/Affected areas: Parser, File-IO ✓\n   - Status/Ready state: Open/Unblocked ✓\n   - Blockers: None ✓\n\n   All good. I'll generate the response.✅\n   Output matches the refined JSON. I'll present it clearly. Optionally add a markdown note about field choices if needed, but keep it concise.👇🏼\n   Structure:\n   ```json\n   {\n     \"type\": \"bug\",\n     \"title\": \"...\",\n     ...\n   }\n   ```\n   Ready.✅\n   Output Generation. \n   Self-Correction/Refinement during thought: \n   I should make sure the format is strictly a task object without extra fluff. JSON is standard. I'll include only relevant fields extracted from the text, keeping it professional and ready for import into an issue tracker. I'll add a `metadata` or keep it flat. Flat is better. I'll output just the JSON. Optionally wrap in markdown code block. All good. \n   Proceeds. \n   Output Generation. \n   *(Done.)*\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 92,
+    "completion_tokens": 1398,
+    "total_tokens": 1490,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1289
+    }
+  },
+  "stats": {
+    "tokens_per_second": 132.3012134019519,
+    "time_to_first_token": 0.059442,
+    "generation_time": 10.618679999999998,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

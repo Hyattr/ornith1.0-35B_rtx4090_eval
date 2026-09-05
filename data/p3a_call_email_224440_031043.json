@@ -1,0 +1,55 @@
+{
+  "id": "chatcmpl-moh9w8flpyslob844hubhq",
+  "object": "chat.completion",
+  "created": 1788615878,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "The user wants me to send an email with specific parameters:\n- To: alice@example.com\n- Subject: Build failed\n- Body: explaining that the nightly build failed\n\nI have the `send_email` function available which requires `to`, `subject`, and `body`. I will construct a suitable body for \"explaining that the nightly build failed\" and then call the function.\n\nParameters:\n- to: \"alice@example.com\"\n- subject: \"Build failed\"\n- body: \"The nightly build has failed.\" (or similar)\n\nLet's make the tool call.\n",
+        "tool_calls": [
+          {
+            "type": "function",
+            "id": "OwIaVMyJ7H1oTXhPxIxQGPDyQQGdiFny",
+            "function": {
+              "name": "send_email",
+              "arguments": "{\"to\":\"alice@example.com\",\"subject\":\"Build failed\",\"body\":\"Hi Alice,\\n\\nThis is to inform you that the nightly build has failed. Please investigate the logs for more details and let me know if any action is required on your end.\\n\\nBest regards,\\nAutomated Notification System\"}"
+            }
+          }
+        ]
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 645,
+    "completion_tokens": 223,
+    "total_tokens": 868,
+    "completion_tokens_details": {
+      "reasoning_tokens": 123
+    }
+  },
+  "stats": {
+    "tokens_per_second": 138.01155193990158,
+    "time_to_first_token": 0.21490299999999998,
+    "generation_time": 1.823464,
+    "stop_reason": "toolCalls"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

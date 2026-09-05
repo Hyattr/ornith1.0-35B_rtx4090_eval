@@ -1,0 +1,55 @@
+{
+  "id": "chatcmpl-t6ru458m67l1tsh25onyp7",
+  "object": "chat.completion",
+  "created": 1788615854,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "The user wants to find all Python files in the `src` directory. I should use the `search_files` function for this. The pattern for Python files is `*.py`, and the directory is `src`.\n\nParameters:\n- pattern: \"*.py\"\n- directory: \"src\"\n",
+        "tool_calls": [
+          {
+            "type": "function",
+            "id": "V1aDFx2hp88LMBDrGF91QjwCFPAvftpv",
+            "function": {
+              "name": "search_files",
+              "arguments": "{\"pattern\":\"*.py\",\"directory\":\"src\"}"
+            }
+          }
+        ]
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 631,
+    "completion_tokens": 103,
+    "total_tokens": 734,
+    "completion_tokens_details": {
+      "reasoning_tokens": 62
+    }
+  },
+  "stats": {
+    "tokens_per_second": 137.57124706986733,
+    "time_to_first_token": 0.063441,
+    "generation_time": 0.804875,
+    "stop_reason": "toolCalls"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

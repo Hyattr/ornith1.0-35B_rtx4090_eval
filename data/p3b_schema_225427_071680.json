@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-r85yzz7c8jehro5tb4e7cj",
+  "object": "chat.completion",
+  "created": 1788616454,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"title\": \"CSV Importer crashes on files with UTF-8 BOM\",\n  \"priority\": \"high\",\n  \"estimated_hours\": 4,\n  \"tags\": [\"bug\", \"release-blocker\"],\n  \"assignee\": {\n    \"name\": \"Dana Wu\",\n    \"email\": \"dana.wu@example.com\"\n  },\n  \"blocked\": false\n}",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Input Text:** A bug report describing an issue with a CSV importer crashing when a file has a UTF-8 BOM. Includes reporter info (Dana Wu, email), assignee (Dana Wu), estimated effort (~half day), priority/impact (holding up release), technical scope (parser and file-io layer), and blockers (none).\n   - **Task:** Convert this into a \"task object\" format.\n\n2.  **Identify Key Fields for a Task Object:**\n   A standard task/object tracking system typically includes:\n   - Title/Summary\n   - Description\n   - Reporter/Author\n   - Assignee\n   - Priority/Severity\n   - Status\n   - Effort/Estimate\n   - Components/Areas touched\n   - Blockers/Dependencies\n   - Tags/Labels (optional but useful)\n\n3.  **Extract Information from Input:**\n   - *Issue:* CSV importer crashes when a file has a UTF-8 BOM\n   - *Reporter:* Dana Wu (dana.wu@example.com)\n   - *Assignee:* Dana Wu\n   - *Estimated Effort:* ~0.5 days (half a day)\n   - *Priority/Impact:* High (holding up the release)\n   - *Components/Areas:* Parser, File-IO layer\n   - *Blockers:* None\n   - *Status:* Open/New (implied, ready to start)\n\n4.  **Structure as a Task Object:**\n   I'll format it as a JSON-like object or a structured markdown table/list. Since the prompt says \"task object\", a structured key-value format (like JSON or YAML, or a clear markdown list) is appropriate. I'll go with a clean JSON-style structure but also present it in a readable way.\n\n   Let's draft it:\n   ```json\n   {\n     \"title\": \"CSV Importer crashes on UTF-8 BOM files\",\n     \"description\": \"The CSV importer crashes when processing a file that contains a UTF-8 Byte Order Mark (BOM).\",\n     \"reporter\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"assignee\": {\n       \"name\": \"Dana Wu\",\n       \"email\": \"dana.wu@example.com\"\n     },\n     \"status\": \"Open\",\n     \"priority\": \"High\",\n     \"estimated_effort\": \"0.5 days\",\n     \"components\": [\"Parser\", \"File-IO Layer\"],\n     \"blockers\": [],\n     \"impact\": \"Holding up the release\"\n   }\n   ```\n\n5.  **Refine & Validate:**\n   - Does it capture all info from the prompt? Yes.\n   - Is it in a standard task object format? Yes, JSON is widely used for this. I'll also provide a markdown version for readability if needed, but JSON is fine as the primary output.\n   - Are field names clear and conventional? Yes (title, description, reporter, assignee, status, priority, effort, components, blockers, impact).\n   - Should I infer any fields? Status: \"Open\" or \"Ready to Start\". Priority: \"High\" or \"Critical\" due to release blocking. I'll stick with \"High\".\n   - The prompt says \"task object\", which in software/project management contexts often implies a structured data format. I'll output it as a clean JSON object, and maybe add a brief explanation if needed.\n\n   Let's double-check the extraction:\n   - Title: CSV importer crashes when file has UTF-8 BOM → \"CSV Importer crashes on files with UTF-8 BOM\"\n   - Description: The CSV importer crashes when a file has a UTF-8 BOM. Reported by Dana Wu... (I'll keep it concise)\n   - Reporter/Assignee: Dana Wu, dana.wu@example.com\n   - Effort: ~0.5 days\n   - Priority: High (release blocker)\n   - Components: Parser, File-IO layer\n   - Blockers: None\n   - Status: Open / Ready to start\n\n   All matches. I'll format it as a JSON object. I could also use a more generic key-value format if JSON feels too rigid, but JSON is standard for \"objects\". I'll provide it in JSON and note the fields clearly.\n\n6.  **Final Output Generation:** (Mental walkthrough of the response)\n   I'll present it as a structured JSON object, which is the most universal representation of a \"task object\". I'll make sure field names are standard and the values accurately reflect the input. I'll also add a brief note if any inferred fields (like status/priority) were added for completeness.\n\n   Structure:\n   ```json\n   {\n     \"id\": null,\n     \"title\": \"CSV Importer crashes on files with UTF-8 BOM\",\n     \"description\": \"...\",\n     \"reporter\": {...},\n     \"assignee\": {...},\n     \"status\": \"Open\",\n     \"priority\": \"High (Release Blocker)\",\n     \"estimated_effort\": \"0.5 days\",\n     \"components\": [\"Parser\", \"File-IO\"],\n     \"blockers\": [],\n     \"dependencies\": []\n   }\n   ```\n   This looks solid. I'll generate it.✅\n   Self-Correction/Refinement during thought: \n   Should I use a different format? The prompt says \"task object\". In many PM tools (Jira, Linear, Asana), fields are standardized. I'll stick with JSON but keep it clean and directly mapping to the input. I'll make sure not to over-engineer it. I'll output just the object as requested. Optionally, I can format it as a markdown table for readability, but JSON is more \"object-like\". I'll go with JSON. All fields are directly derived or reasonably inferred from standard task tracking conventions. I'll explicitly note inferred fields if any. Actually, priority and status are reasonable inferences but I'll keep them close to the text: priority = \"High (Release Blocker)\", status = \"Open / Ready to Start\". Effort is explicitly stated. Components are explicit. Blockers are explicitly none.\n\n   Final check of the prompt: \"Convert the following bug report into a task object.\" -> Direct conversion expected.\n   I'll produce a clean JSON object.✅\n   Output matches the response. \n   Proceeds. \n   [Output Generation] -> *See response.* \n   Structure:\n   ```json\n   {\n     \"title\": \"...\",\n     \"description\": \"...\",\n     \"reporter\": {...},\n     \"assignee\": {...},\n     \"status\": \"Open\",\n     \"priority\": \"High (Release Blocker)\",\n     \"estimated_effort\": \"0.5 days\",\n     \"components\": [\"Parser\", \"File-IO Layer\"],\n     \"blockers\": [],\n     \"dependencies\": []\n   }\n   ```\n   All good.✅\n   Output matches response. \n   [Done.] \n   *Self-Correction/Note during generation prep*: I should make sure the format is clearly a \"task object\" and not just JSON. I'll present it as a structured key-value object, which works for both human reading and programmatic use. I'll keep it concise. No extra fluff.✅\n   Proceeds. \n   [Output Generation] -> *Proceeds.*\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 92,
+    "completion_tokens": 1713,
+    "total_tokens": 1805,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1619
+    }
+  },
+  "stats": {
+    "tokens_per_second": 132.77723044225132,
+    "time_to_first_token": 0.057137,
+    "generation_time": 12.950914000000001,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-nmj4xvdqmtgomxd5uuxb4q",
+  "object": "chat.completion",
+  "created": 1788616674,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"title\": \"Fix CSV importer crash on files with UTF-8 BOM\",\n  \"priority\": \"high\",\n  \"estimated_hours\": 4,\n  \"tags\": [\"bug\", \"csv-importer\", \"utf8-bom\", \"parser\", \"file-io\"],\n  \"assignee\": {\n    \"name\": \"Dana Wu\",\n    \"email\": \"dana.wu@example.com\"\n  },\n  \"blocked\": false\n}",
+        "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Input Text:** \"The CSV importer crashes when a file has a UTF-8 BOM. Reported by Dana Wu (dana.wu@example.com), who is picking it up. She thinks it is about half a day of work. It is holding up the release, and it touches the parser and the file-io layer. Nothing is blocking her from starting.\"\n   - **Task:** Convert this bug report into a task object.\n\n2.  **Identify Key Information in Bug Report:**\n   - *Issue/Problem:* CSV importer crashes when a file has a UTF-8 BOM (Byte Order Mark)\n   - *Reporter/Assignee:* Dana Wu (dana.wu@example.com) - she's picking it up (assignee)\n   - *Estimated Effort:* ~half a day\n   - *Priority/Urgency:* Holding up the release → High priority / Critical for current release\n   - *Affected Components/Layers:* Parser, File-IO layer\n   - *Dependencies/Blockers:* None blocking her from starting\n\n3.  **Determine Task Object Structure:**\n   A standard task object typically includes fields like:\n   - ID (optional/generate placeholder)\n   - Title/Summary\n   - Description\n   - Reporter\n   - Assignee\n   - Priority/Severity\n   - Status\n   - Estimated Effort/Time\n   - Components/Areas of Impact\n   - Dependencies/Blockers\n   - Release/Version Target\n   - Created Date (optional)\n\n   I'll structure it as a clean, structured JSON-like or markdown object that captures all relevant fields clearly.\n\n4.  **Map Information to Fields:**\n   - `title`: \"Fix CSV importer crash on files with UTF-8 BOM\"\n   - `description`: \"The CSV importer crashes when processing files that contain a UTF-8 Byte Order Mark (BOM). This needs to be fixed in the parser and file-io layer.\"\n   - `reporter`: \"Dana Wu\"\n   - `assignee`: \"Dana Wu\"\n   - `priority`: \"High\" / \"Critical for Release\"\n   - `status`: \"To Do\" / \"Ready to Start\"\n   - `estimated_effort`: \"~0.5 days\" / \"Half a day\"\n   - `components_affected`: [\"Parser\", \"File-IO Layer\"]\n   - `dependencies_blockers`: \"None\"\n   - `release_target`: \"Current release (blocking)\"\n\n5.  **Refine into a Professional Task Object:**\n   I'll format it as a clean, structured object (JSON or Markdown table/list). Since the prompt says \"task object\", JSON is often expected in engineering contexts, but a well-structured markdown representation works too. I'll provide a clear, standardized format that can be easily adapted to any project management tool.\n\n   Let's draft it:\n\n   ```json\n   {\n     \"id\": null,\n     \"title\": \"Fix CSV importer crash on files with UTF-8 BOM\",\n     \"description\": \"The CSV importer crashes when processing files that contain a UTF-8 Byte Order Mark (BOM). The fix requires updates to both the parser and file-io layer.\",\n     \"type\": \"Bug Fix / Task\",\n     \"reporter\": \"Dana Wu\",\n     \"assignee\": \"Dana Wu\",\n     \"priority\": \"High (Blocking Release)\",\n     \"status\": \"Ready to Start\",\n     \"estimated_effort\": \"~0.5 days\",\n     \"components_affected\": [\"Parser\", \"File-IO Layer\"],\n     \"dependencies\": [],\n     \"blockers\": null,\n     \"release_target\": \"Current release\"\n   }\n   ```\n\n6.  **Self-Correction/Verification:**\n   - Does it capture all info from the prompt? Yes: crash on UTF-8 BOM, reporter/assignee Dana Wu, ~half day, blocking release, touches parser & file-io, no blockers.\n   - Is it structured as a \"task object\"? Yes, clearly fielded.\n   - Any missing context? Could add `created_by` or `tags`, but not necessary. The format is clean and directly maps to common issue tracker schemas (Jira, Linear, etc.).\n   - I'll present it in a clear, readable format (JSON + brief explanation if needed), making sure it's ready to be pasted into a PM tool.\n\n   I'll output just the structured object as requested, maybe with a markdown-friendly version for readability. I'll stick to JSON since \"task object\" implies a data structure. I'll also add a note that fields can be adjusted to match their specific system schema.\n\n7.  **Final Output Generation:** (matches the refined version)\n   - Structure: JSON-like task object\n   - Fields: title, description, assignee, reporter, priority, status, estimated_effort, affected_components, dependencies/blockers, release_target\n   - All info accurately extracted and mapped. No fluff.✅\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 92,
+    "completion_tokens": 1197,
+    "total_tokens": 1289,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1089
+    }
+  },
+  "stats": {
+    "tokens_per_second": 131.08712547964353,
+    "time_to_first_token": 0.0567,
+    "generation_time": 9.180403,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

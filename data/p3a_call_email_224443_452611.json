@@ -1,0 +1,55 @@
+{
+  "id": "chatcmpl-b6vo8e57hwof62xlgm3q6v",
+  "object": "chat.completion",
+  "created": 1788615881,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "The user wants me to send an email to alice@example.com with:\n- Subject: 'Build failed'\n- Body: explaining that the nightly build failed\n\nI have the `send_email` function available which requires:\n- to (required)\n- subject (required)\n- body (required)\n\nAll required parameters are provided or can be inferred from the request. I'll compose a clear body message about the nightly build failure and send the email.\n",
+        "tool_calls": [
+          {
+            "type": "function",
+            "id": "S9SUzPWuVhyy6y7BDUSNRlsnYDT3uqPO",
+            "function": {
+              "name": "send_email",
+              "arguments": "{\"to\":\"alice@example.com\",\"subject\":\"Build failed\",\"body\":\"Hi Alice,\\n\\nI'm writing to inform you that the nightly build has failed. We are currently investigating the issue and will keep you updated on our progress.\\n\\nPlease let me know if you need any further details in the meantime.\\n\\nBest regards\"}"
+            }
+          }
+        ]
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 645,
+    "completion_tokens": 200,
+    "total_tokens": 845,
+    "completion_tokens_details": {
+      "reasoning_tokens": 95
+    }
+  },
+  "stats": {
+    "tokens_per_second": 137.99119491360292,
+    "time_to_first_token": 0.056338,
+    "generation_time": 1.498459,
+    "stop_reason": "toolCalls"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

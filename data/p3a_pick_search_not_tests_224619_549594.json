@@ -1,0 +1,55 @@
+{
+  "id": "chatcmpl-p933vuy9v6hhuiup7m7nj",
+  "object": "chat.completion",
+  "created": 1788615971,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "The user wants to know which test files exist but does not want me to execute anything (like run tests). I should search for files that look like test files. Common patterns for test files include `*test*.py`, `*_test.py`, `*.spec.js`, etc. Since I don't know the language of the project, I'll start by searching for common test file patterns. Let me try a few glob patterns to find test files.\n\nI will search for:\n1. `*test*` in the root directory\n2. Maybe check if there's a specific test directory like `tests/` or `__tests__/`\n\nLet's start with searching for common test file patterns. I'll use `search_files` with different patterns.\nPattern 1: `*test*.py` (Python)\nPattern 2: `*test*.js` / `*test*.ts` (JS/TS)\nActually, a broader search like `*test*` might be better to catch all languages.\n\nLet's do `search_files(pattern=\"*test*\")`. I won't specify a directory so it searches the whole repo (or default). The function description says \"Search for files matching a glob pattern in the repository.\" and `directory` is optional.\n\nWait, the prompt says \"Just list them, don't execute anything.\"\nI will search for test files using common patterns. Let's try `*test*`.\nActually, I'll just call `search_files(pattern=\"*test*\")`.\nLet's also check `tests/` directory if it exists, but listing files matching the pattern is enough.\nI will proceed with `search_files(pattern=\"*test*\")`.\nWait, maybe I should search for multiple patterns to be safe across languages: `*test*.py`, `*test*.js`, `*test*.ts`, `*_test.go`, etc. But `*test*` covers most.\nLet's just use `*test*`.\nActually, the function description says \"Search for files matching a glob pattern in the repository.\" I'll call it with `pattern=\"*test*\"`.\nIf that returns too many or not enough, I can adjust, but one call is fine to start.\nLet's do it. \nWait, should I search in specific directories? The user just said \"which test files exist\". I'll stick with the root search.\nProceeding. \n`search_files(pattern=\"*test*\")` -> returns list.\nI will output the result.\nDone. \nLet's generate the tool call. \nActually, let's think about common conventions: `*_test.py`, `*.test.js`, `*.spec.js`, `*_test.go`. A single pattern `*test*` usually catches them all unless they use very different naming. I'll go with `*test*`.\nAnother option: search for `tests/` directory contents? No, the user asked for test files specifically.\nI'll call `search_files(pattern=\"*test*\")`.\nDone. \nProceeds. \n[Self-Correction/Refinement during thought]\nIs there a better pattern? Sometimes tests are in `__tests__/` or `tests/`. But listing files with \"test\" in the name is standard. I'll stick with `*test*`.\nI will make the call now. \nActually, let's also check if there's a `test_*` pattern. `*test*` covers both.\nReady. \n`search_files(pattern=\"*test*\")`\nLet's do it. \nWait, the system prompt says \"Just list them, don't execute anything.\" This likely refers to not running tests (`run_tests`). Searching files is fine.\nI will call `search_files`. \nOutput matches expectation. \nProceeds. \n[Tool Call] `search_files(pattern=\"*test*\")`\nDone. \nLet's generate the response after getting results. (I'm simulating, I'll just output the tool call)\nActually, I'll just make the call now. \n`search_files(pattern=\"*test*\")` -> returns file list.\nAll good. \nProceeds. \n[Output Generation] -> Tool Call. \n(Note: I'm an AI, I will generate the tool call block now.) \nWait, should I search multiple patterns? `*test*.py`, `*test*.js`, etc.? The prompt says \"Just list them\". One broad pattern is usually best for this kind of request unless specified otherwise.\nI'll use `pattern=\"*test*\"`.\nDone. \nLet's call it. \n`search_files(pattern=\"*test*\")`\nProceeds. \n[Output] Tool call generated. \n(Self-Correction/Verification during thought)\nIs there any chance the user means unit tests vs integration tests? Not specified. I'll just list all files matching `*test*`.\nI will generate the tool call now. \n`search_files(pattern=\"*test*\")`\nDone. \n[Final Check] The function requires `pattern`. Optional `directory`. I have pattern. Good.\nProceeds. \n`search_files(pattern=\"*test*\")`\n",
+        "tool_calls": [
+          {
+            "type": "function",
+            "id": "aKhiiTLnso6C8mgBsUPAFfs1QtMYQyIL",
+            "function": {
+              "name": "search_files",
+              "arguments": "{\"pattern\":\"*test*\"}"
+            }
+          }
+        ]
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 639,
+    "completion_tokens": 1120,
+    "total_tokens": 1759,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1090
+    }
+  },
+  "stats": {
+    "tokens_per_second": 137.70777229312236,
+    "time_to_first_token": 0.212407,
+    "generation_time": 8.33831,
+    "stop_reason": "toolCalls"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

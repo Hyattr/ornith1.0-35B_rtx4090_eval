@@ -1,0 +1,55 @@
+{
+  "id": "chatcmpl-8rpanaq5y3566la7a62uph",
+  "object": "chat.completion",
+  "created": 1788615869,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "The user wants me to run tests located at `tests/test_parser.py` and report on whether they pass. I will use the `run_tests` tool for this purpose.\n\n1.  **Identify the tool**: `run_tests`.\n2.  **Identify the parameter**: `test_path` = \"tests/test_parser.py\".\n3.  **Construct the call**.\n\nLet's do it.\n",
+        "tool_calls": [
+          {
+            "type": "function",
+            "id": "n9gmwGTII0Ongr1f2PzhT63sRTR4lSca",
+            "function": {
+              "name": "run_tests",
+              "arguments": "{\"test_path\":\"tests/test_parser.py\"}"
+            }
+          }
+        ]
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 636,
+    "completion_tokens": 118,
+    "total_tokens": 754,
+    "completion_tokens_details": {
+      "reasoning_tokens": 86
+    }
+  },
+  "stats": {
+    "tokens_per_second": 138.46547120864972,
+    "time_to_first_token": 0.062735,
+    "generation_time": 0.907711,
+    "stop_reason": "toolCalls"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

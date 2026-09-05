@@ -1,0 +1,55 @@
+{
+  "id": "chatcmpl-8k75rq27iyti2v2s9mgvz",
+  "object": "chat.completion",
+  "created": 1788615984,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "",
+        "reasoning_content": "The user wants to calculate 98765 * 43210 and explicitly asked me to use the calculator for precision. I will call the `calculate` function with the expression \"98765 * 43210\".\n",
+        "tool_calls": [
+          {
+            "type": "function",
+            "id": "MLkWmLFAtDqWcPTnRZ9mXxrxvwZ4K7qT",
+            "function": {
+              "name": "calculate",
+              "arguments": "{\"expression\":\"98765 * 43210\"}"
+            }
+          }
+        ]
+      },
+      "logprobs": null,
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 648,
+    "completion_tokens": 94,
+    "total_tokens": 742,
+    "completion_tokens_details": {
+      "reasoning_tokens": 55
+    }
+  },
+  "stats": {
+    "tokens_per_second": 138.25028653486805,
+    "time_to_first_token": 0.219006,
+    "generation_time": 0.8916989999999999,
+    "stop_reason": "toolCalls"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}
