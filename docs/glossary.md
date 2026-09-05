@@ -100,6 +100,21 @@ C/C++で書かれたLLM推論エンジン。GGUF形式のモデルを動かす�
 **GGUF**
 llama.cpp が使うモデルファイル形式。モデルの重みに加えて、トークナイザやチャットテンプレートなどのメタデータも1ファイルに含む。
 
+メタデータはファイル先頭に格納されているため、**Pythonで数十行のパーサを書けば全部読める**（重み本体を読み込む必要はない）。チャットテンプレートの検証に有用。
+
+✅ 本プロジェクトの GGUF から読み取った主な値:
+
+```
+general.architecture      = qwen35moe
+general.size_label        = 35B
+general.license           = mit
+general.base_model.0.name = Ornith 1.0 35B
+qwen35moe.context_length  = 262144
+tokenizer.chat_template   = (7,686 bytes)
+```
+
+⚠️ **メタデータの不備を発見。** `general.name` と `general.basename` が **`Ornith-1.0-9B`** になっている（実際は35B）。`size_label` と `base_model` は正しく35Bを指しているので、**配布時のラベル付けミス**と考えられる。推論動作には影響しないが、**GGUFのメタデータを無条件に信用してはいけない実例**。記事に構成情報を書く際は、複数のフィールドを突き合わせて確認すること。
+
 **エンドポイント (endpoint) / ポート (port)**
 エンドポイントはAPIの接続先URL。ポートは1台のマシン内で通信の入口を区別する番号。このプロジェクトでは `http://127.0.0.1:1235`（`127.0.0.1` は自マシンを指すアドレス。LM Studioの既定ポートは1234だが、ここでは1235を使用）。
 
@@ -376,9 +391,72 @@ Quickstart に記載された推奨値:
 **チャットテンプレート (chat template)**
 `messages` の配列を、そのモデルが学習時に見た形式の1本のテキストに整形する規則。GGUFのメタデータに含まれ通常は自動適用される。**間違うと出力品質が大きく劣化する。** 疑わしい時は `lms log stream` で実際の整形結果を確認する。
 
-⚠️ **Ornith 固有の注意点。** モデルカードの評価脚注に、**「学習時と推論時の整合を取るため Qwen のチャットテンプレートを修正した」**旨が2箇所で明記されている（修正版 `chat_template.jinja` へのリンクあり）。
+**Ornith 固有の注意点。** モデルカードの評価脚注に、**「学習時と推論時の整合を取るため Qwen のチャットテンプレートを修正した」**旨が2箇所で明記されている（修正版 `chat_template.jinja` へのリンクあり）。つまり素の Qwen テンプレートはこのモデルにとって不正解。
 
-つまり **素の Qwen テンプレートはこのモデルにとって不正解**。使用中の unsloth 製 GGUF に修正版が埋め込まれているかは⚠️**未確認**。品質評価の妥当性に直結するため、評価前に `lms log stream` で実際の整形結果を確認する価値が高い。
+### ✅ 検証結果: 使用中のGGUFのテンプレートは適切
+
+2つの方法で確認した。
+
+**① 実際の整形結果（`lms log stream`）**
+
+```
+<|im_start|>system
+# Tools
+
+You have access to the following functions:
+
+<tools>
+{"type":"function","function":{"name":"marker_tool", ...}}
+</tools>
+
+If you choose to call a function ONLY reply in the following format with NO suffix:
+
+<tool_call>
+<function=example_function_name>
+<parameter=example_parameter_1>
+...
+</IMPORTANT>
+
+（システムプロンプト本文）<|im_end|>
+<|im_start|>user
+（ユーザー入力）<|im_end|>
+<|im_start|>assistant
+<think>
+```
+
+- ChatML 形式（`<|im_start|>` / `<|im_end|>`）で正しく整形されている
+- ツール定義はシステムメッセージ内に注入され、**公式テンプレートと一字一句一致**
+- アシスタントターンが `<think>` で開始される（reasoning モデルとして正しい）
+
+**② GGUFメタデータから抽出したテンプレート本体**
+
+`tokenizer.chat_template` を直接読み出し（7,686 bytes）、公式2種と比較した。
+
+| 比較対象 | 差分行数 | reasoning の履歴保持 |
+|---|---|---|
+| モデルカード参照版（397B） | 46行 | **除去する**（GGUFと同じ挙動） |
+| 35B リポジトリの公式版 | 50行 | **保持する**（GGUFと挙動が異なる） |
+
+→ **GGUF埋め込みテンプレートはモデルカード参照版（＝修正版）の系統**であり、カードが警告していた修正が**反映されている**。末尾に `{#- Unsloth fixes - developer role, tool calling #}` というコメントがあり、unsloth が独自の修正を加えたものと分かる。
+
+**unsloth による追加変更点**
+
+1. `developer` ロールに対応し、先頭2件までの system/developer メッセージを結合
+2. 例外送出を3箇所削除（ユーザークエリ無し・system位置不正・不明ロール）→ より寛容
+3. ツール引数の直列化を修正（`is defined` → `is mapping`）
+4. `preserve_thinking` フラグを追加（有効にすると履歴の思考を保持）
+
+**⚠️ 唯一の相違点: 履歴の思考ブロックの扱い**
+
+✅ マルチターンで実測したところ、**過去のアシスタントターンの `<think>` は履歴から除去される**。
+
+```
+（送信）assistant: "<think>PRIOR_REASONING</think>PRIOR_ANSWER"
+（整形）<|im_start|>assistant
+        PRIOR_ANSWER<|im_end|>     ← 思考が消えている
+```
+
+これはモデルカード参照版と同じ挙動だが、**35Bリポジトリ自身のテンプレートとは異なる**（そちらは保持する）。Qwen3系では除去が標準的な作法であり、カードがリンクした修正版もそうしているため、**現状のままで問題ないと判断できる**。⚠️ ただしマルチターンのエージェント評価を行う場合、この挙動の違いが結果に影響しうる点は記録しておく。
 
 **システムプロンプト (system prompt)**
 モデルの役割や制約を指示する、会話の先頭に置くメッセージ。評価では全条件で揃えるか、意図的に変えるなら記録する。
@@ -601,6 +679,9 @@ JSONスキーマ等の指定形式をどれだけ守れるかの割合。⚠️ 
 | メモリ試算 parallel=4 | 18.23 GiB | **parallel では変化しない** |
 | 存在しないAPIパス | HTTP 200 + ボディに `error` | **ステータスコードで成否判定不可** |
 | ツール呼び出し | 正常動作 | `finish_reason: "tool_calls"`、引数も正しい |
+| チャットテンプレート | 修正版が埋め込み済み | カード参照版(397B)と同系統 + unsloth修正 |
+| 履歴の思考ブロック | 除去される | マルチターンで実測 |
+| GGUF `general.name` | `Ornith-1.0-9B` | **35Bなのに9B表記。ラベル付けミス** |
 
 ⚠️ **ツール呼び出しテストを除き、すべて `temperature: 0`（＝モデルカードの推奨から外れた設定）での計測。** 推奨設定（temp 0.6 / top_p 0.95 / top_k 20）での再計測が必要。
 
@@ -610,10 +691,10 @@ JSONスキーマ等の指定形式をどれだけ守れるかの割合。⚠️ 
 
 - [x] ~~モデルカードで**推奨サンプリング設定**を確認~~ → **temp 0.6 / top_p 0.95 / top_k 20**（第6章）
 - [x] ~~ツール呼び出しが LM Studio 経由で動くか確認~~ → **動作確認済み**（第3章）
-- [ ] **チャットテンプレートを検証**（`lms log stream`）— Ornith は Qwen テンプレートの修正版が必要と明記されており、GGUF に反映されているか未確認。**品質評価の妥当性に直結するので最優先**
-- [ ] NVIDIAコントロールパネルで **sysmem fallback を無効化**（静かな性能劣化を明示的エラーに変える）
+- [x] ~~**チャットテンプレートを検証**~~ → **修正版が正しく埋め込まれていることを確認**（第6章）
+- [x] ~~NVIDIAコントロールパネルで **sysmem fallback を無効化**~~ → 設定済み
+- [x] ~~LM Studio UI で **Flash Attention 有効**を確認~~ → 有効化済み
 - [ ] `lms load --gpu max` で**全レイヤーGPUオフロード**を明示
-- [ ] LM Studio UI で **Flash Attention 有効**を確認（※ここだけCLI不可）
 - [ ] 推奨設定（temp 0.6 / top_p 0.95 / top_k 20）で**速度を再計測**（初期計測は temp 0 のため無効）
 - [ ] `max_tokens` を 2048 に設定
 - [ ] 評価スクリプトに `finish_reason == "length"` かつ `content == ""` の検出を実装（`"tool_calls"` は除外）
