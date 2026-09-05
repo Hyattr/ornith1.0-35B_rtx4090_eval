@@ -1,0 +1,15 @@
+{
+  "model": "claude-opus-5",
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "code_quality": 1,
+    "overall": 1,
+    "justification": ""
+  },
+  "usage": {
+    "input": 1294,
+    "output": 55
+  },
+  "stop_reason": "end_turn"
+}

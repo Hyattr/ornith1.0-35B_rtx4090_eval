@@ -1,0 +1,10 @@
+{
+  "model": "gemini-3.8-flash",
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "code_quality": 1,
+    "overall": 1,
+    "justification": "The model provided an empty response with no code or explanation. As no implementation of the requested `diff` function was delivered, all criteria receive a score of 1 per the grading rules."
+  }
+}

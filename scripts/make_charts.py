@@ -169,6 +169,56 @@ def phase2_charts():
         print("生成: phase2_difficulty.png")
 
 
+def phase3_charts():
+    rows = read_csv("phase3c_coding.csv")
+    if not rows:
+        print("phase3: データなし")
+        return
+
+    LEVEL_COLOR = {"easy": "#2f855a", "medium": ACCENT, "hard": ACCENT2}
+    labels = [r["case"].split("_", 1)[1] for r in rows]
+    reasoning = [fnum(r["reasoning_tokens"]) for r in rows]
+    colors = [LEVEL_COLOR.get(r["level"], ACCENT) for r in rows]
+
+    # ① 思考トークンと予算の関係。4096 で 5/12 が溢れたことを図で示す。
+    fig, ax = plt.subplots(figsize=(9.5, 4.6))
+    ax.bar(range(len(rows)), reasoning, color=colors)
+    ax.set_xticks(range(len(rows)))
+    ax.set_xticklabels(labels, rotation=45, ha="right", fontsize=8)
+    ax.set_ylabel("思考トークン数")
+    ax.set_title("課題ごとの思考量と max_tokens 予算")
+    for budget, color, note in [(2048, "#a0aec0", "2048"), (4096, "crimson", "4096 (5/12が超過)")]:
+        ax.axhline(budget, color=color, ls="--", lw=1.4)
+        ax.text(0.995, budget, f" {note}", color=color, fontsize=8, va="bottom",
+                ha="right", transform=ax.get_yaxis_transform())
+    handles = [plt.Rectangle((0, 0), 1, 1, color=c) for c in LEVEL_COLOR.values()]
+    ax.legend(handles, LEVEL_COLOR.keys(), title="出題時の難易度ラベル", fontsize=8)
+    fig.tight_layout()
+    fig.savefig(RESULTS / "phase3_reasoning_budget.png", bbox_inches="tight")
+    print("生成: phase3_reasoning_budget.png")
+
+    # ② 2審査員のスコア比較。平均せず並べることで一致/不一致を見せる。
+    fig, ax = plt.subplots(figsize=(9.5, 4.4))
+    width = 0.38
+    xs = range(len(rows))
+    ax.bar([x - width / 2 for x in xs], [fnum(r["claude_overall"]) for r in rows],
+           width, label="Claude (claude-opus-5)", color=ACCENT)
+    ax.bar([x + width / 2 for x in xs], [fnum(r["gemini_overall"]) for r in rows],
+           width, label="Gemini (gemini-3.8-flash)", color=ACCENT2)
+    for i, r in enumerate(rows):
+        if fnum(r["claude_overall"]) != fnum(r["gemini_overall"]):
+            ax.annotate("不一致", xy=(i, 5.15), ha="center", fontsize=8, color="crimson")
+    ax.set_xticks(list(xs))
+    ax.set_xticklabels(labels, rotation=45, ha="right", fontsize=8)
+    ax.set_ylabel("総合スコア (1-5)")
+    ax.set_ylim(0, 5.8)
+    ax.set_title("2審査員による独立採点 — 完全一致 11/12")
+    ax.legend(loc="lower left", fontsize=9)
+    fig.tight_layout()
+    fig.savefig(RESULTS / "phase3_judges.png", bbox_inches="tight")
+    print("生成: phase3_judges.png")
+
+
 if __name__ == "__main__":
     RESULTS.mkdir(parents=True, exist_ok=True)
     # 日本語ラベルが使えるフォントを選ぶ
@@ -182,3 +232,4 @@ if __name__ == "__main__":
             continue
     phase1_charts()
     phase2_charts()
+    phase3_charts()

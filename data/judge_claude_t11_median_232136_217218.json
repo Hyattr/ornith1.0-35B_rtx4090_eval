@@ -1,0 +1,15 @@
+{
+  "model": "claude-opus-5",
+  "scores": {
+    "correctness": 5,
+    "completeness": 5,
+    "code_quality": 5,
+    "overall": 5,
+    "justification": "The two-heap logic is correct: insertion routes by comparison with the max-heap root, rebalancing keeps |lower| == |upper| or |upper|+1, giving O(log n) add and O(1) median; the worked example (5,3,7 -> 5; then 1 -> 4.0) checks out by hand. All stated requirements are met including even-count averaging via /2.0 and a descriptive RuntimeError on an empty stream. Code is idiomatic with type hints and comments explaining the negation trick; only trivial quibble is RuntimeError vs. a more specific ValueError/StatisticsError, which is still acceptable as a 'clear error'."
+  },
+  "usage": {
+    "input": 1933,
+    "output": 613
+  },
+  "stop_reason": "end_turn"
+}

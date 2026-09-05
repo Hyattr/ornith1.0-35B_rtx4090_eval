@@ -1,0 +1,15 @@
+{
+  "model": "claude-opus-5",
+  "scores": {
+    "correctness": 5,
+    "completeness": 5,
+    "code_quality": 5,
+    "overall": 5,
+    "justification": "The decorator correctly loops max_attempts times, catches only the given exception tuple, sleeps with full jitter over an exponentially growing delay, skips the sleep after the final attempt, and re-raises the stored last exception; functools.wraps preserves name/docstring. Only nitpicks: `max_attempts=0` would attempt `raise None` (TypeError), and `raise ... from None` discards chaining context, though it is deliberately explained. Code is short, idiomatic, well-commented, and accompanied by a clear usage example and rationale for each design choice."
+  },
+  "usage": {
+    "input": 1904,
+    "output": 567
+  },
+  "stop_reason": "end_turn"
+}

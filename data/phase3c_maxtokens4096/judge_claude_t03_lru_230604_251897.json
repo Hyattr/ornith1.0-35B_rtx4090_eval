@@ -1,0 +1,15 @@
+{
+  "model": "claude-opus-5",
+  "scores": {
+    "correctness": 5,
+    "completeness": 5,
+    "code_quality": 5,
+    "overall": 5,
+    "justification": "The hash map + doubly linked list implementation is correct: sentinel nodes, move-to-end on get and on put-update, eviction of head.next when size exceeds capacity, and `get` returning None for missing keys (though a stored value of None would be ambiguous, that's inherent to the spec). All stated requirements are met and O(1) holds; the OrderedDict alternative is also correct. Code is clean and well-commented; minor nits are the `int | None` annotation (3.10+ only, and values need not be ints) and silently coercing capacity 0 to 1, which is a defensible but undocumented deviation."
+  },
+  "usage": {
+    "input": 2482,
+    "output": 234
+  },
+  "stop_reason": "end_turn"
+}

@@ -1,0 +1,15 @@
+{
+  "model": "claude-opus-5",
+  "scores": {
+    "correctness": 5,
+    "completeness": 5,
+    "code_quality": 5,
+    "overall": 5,
+    "justification": "The implementation correctly uses time.monotonic() for lazy refill, caps tokens at capacity via min(), and consumes only when sufficient tokens exist — all stated requirements are met including no background thread. Edge cases implied by the task (fractional rates, clock jumps, cost > available) are handled sensibly; cost > capacity correctly returns False forever, and negative-argument validation was not requested. Code is concise, typed, and documented; the only nit is the absence of a lock for thread safety, which was not part of the task."
+  },
+  "usage": {
+    "input": 1627,
+    "output": 358
+  },
+  "stop_reason": "end_turn"
+}

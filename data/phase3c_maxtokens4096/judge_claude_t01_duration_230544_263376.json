@@ -1,0 +1,15 @@
+{
+  "model": "claude-opus-5",
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "code_quality": 1,
+    "overall": 1,
+    "justification": "The model produced no response at all, so there is no function, no error handling, and nothing to evaluate. Per the grading rules, an empty answer scores 1 across every criterion."
+  },
+  "usage": {
+    "input": 931,
+    "output": 91
+  },
+  "stop_reason": "end_turn"
+}

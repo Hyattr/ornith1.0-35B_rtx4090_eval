@@ -1,0 +1,10 @@
+{
+  "model": "gemini-3.8-flash",
+  "scores": {
+    "correctness": 5,
+    "completeness": 5,
+    "code_quality": 5,
+    "overall": 5,
+    "justification": "The solution accurately implements all requested behavior, correctly handling combinations and ordering of h/m/s units. It explicitly checks for empty strings, inputs missing digits, and unknown units with clear, tailored `ValueError` messages, while also properly rejecting malformed formats such as trailing numbers without units."
+  }
+}

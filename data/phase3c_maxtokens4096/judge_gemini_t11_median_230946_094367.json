@@ -1,0 +1,10 @@
+{
+  "model": "gemini-3.8-flash",
+  "scores": {
+    "correctness": 5,
+    "completeness": 5,
+    "code_quality": 5,
+    "overall": 5,
+    "justification": "The implementation correctly uses the two-heap technique with Python's heapq to achieve O(log n) insertions and O(1) median queries. It properly balances the heaps, computes the average for even counts, and raises an informative ValueError when called on an empty stream. The code is clean, idiomatic, and includes type annotations."
+  }
+}

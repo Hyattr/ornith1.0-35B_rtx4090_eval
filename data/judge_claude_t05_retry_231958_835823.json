@@ -1,0 +1,15 @@
+{
+  "model": "claude-opus-5",
+  "scores": {
+    "correctness": 5,
+    "completeness": 5,
+    "code_quality": 5,
+    "overall": 5,
+    "justification": "The decorator correctly loops attempts, catches only the specified exception tuple, applies exponential backoff (base_delay * 2^(attempt-1)) with full jitter via random.uniform, skips the sleep on the final attempt, and re-raises the stored last exception; functools.wraps preserves __name__ and __doc__. Only nit: a degenerate max_attempts <= 0 would hit `raise None` (TypeError), and the prose claim \"first retry waits base_delay\" is imprecise given full jitter. Code is idiomatic, typed, and clearly commented, with a concise usage example rather than padding."
+  },
+  "usage": {
+    "input": 1879,
+    "output": 573
+  },
+  "stop_reason": "end_turn"
+}

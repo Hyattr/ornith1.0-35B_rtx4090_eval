@@ -1,0 +1,15 @@
+{
+  "model": "claude-opus-5",
+  "scores": {
+    "correctness": 4,
+    "completeness": 5,
+    "code_quality": 4,
+    "overall": 4,
+    "justification": "The core implementation is correct: the two-heap invariant, rebalancing, O(log n) add, O(1) median, even-count averaging, and a clear ValueError on an empty stream are all handled properly. However, the usage example's stated output is wrong \\u2014 after adding [5,1,3,8] the median is (3+5)/2 = 4.0, not the claimed 3.5, and odd-count medians would print as ints (5, 3) rather than the shown 5.0/3.0. Minor quality nits: an unused `Union` import and legacy `# type:` comments alongside modern annotations, though naming and comments are otherwise clear."
+  },
+  "usage": {
+    "input": 2007,
+    "output": 1048
+  },
+  "stop_reason": "end_turn"
+}

@@ -1,0 +1,15 @@
+{
+  "model": "claude-opus-5",
+  "scores": {
+    "correctness": 4,
+    "completeness": 5,
+    "code_quality": 5,
+    "overall": 4,
+    "justification": "The hash map + doubly linked list implementation is textbook-correct: dict gives O(1) lookup, dummy head/tail simplify list surgery, `get` returns None on miss and calls `_move_to_front`, and eviction reads `self.tail.prev` in O(1). The one real defect is the degenerate `capacity=0` (or negative) case: `put` would try `del self.cache[lru_node.key]` on the dummy head node, raising KeyError, and there is no capacity validation. Naming, docstrings, and the private helper factoring are clean and idiomatic, and the complexity claims stated are accurate."
+  },
+  "usage": {
+    "input": 2007,
+    "output": 715
+  },
+  "stop_reason": "end_turn"
+}

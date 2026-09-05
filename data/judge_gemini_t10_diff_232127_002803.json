@@ -1,0 +1,10 @@
+{
+  "model": "gemini-3.8-flash",
+  "scores": {
+    "correctness": 5,
+    "completeness": 5,
+    "code_quality": 5,
+    "overall": 5,
+    "justification": "The solution implements standard LCS dynamic programming with backtracking to construct the diff. It correctly meets the specification, handles edge cases like empty lists cleanly, and produces output from which both input sequences can be reconstructed in order."
+  }
+}

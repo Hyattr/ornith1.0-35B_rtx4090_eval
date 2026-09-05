@@ -1,0 +1,54 @@
+{
+  "config": {
+    "timestamp": "2026-09-05T23:10:49",
+    "model": "ornith-1.0-35b",
+    "arch": "qwen35moe",
+    "quantization": "IQ4_XS",
+    "loaded_context": 32768,
+    "max_context": 262144,
+    "vram_used_mib": 20913,
+    "vram_free_mib": 3226,
+    "gpu_util_pct": 1,
+    "gpu_temp_c": 42,
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20
+  },
+  "max_tokens": 16384,
+  "tasks": 12,
+  "judges": {
+    "claude": "claude-opus-5",
+    "gemini": "gemini-3.8-flash"
+  },
+  "mean_overall": {
+    "claude": 4.75,
+    "gemini": 4.83
+  },
+  "agreement": {
+    "pairs": 12,
+    "exact_pct": 91.7,
+    "within_1_pct": 100.0
+  },
+  "disagreements": [
+    {
+      "case": "t03_lru",
+      "level": "medium",
+      "claude": 4,
+      "gemini": 5
+    }
+  ],
+  "by_level": {
+    "easy": {
+      "claude": 5,
+      "gemini": 5
+    },
+    "medium": {
+      "claude": 4.8,
+      "gemini": 5
+    },
+    "hard": {
+      "claude": 4.6,
+      "gemini": 4.6
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "chatcmpl-z511madbboic1ygn18dpqb",
+  "object": "chat.completion",
+  "created": 1788617008,
+  "model": "ornith-1.0-35b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Here's a clean implementation of the token-bucket rate limiter:\n\n```python\nimport time\n\nclass RateLimiter:\n    def __init__(self, rate: float, capacity: int):\n        self.rate = rate\n        self.capacity = float(capacity)\n        self.tokens = self.capacity  # start with a full bucket\n        self.last_refill = time.monotonic()\n\n    def _refill(self) -> None:\n        \"\"\"Lazily refill tokens based on elapsed time.\"\"\"\n        now = time.monotonic()\n        elapsed = now - self.last_refill\n        if elapsed > 0:\n            self.tokens = min(self.capacity, self.tokens + elapsed * self.rate)\n            self.last_refill = now\n\n    def allow(self, cost: int = 1) -> bool:\n        \"\"\"Consume `cost` tokens if available. Returns True if allowed.\"\"\"\n        self._refill()\n        if self.tokens >= cost:\n            self.tokens -= cost\n            return True\n        return False\n```\n\n### Key Design Choices\n\n| Aspect | Decision | Rationale |\n|--------|----------|-----------|\n| **Clock** | `time.monotonic()` | Guaranteed non-decreasing, immune to system clock adjustments |\n| **Token type** | Internal `float` | Handles fractional rates (e.g., 0.5 tokens/sec) and smooth consumption |\n| **Refill logic** | Lazy on access | No background threads; O(1) per call with negligible overhead |\n| **Capacity cap** | `min(self.capacity, ...)` | Explicitly prevents overflow even if clock jumps forward |\n\n### Usage Example\n\n```python\nlimiter = RateLimiter(rate=5.0, capacity=20)  # 5 tokens/sec, max 20\n\n# Burst up to capacity immediately\nfor i in range(25):\n    print(limiter.allow())  # True × 20, then False × 5\n\n# Wait and consume again (1 token per 0.2 seconds)\ntime.sleep(0.4)\nprint(limiter.allow(cost=1))  # True (refilled ~2 tokens)\n```",
+        "reasoning_content": "The user wants me to implement a token-bucket rate limiter in Python.\n\nKey requirements:\n1. Class `RateLimiter(rate, capacity)` where `rate` is tokens per second and `capacity` is the max tokens the bucket can hold.\n2. Method `allow(cost: int = 1) -> bool` that consumes `cost` tokens if available, returns True if allowed, False otherwise.\n3. Lazy refill based on elapsed time (no background threads).\n4. Never let the bucket exceed capacity.\n\nLet me think about the token bucket algorithm:\n- Maintain current number of tokens in the bucket (starts at capacity)\n- Maintain timestamp of last refill\n- On each call to `allow`:\n  - Calculate elapsed time since last refill\n  - Add `elapsed * rate` tokens, but cap at `capacity`\n  - Update last refill timestamp to current time\n  - If enough tokens for the cost, subtract and return True; otherwise return False\n\nI should use `time.monotonic()` or `time.perf_counter()` for reliable timing.\n\nLet me write this:\n\n```python\nimport time\n\nclass RateLimiter:\n    def __init__(self, rate: float, capacity: int):\n        self.rate = rate\n        self.capacity = capacity\n        self.tokens = float(capacity)\n        self.last_refill = time.monotonic()\n\n    def _refill(self):\n        now = time.monotonic()\n        elapsed = now - self.last_refill\n        if elapsed > 0:\n            self.tokens = min(self.capacity, self.tokens + elapsed * self.rate)\n            self.last_refill = now\n\n    def allow(self, cost: int = 1) -> bool:\n        self._refill()\n        if self.tokens >= cost:\n            self.tokens -= cost\n            return True\n        return False\n```\n\nWait, should `tokens` be float or int? The rate is per second and can produce fractional tokens. Using float for tokens makes sense to allow smooth consumption. But the capacity could be an integer or float. Let me keep tokens as float internally but the user said `capacity` parameter without type hint, so I'll accept both.\n\nActually, let me reconsider. The cost is `int`, and rate is \"tokens per second\". Using float for internal token count is standard for smooth token bucket behavior. But if we want exact integer behavior matching capacity, we could use integers with fractional tracking. However, float is simpler and usually fine. Let me stick with float for simplicity but note that it's a common approach.\n\nActually, I'll keep tokens as float since `rate` can be fractional (e.g., 0.5 tokens/second), and `elapsed * rate` will naturally produce fractional increments. The capacity should probably also accept float or we cast appropriately. Let me make the implementation clean:\n\n```python\nimport time\n\nclass RateLimiter:\n    def __init__(self, rate: float, capacity: int):\n        self.rate = rate\n        self.capacity = float(capacity)\n        self.tokens = self.capacity  # start full\n        self.last_refill = time.monotonic()\n\n    def _refill(self):\n        now = time.monotonic()\n        elapsed = now - self.last_refill\n        if elapsed > 0:\n            self.tokens = min(self.capacity, self.tokens + elapsed * self.rate)\n            self.last_refill = now\n\n    def allow(self, cost: int = 1) -> bool:\n        self._refill()\n        if self.tokens >= cost:\n            self.tokens -= cost\n            return True\n        return False\n```\n\nThis looks correct. Let me double-check the requirements:\n- `rate` is tokens added per second ✓\n- `capacity` is max tokens ✓\n- `allow(cost: int = 1) -> bool` consumes tokens if available ✓\n- Lazy refill based on elapsed time ✓\n- Never exceeds capacity (min with capacity in _refill) ✓\n\nOne edge case: what if `time.monotonic()` returns the same value twice due to clock changes? Actually, `monotonic()` is guaranteed not to go backwards, so that's fine. But what about very small elapsed times causing floating point issues? The `if elapsed > 0` check handles negative/zero time differences gracefully.\n\nShould I use `time.perf_counter()` instead? Both work, but `perf_counter()` has higher resolution on some systems and is also monotonic. Actually, in Python docs, both are monotonic. `monotonic()` was added specifically for this purpose. Either works fine.\n\nLet me also consider: should the bucket start full or empty? Standard token bucket starts at capacity (full). The user didn't specify otherwise, so starting full is standard and makes sense.\n\nOne more consideration: the `_refill` method updates `last_refill = now`, which means if we call `allow()` very frequently, we might lose small time increments due to floating point precision. But this is a known trade-off with lazy refill and is generally acceptable for rate limiting purposes. The alternative is to not update last_refill when elapsed is tiny, but that complicates things unnecessarily.\n\nActually, I should be careful: if `self.last_refill = now` every time, we're always setting it to the current time, which means any fractional seconds between calls are properly accounted for in the next call. This is correct behavior.\n\nLet me verify with a quick mental test:\n- rate=10 tokens/sec, capacity=20\n- Call allow(5): tokens starts at 20, elapsed ~0, no refill, 20>=5, tokens becomes 15, returns True ✓\n- Wait 1 second, call allow(3): elapsed=1, tokens = min(20, 15 + 10) = 25 → capped at 20. 20>=3, tokens becomes 17, returns True ✓\n- Call allow(50): 17<50, returns False ✓\n\nLooks good. I'll present the implementation cleanly.\n",
+        "tool_calls": []
+      },
+      "logprobs": null,
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 81,
+    "completion_tokens": 1770,
+    "total_tokens": 1851,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1300
+    }
+  },
+  "stats": {
+    "tokens_per_second": 138.86880563878003,
+    "time_to_first_token": 0.06913899999999999,
+    "generation_time": 12.807780999999999,
+    "stop_reason": "eosFound"
+  },
+  "model_info": {
+    "arch": "qwen35moe",
+    "quant": "IQ4_XS",
+    "format": "gguf",
+    "context_length": 32768
+  },
+  "runtime": {
+    "name": "llama.cpp-win-x86_64-nvidia-cuda12-avx2",
+    "version": "2.33.0",
+    "supported_formats": [
+      "gguf"
+    ]
+  }
+}

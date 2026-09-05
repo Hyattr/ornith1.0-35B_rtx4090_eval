@@ -1,0 +1,15 @@
+{
+  "model": "claude-opus-5",
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "code_quality": 1,
+    "overall": 1,
+    "justification": "The response is entirely empty; no function, explanation, or code was provided. Nothing meets any of the task's requirements."
+  },
+  "usage": {
+    "input": 941,
+    "output": 78
+  },
+  "stop_reason": "end_turn"
+}

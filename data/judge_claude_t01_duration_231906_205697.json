@@ -1,0 +1,15 @@
+{
+  "model": "claude-opus-5",
+  "scores": {
+    "correctness": 5,
+    "completeness": 5,
+    "code_quality": 5,
+    "overall": 5,
+    "justification": "The implementation correctly handles all stated cases: any order/combination of h/m/s, empty input, missing digits, and unknown units, each with a distinct clear message. The reconstruction check against the cleaned string is a solid way to reject malformed inputs like '1h45', '1hh', or 'h30m' that a naive findall would silently accept. Code is readable and idiomatic; the only minor deviations are unrequested whitespace tolerance (which also makes '1 0h' parse as 10h) and the fact that a digit-less string with a bad unit reports the 'must contain a digit' message first \ninor and acceptable."
+  },
+  "usage": {
+    "input": 1875,
+    "output": 684
+  },
+  "stop_reason": "end_turn"
+}

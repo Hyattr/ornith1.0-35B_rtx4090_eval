@@ -9,11 +9,15 @@ LM Studio 独自の /api/v0/chat/completions を使う。OpenAI 互換の /v1 �
 
 import json
 import subprocess
+import sys
 import time
 import urllib.error
 import urllib.request
 from datetime import datetime
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import config  # noqa: F401  (.env の読み込みと UTF-8 出力の設定)
 
 BASE = "http://127.0.0.1:1235"
 MODEL = "ornith-1.0-35b"

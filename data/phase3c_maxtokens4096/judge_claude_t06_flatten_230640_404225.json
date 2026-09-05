@@ -1,0 +1,15 @@
+{
+  "model": "claude-opus-5",
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "code_quality": 1,
+    "overall": 1,
+    "justification": "The model produced no response at all, so there is no code to evaluate. No deliverable means all criteria score the minimum."
+  },
+  "usage": {
+    "input": 974,
+    "output": 77
+  },
+  "stop_reason": "end_turn"
+}

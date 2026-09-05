@@ -1,0 +1,15 @@
+{
+  "model": "claude-opus-5",
+  "scores": {
+    "correctness": 5,
+    "completeness": 5,
+    "code_quality": 5,
+    "overall": 5,
+    "justification": "The two-pointer merge is textbook-correct, runs in O(n+m), handles empty inputs naturally via the loop condition plus trailing slice extends, and uses <= for stability. All stated requirements (no sorted()/sort(), linear time, empty inputs) are met and demonstrated with examples including both-empty and duplicate cases. Code is concise, idiomatic, and appropriately commented; the complexity explanation is accurate."
+  },
+  "usage": {
+    "input": 1522,
+    "output": 180
+  },
+  "stop_reason": "end_turn"
+}

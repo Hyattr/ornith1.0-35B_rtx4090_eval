@@ -1,0 +1,15 @@
+{
+  "model": "claude-opus-5",
+  "scores": {
+    "correctness": 5,
+    "completeness": 5,
+    "code_quality": 5,
+    "overall": 5,
+    "justification": "The implementation is correct: lazy refill via `time.monotonic()`, `min(capacity, ...)` caps the bucket, float token storage handles fractional refills, and `allow(cost)` consumes only when sufficient tokens exist. All stated requirements are met with no background thread, and the usage example's arithmetic checks out. Minor blemish: the explanation contradicts itself by claiming monotonic time is non-decreasing and then presenting `if elapsed > 0` as a backward-clock guard, and there's no input validation for negative rate/cost — but neither affects behavior for the task as specified, and thread-safety is correctly flagged as an explicit caveat."
+  },
+  "usage": {
+    "input": 1748,
+    "output": 634
+  },
+  "stop_reason": "end_turn"
+}

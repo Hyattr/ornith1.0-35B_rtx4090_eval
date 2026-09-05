@@ -3,8 +3,13 @@
 ornith で回答を生成し、Claude と Gemini が同一ルーブリックで独立に採点する。
 一致率そのものが「採点の信頼性」を示す指標になる。
 
-max_tokens は 4096。Phase 2 で難問の 6/9 が 2048 の上限に張り付き、
-うち3回が空応答になったため、2048 では約3分の1を取りこぼす。
+max_tokens は 16384。
+
+経緯: Phase 2 の結果から 4096 で足りると見積もったが、実際に回すと
+12問中4問が思考だけで 4096 を使い切り、回答が空になった。うち1問は
+最も簡単な easy 課題 (t01_duration) である。空応答は採点で 1 点になるため、
+予算不足がそのままスコアに化けて「モデルの能力」に見えてしまう。
+4096 での実行結果は results/*_maxtokens4096.* に証拠として残してある。
 """
 
 import csv
@@ -21,7 +26,7 @@ ROOT = Path(__file__).resolve().parent.parent
 RESULTS = ROOT / "results"
 PROMPTS = ROOT / "prompts"
 
-MAX_TOKENS = 4096
+MAX_TOKENS = 16384
 
 TASKS = [
     {"id": "t01_duration", "level": "easy", "prompt":

@@ -1,0 +1,10 @@
+{
+  "model": "gemini-3.8-flash",
+  "scores": {
+    "correctness": 1,
+    "completeness": 1,
+    "code_quality": 1,
+    "overall": 1,
+    "justification": "The model provided an empty response with no code or explanation. As no deliverable was submitted, all criteria are scored at 1."
+  }
+}

@@ -8,10 +8,28 @@ anthropic / google-genai の SDK からも見えないため、ここで明示�
 """
 
 import os
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 ENV_FILE = ROOT / ".env"
+
+
+def _force_utf8_output():
+    """標準出力を UTF-8 にする。
+
+    Windows のコンソールは既定が cp932 で、絵文字などを print すると
+    UnicodeEncodeError でスクリプトごと落ちる。計測の途中で表示の都合だけで
+    落ちるのは損失が大きいので、出力側を UTF-8 に寄せる。
+    """
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, ValueError):
+            pass  # リダイレクト先によっては reconfigure できない
+
+
+_force_utf8_output()
 
 
 def load_env(path=ENV_FILE):

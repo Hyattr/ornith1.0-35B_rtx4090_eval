@@ -1,0 +1,10 @@
+{
+  "model": "gemini-3.8-flash",
+  "scores": {
+    "correctness": 5,
+    "completeness": 5,
+    "code_quality": 5,
+    "overall": 5,
+    "justification": "The implementation correctly uses three-color DFS to detect and reconstruct the cycle. It explicitly addresses all specified edge cases (disconnected components, target-only nodes via `graph.get()`, and self-loops). The code is clean, optimal in both time and space complexity, and properly documented."
+  }
+}

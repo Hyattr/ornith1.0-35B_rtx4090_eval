@@ -1,0 +1,10 @@
+{
+  "model": "gemini-3.8-flash",
+  "scores": {
+    "correctness": 5,
+    "completeness": 5,
+    "code_quality": 5,
+    "overall": 5,
+    "justification": "The model accurately identifies the early return on match as the defect and provides a minimal, working counterexample (`xs = [2, 2, 3]`, `target = 2`) with a clear execution trace. The corrected implementation cleanly records candidate indices while narrowing the search window to the left, properly handling duplicates, empty lists, and missing elements."
+  }
+}

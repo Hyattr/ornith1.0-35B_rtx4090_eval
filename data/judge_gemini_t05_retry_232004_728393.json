@@ -1,0 +1,10 @@
+{
+  "model": "gemini-3.8-flash",
+  "scores": {
+    "correctness": 5,
+    "completeness": 5,
+    "code_quality": 5,
+    "overall": 5,
+    "justification": "The implementation satisfies all explicit requirements cleanly and idiomatically. It correctly preserves metadata using `functools.wraps`, calculates exponential backoff with standard full jitter, and re-raises the final caught exception when attempts are exhausted."
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "model": "gemini-3.8-flash",
+  "scores": {
+    "correctness": 5,
+    "completeness": 5,
+    "code_quality": 5,
+    "overall": 5,
+    "justification": "The implementation correctly satisfies all time complexity and functional requirements using two heaps via Python's `heapq`. It handles empty-state error raising, even/odd parity, and partition balancing cleanly and idiomatically."
+  }
+}

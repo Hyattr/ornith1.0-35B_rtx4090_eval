@@ -1,0 +1,10 @@
+{
+  "model": "gemini-3.8-flash",
+  "scores": {
+    "correctness": 5,
+    "completeness": 5,
+    "code_quality": 5,
+    "overall": 5,
+    "justification": "The implementation correctly uses a hash map combined with a doubly linked list with dummy head and tail nodes to achieve true O(1) time complexity for both `get` and `put`. All requirements, including returning `None` for missing keys and treating `get` calls as recency updates, are properly handled. The code is clean, well-structured, and idiomatic."
+  }
+}

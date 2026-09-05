@@ -1,0 +1,10 @@
+{
+  "model": "gemini-3.8-flash",
+  "scores": {
+    "correctness": 5,
+    "completeness": 5,
+    "code_quality": 5,
+    "overall": 5,
+    "justification": "The implementation correctly satisfies all functional requirements and achieves O(1) time complexity using a hash map combined with a doubly linked list. Sentinel head and tail nodes are cleanly employed to eliminate edge cases around boundary insertions and deletions. The response also appropriately handles missing keys by returning `None` and includes an idiomatic `OrderedDict` alternative."
+  }
+}
