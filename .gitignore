@@ -1,0 +1,44 @@
+# --- secrets ---
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets.json
+
+# --- python ---
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# --- node ---
+node_modules/
+npm-debug.log*
+pnpm-debug.log*
+yarn-error.log*
+dist/
+build/
+
+# --- notebooks ---
+.ipynb_checkpoints/
+
+# --- claude code (local only) ---
+.claude/settings.local.json
+
+# --- os / editor ---
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# --- logs / scratch ---
+*.log
+tmp/
+scratch/
