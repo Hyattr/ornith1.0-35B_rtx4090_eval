@@ -22,3 +22,5 @@ cp .env.example .env   # ANTHROPIC_API_KEY を記入
 - [Phase 3 計測結果](docs/phase3-results.md) — ツール呼び出し・JSON準拠・コード生成の2審査員評価
 
 - [記事ドラフト](docs/article-draft.md) — note 公開用の原稿
+
+- [記事ドラフト・基礎編](docs/article-basics-draft.md) — トークン入出力・キャッシュ・出力上限の入門記事
