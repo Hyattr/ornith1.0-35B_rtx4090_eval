@@ -38,7 +38,7 @@ RTX 4090 一枚（VRAM 24GB）に **Ornith-1.0-35B**（MoE / 4bit量子化）を
 1. [用語集](docs/glossary.md) — 用語・パラメータの解説と実測値まとめ
 2. [Phase 1・2 計測結果](docs/phase1-2-results.md) — 速度・VRAM・思考トークン
 3. [Phase 3 計測結果](docs/phase3-results.md) — ツール呼び出し・JSON準拠・コード生成
-4. [記事ドラフト](docs/article-draft.md) — note 公開用の原稿
+4. [記事ドラフト](docs/article-draft.md) — note 公開用の原稿（[note 公開版](https://note.com/hyattrt/n/nf99eafd68bb8)）
 5. [記事ドラフト・基礎編](docs/article-basics-draft.md) — トークン入出力の入門記事（[note 公開版](https://note.com/hyattrt/n/nfb5375d04807)）
 
 ## 計測環境
